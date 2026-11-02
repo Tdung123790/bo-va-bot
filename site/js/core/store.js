@@ -1,0 +1,2 @@
+export function createStore(initial={}){let state={...initial};const listeners=new Set();return{get(key){return key===undefined?{...state}:state[key];},set(key,value){const next=typeof key==='object'?key:{[key]:value};state={...state,...next};for(const listener of listeners)listener({...state},next);return {...state};},subscribe(listener){listeners.add(listener);return()=>listeners.delete(listener);}};}
+export const store=createStore({cartCount:0,user:null,cartOpen:false});

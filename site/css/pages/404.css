@@ -1,0 +1,1 @@
+.not-found{text-align:center;display:grid;justify-items:center;align-content:center;gap:1rem;min-height:65vh;padding:4rem 1rem}.not-found__code{font-size:clamp(7rem,24vw,16rem);font-family:var(--font-heading,serif);color:#a88b59;line-height:1}.not-found h1{font-size:clamp(2rem,5vw,4rem)}.not-found p:not(.not-found__code){max-width:35rem}.not-found a{margin-top:1rem}

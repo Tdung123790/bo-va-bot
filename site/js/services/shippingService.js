@@ -1,0 +1,5 @@
+let dataPromise;
+export async function getLocations(){if(!dataPromise)dataPromise=fetch('data/hcm-locations.json').then(r=>{if(!r.ok)throw Error('Không tải được địa giới');return r.json();}).catch(e=>{dataPromise=null;throw e;});return dataPromise;}
+export function calculateDistance(lat1,lng1,lat2,lng2){const R=6371,toRad=Math.PI/180,dLat=(lat2-lat1)*toRad,dLng=(lng2-lng1)*toRad,a=Math.sin(dLat/2)**2+Math.cos(lat1*toRad)*Math.cos(lat2*toRad)*Math.sin(dLng/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
+export function calculateShippingFee(distanceKm){if(!Number.isFinite(distanceKm)||distanceKm<0)throw Error('Khoảng cách không hợp lệ');if(distanceKm<=3)return 20000;if(distanceKm<=5)return 30000;if(distanceKm<=10)return 50000;return 0;}
+export async function quoteShipping(lat,lng){if(!Number.isFinite(Number(lat))||!Number.isFinite(Number(lng)))return {distanceKm:null,fee:20000,supported:false};const {bakery}=await getLocations();const distanceKm=calculateDistance(bakery.lat,bakery.lng,Number(lat),Number(lng));return {distanceKm,fee:calculateShippingFee(distanceKm),supported:distanceKm<=10};}

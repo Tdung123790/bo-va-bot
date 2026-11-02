@@ -1,0 +1,5 @@
+import {getConfig} from './config.js';
+export function trackEvent(eventName,params={}){if(typeof window.gtag==='function')window.gtag('event',eventName,params);else console.log(`[GA4 Mock] Event: ${eventName}`,params);}
+export function setGaUser(contactId){if(contactId&&typeof window.gtag==='function')window.gtag('set',{user_id:contactId});}
+export function toGaItem(product,quantity=1){return{item_id:product._id||product.id||product.product_id,item_name:product.itemName||product.name,price:product.itemPriceVND??product.price??product.base_price??0,item_category:product.category||product.categoryId,quantity};}
+export async function initAnalytics(){const conf=await getConfig();const id=conf.ga4MeasurementId;if(!id||!/^G-[A-Z0-9]+$/.test(id))return;window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config',id,{send_page_view:false});const script=document.createElement('script');script.async=true;script.src=`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;document.head.append(script);trackEvent('page_view',{page_path:location.pathname});}

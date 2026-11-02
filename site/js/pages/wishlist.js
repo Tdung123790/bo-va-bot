@@ -1,0 +1,3 @@
+import {requireLogin} from '../core/guard.js';import {list,toggle} from '../services/wishlistService.js';import {renderProductCards} from '../components/product-card.js';import {toast} from '../core/toast.js';
+const target=document.getElementById('wishlist-result');async function render(){try{const result=await list();if(!result.items.length){target.innerHTML='<p class="account-empty">Chưa có món bánh yêu thích. <a href="menu.html">Khám phá thực đơn</a></p>';return;}renderProductCards(target,result.items);}catch(error){target.textContent='Không tải được danh sách yêu thích: '+error.message;}}
+if(requireLogin())render();window.addEventListener('bobot:wishlist-updated',render);

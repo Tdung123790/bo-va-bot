@@ -1,0 +1,4 @@
+import {el} from './dom.js';
+let host;
+export function toast({title='',description='',variant='default',duration=4500}={}){if(!host){host=el('div',{className:'toast-region',role:'region','aria-label':'Thông báo'});document.body.append(host);}host.replaceChildren();const item=el('div',{className:`toast${variant==='destructive'?' toast--destructive':''}`,role:variant==='destructive'?'alert':'status'});const body=el('div',{className:'toast__body'},[el('strong',{className:'toast__title',text:title}),el('p',{text:description})]);const close=el('button',{type:'button',className:'toast__close','aria-label':'Đóng thông báo',text:'×'});item.append(body,close);host.append(item);close.addEventListener('click',()=>item.remove());const timeout=window.setTimeout(()=>item.remove(),duration);return{dismiss:()=>{clearTimeout(timeout);item.remove();},id:String(timeout)};}
+export const showToast=toast;
