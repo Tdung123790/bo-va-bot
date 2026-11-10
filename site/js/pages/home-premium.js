@@ -497,7 +497,7 @@ export function mountMaisonJourney(grid, products) {
     );
     set(
       '--f-meta',
-      (ramp(p, .72, .77) * (1 - finale)).toFixed(3)
+      (galleryAlpha * (1 - finale)).toFixed(3)
     );
     set('--f-end', finale.toFixed(3));
 

@@ -133,6 +133,10 @@ async function reload(selections={}){
   fillProfile();
   moderation();
   root.hidden=false;
+  const targetId=location.hash.slice(1);
+  if(['products-panel','promotions-panel','staff-panel','reviews-panel'].includes(targetId)){
+    requestAnimationFrame(()=>document.getElementById(targetId)?.scrollIntoView({block:'start'}));
+  }
 }
 
 productList.addEventListener('change',fillProduct);

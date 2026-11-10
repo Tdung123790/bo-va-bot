@@ -3,7 +3,7 @@
 .management-header h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
 .management-header nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
 .management-header a{color:inherit;text-decoration:underline}
-.management-panel{border:1px solid rgba(84,61,44,.25);border-radius:16px;padding:24px;margin:24px 0;background:#fffaf0}
+.management-panel{border:1px solid rgba(84,61,44,.25);border-radius:16px;padding:24px;margin:24px 0;background:#fffaf0;scroll-margin-top:6rem}
 .management-panel h2{margin-top:0;font-size:24px}
 .management-split{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,2fr);gap:24px}
 .management-form{display:grid;gap:12px}
