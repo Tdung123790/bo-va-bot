@@ -1,0 +1,13 @@
+:root{--ui-ink:#30241e;--ui-paper:#fffaf0;--ui-field:#fffdf7;--ui-border:#bba383;--ui-muted:#654f36}
+:is(.account-card,.account-panel,.profile-card,.profile-loyalty,.profile-order,.wishlist-card,.management-panel,.ops-panel,.staff-order,#review-submit-section){border-color:rgba(84,61,44,.25);background:var(--ui-paper)}
+:is(.account-card,.profile-card,.profile-loyalty,.profile-order,.management-panel,.ops-panel,.staff-order,#review-submit-section) h2{font-family:var(--font-heading);color:var(--ui-ink)}
+:is(.account-card,.account-panel,.management-panel,.ops-panel,#review-submit-section) :is(input:not([type=radio]):not([type=checkbox]),select,textarea),.contact-main :is(input,textarea),.menu-filters :is(input,select){min-height:2.75rem;border-color:#a38b67;background:var(--ui-field);color:var(--ui-ink)}
+:is(.account-card,.account-panel,.management-panel,.ops-panel,#review-submit-section) :is(input,select,textarea):focus-visible,.contact-main :is(input,textarea):focus-visible,.menu-filters :is(input,select):focus-visible{outline:2px solid #8a7b64;outline-offset:2px}
+:is(.account-button,.management-panel button,.ops-primary,.reviews-actions button,#review-submit-form button,.contact-main form button,.wishlist-card__add){min-height:2.75rem;border:1px solid var(--ui-ink);border-radius:.4rem;background:var(--ui-ink);color:#f9f1e3;font-family:var(--font-paragraph);font-weight:600;transition:background-color .2s ease,color .2s ease,box-shadow .2s ease}
+:is(.account-button,.management-panel button,.ops-primary,.reviews-actions button,#review-submit-form button,.contact-main form button,.wishlist-card__add):disabled{opacity:.55;box-shadow:none;cursor:not-allowed}
+:is(.wishlist-empty,.profile-empty,.account-empty,.admin-empty,#admin-permission:not(:empty)){border:1px solid rgba(84,61,44,.28);border-radius:.6rem;background:#f0e3ca;color:var(--ui-ink)}
+:is(.wishlist-empty,.profile-empty,.account-empty,.admin-empty) :is(p,small){color:var(--ui-muted)}
+:is(#menu-grid,#reviews-list,#wishlist-result,#admin-list,#my-orders)>p:only-child{grid-column:1/-1;max-width:40rem;margin:1.5rem auto;padding:1.5rem 2rem;border:1px solid rgba(84,61,44,.23);border-radius:.5rem;background:#f0e3ca;color:var(--ui-muted);text-align:center;line-height:1.6}
+:is(.ops-error:not(:empty),#checkout-error:not(:empty)){overflow-wrap:anywhere}
+:is(.ops-result:not(:empty),#contact-feedback:not(:empty),#review-submit-status:not(:empty),#management-notice:not(:empty)){overflow-wrap:anywhere}
+@media(hover:hover) and (pointer:fine){:is(.account-button,.management-panel button,.ops-primary,.reviews-actions button,#review-submit-form button,.contact-main form button,.wishlist-card__add):hover:not(:disabled){background:#654f36;box-shadow:0 7px 18px rgba(48,36,30,.19)}}

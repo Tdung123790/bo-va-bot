@@ -47,7 +47,7 @@ function card(product,index){
     add.addEventListener('click',async()=>{
       if(add.disabled)return;
       add.disabled=true;
-      try{await addToCart({collectionId:'bakeryproducts',itemId:product.id,quantity:1});toast({title:'Đã thêm vào giỏ',description:`Đã thêm ${name} vào giỏ hàng.`});}
+      try{await addToCart({collectionId:'bakeryproducts',itemId:product.id,quantity:1});toast({title:'Đã thêm vào giỏ',description:`Đã thêm ${name} vào giỏ hàng.`,variant:'success'});}
       catch(error){toast({title:'Không thể thêm vào giỏ',description:error.message,variant:'destructive'});}
       finally{add.disabled=false;}
     });

@@ -3,18 +3,19 @@
 .management-header h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
 .management-header nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
 .management-header a{color:inherit;text-decoration:underline}
-.management-panel{border:1px solid #d7cec4;border-radius:16px;padding:24px;margin:24px 0;background:#fffdf9}
+.management-panel{border:1px solid rgba(84,61,44,.25);border-radius:16px;padding:24px;margin:24px 0;background:#fffaf0}
 .management-panel h2{margin-top:0;font-size:24px}
 .management-split{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,2fr);gap:24px}
 .management-form{display:grid;gap:12px}
 .management-form label,.management-split>div>label{display:grid;gap:6px;font-weight:600}
-.management-form input,.management-form textarea,.management-form select,.management-split>div>input,.management-split>div>select,.management-panel select{width:100%;min-width:0;border:1px solid #b9ad9f;background:white;padding:10px;border-radius:8px;font:inherit;color:#241f1b}
+.management-form input,.management-form textarea,.management-form select,.management-split>div>input,.management-split>div>select,.management-panel select{width:100%;min-width:0;border:1px solid #a38b67;background:#fffdf7;padding:10px;border-radius:8px;font:inherit;color:#30241e}
 .management-split>div>select[size]{min-height:260px}
 .management-form .management-check{display:flex;gap:8px;align-items:center}
 .management-check input{width:auto}
 .management-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.management-panel button{font:inherit;border:0;border-radius:8px;padding:11px 16px;background:#49322c;color:#fff;cursor:pointer;margin-top:8px}
+.management-panel button{font:600 .95rem var(--font-paragraph);border:1px solid #30241e;border-radius:8px;padding:11px 16px;background:#30241e;color:#f9f1e3;cursor:pointer;margin-top:8px;transition:background-color .2s ease,box-shadow .2s ease}
 .management-panel button:disabled{opacity:.5;cursor:not-allowed}
+@media(hover:hover) and (pointer:fine){.management-panel button:hover:not(:disabled){background:#654f36;box-shadow:0 7px 18px rgba(48,36,30,.19)}}
 .moderation-list{display:grid;gap:12px;margin-top:16px}
 .moderation-item{border:1px solid #ddd0c2;padding:16px;border-radius:12px}
 .moderation-item p{white-space:pre-wrap;overflow-wrap:anywhere}

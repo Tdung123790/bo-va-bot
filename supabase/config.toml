@@ -37,3 +37,7 @@ static_files = [ './functions/related-products/rankings.json' ]
 verify_jwt = false
 entrypoint = './functions/product-search/index.js'
 static_files = [ './functions/product-search/model.json' ]
+
+[functions.cake-preview]
+verify_jwt = false
+entrypoint = './functions/cake-preview/index.js'

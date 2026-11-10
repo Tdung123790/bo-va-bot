@@ -31,6 +31,7 @@
 @import url('./pages/contact.css');
 @import url('./pages/customize.css');
 @import url('./pages/404.css');
+@import url('./components/interface-polish.css');
 
 body[data-page="trang-chu"] .home-section {
   background:

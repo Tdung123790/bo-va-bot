@@ -29,10 +29,11 @@ export async function initCartDrawer(){
    if(cake.text)parts.push(`Lời chúc: “${cake.text}”`);
    return parts.length?`<small>${escapeHtml(parts.join(' · '))}</small>`:'';
   };
-  area.innerHTML=items.length?items.map(item=>`<article class="cart-line" data-key="${escapeHtml(item.key)}"><div><strong>${escapeHtml(item.productNameSnapshot)}</strong>${detail(item)}<p>${formatVND(item.unitPrice)}</p></div><div class="cart-line__actions"><button type="button" data-cart-minus aria-label="Giảm số lượng">−</button><span>${item.quantity}</span><button type="button" data-cart-plus aria-label="Tăng số lượng">+</button><button type="button" data-cart-remove aria-label="Xóa sản phẩm">✕</button></div></article>`).join(''):'<p class="cart-empty">Giỏ Hàng Của Bạn Trống. Thêm một số bánh ngọt ngon lành để bắt đầu.</p>';
+  area.innerHTML=items.length?items.map(item=>`<article class="cart-line" data-key="${escapeHtml(item.key)}">${item.image?`<img class="cart-line__image" src="${escapeHtml(item.image)}" alt="" loading="lazy">`:''}<div class="cart-line__content"><strong>${escapeHtml(item.productNameSnapshot)}</strong>${detail(item)}<p>${formatVND(item.unitPrice)}</p><div class="cart-line__actions"><button type="button" data-cart-minus aria-label="Giảm số lượng">−</button><span>${item.quantity}</span><button type="button" data-cart-plus aria-label="Tăng số lượng">+</button><button type="button" data-cart-remove aria-label="Xóa sản phẩm">✕</button></div></div></article>`).join(''):'<p class="cart-empty">Giỏ Hàng Của Bạn Trống. Thêm một số bánh ngọt ngon lành để bắt đầu.</p>';
   checkout.disabled=!items.length;discount.hidden=true;
-  if(!items.length){total.textContent=formatVND(0);return;}
-  if(isSupabaseMode()){total.textContent='Chọn ngày giờ nhận để xem báo giá backend';return;}
+  if(!items.length){total.parentElement.classList.remove('cart-drawer__total--pending');total.textContent=formatVND(0);return;}
+  if(isSupabaseMode()){total.parentElement.classList.add('cart-drawer__total--pending');total.textContent='Tính khi thanh toán';return;}
+  total.parentElement.classList.remove('cart-drawer__total--pending');
   total.textContent='Đang tính...';
   try{
    const quote=await calculateOrder({items,fulfillmentType:'pickup'});

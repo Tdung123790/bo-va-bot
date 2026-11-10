@@ -21,7 +21,50 @@ const ease = n => {
 const ramp = (p, a, b) => ease((p - a) / (b - a));
 const windowOpacity = (p, a, b, c, d) =>
   ramp(p, a, b) * (1 - ramp(p, c, d));
+
 const mix = (a, b, t) => a + (b - a) * t;
+
+const CINEMATIC_BEATS = [
+  [0, 0],
+  [.05, 0],
+  [.09, .05],
+  [.12, .05],
+  [.195, .27],
+  [.22, .27],
+  [.255, .34],
+  [.295, .34],
+  [.365, .49],
+  [.39, .49],
+  [.465, .635],
+  [.515, .635],
+  [.565, .77],
+  [.605, .77],
+  [.645, .82],
+  [.685, .82],
+  [.725, .87],
+  [.765, .87],
+  [.81, .92],
+  [.895, .92],
+  [.95, .995],
+  [1, .995]
+];
+
+function cinematicProgress(raw) {
+  const value = clamp(raw);
+
+  for (let i = 1; i < CINEMATIC_BEATS.length; i += 1) {
+    const [end, endProgress] = CINEMATIC_BEATS[i];
+
+    if (value <= end) {
+      const [start, startProgress] = CINEMATIC_BEATS[i - 1];
+      const t = ease((value - start) / (end - start));
+      return mix(startProgress, endProgress, t);
+    }
+  }
+
+  return 1;
+}
+
 
 function colorMix(a, b, t) {
   const x = a.match(/[0-9a-f]{2}/gi).map(v => parseInt(v, 16));
@@ -454,12 +497,12 @@ export function mountMaisonJourney(grid, products) {
     );
     set(
       '--f-meta',
-      (ramp(p, .63, .69) * (1 - finale)).toFixed(3)
+      (ramp(p, .72, .77) * (1 - finale)).toFixed(3)
     );
     set('--f-end', finale.toFixed(3));
 
     fill.style.transform =
-      `scaleX(${clamp((p - .70) / .22).toFixed(4)})`;
+      `scaleX(${clamp((p - .77) / .15).toFixed(4)})`;
 
     if (heroCopy) {
       heroCopy.inert = heroAlpha < .06;

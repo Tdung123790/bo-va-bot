@@ -81,16 +81,7 @@ body[data-page="tu-thiet-ke-banh"] .custom-preview__image.ai-ready .custom-previ
 }
 
 body[data-page="tu-thiet-ke-banh"] #cake-preview-text {
-  display: none;
-  z-index: 2;
-  top: 42%;
-  left: 24%;
-  width: 52%;
-  font-size: clamp(1rem, 2vw, 1.5rem);
-}
-
-body[data-page="tu-thiet-ke-banh"] .custom-preview__image.ai-ready #cake-preview-text:not(:empty) {
-  display: block;
+  display: none !important;
 }
 
 body[data-page="tu-thiet-ke-banh"] #cake-flavor-label {

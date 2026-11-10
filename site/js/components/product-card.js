@@ -60,7 +60,7 @@ export function renderProductCard(product,{home=false,menu=false}={}){
       try{
         await addToCart({collectionId:'bakeryproducts',itemId:product.id,quantity:1});
         trackEvent('add_to_cart',{currency:'VND',value:product.price,items:[toGaItem(product,1)]});
-        toast({title:'Đã thêm vào giỏ',description:name});
+        toast({title:'Đã thêm vào giỏ',description:name,variant:'success'});
       }catch(error){toast({title:'Không thể thêm vào giỏ',description:error.message,variant:'destructive'});}
       finally{button.disabled=false;if(menu){button.textContent=idleLabel;button.removeAttribute('aria-busy');}}
     });

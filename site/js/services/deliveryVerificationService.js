@@ -10,7 +10,7 @@ export async function suggestDeliveryAddresses(query,signal){
  if(error||!session?.access_token)return [];
  const base=getBackendUrl();
  const url=base?new URL(base):null;
- if(!url||url.protocol!=='https:'&&!(url.protocol==='http:'&&['localhost','127.0.0.1'].includes(url.hostname)&&['localhost','127.0.0.1'].includes(location.hostname)))throw Error('Ch?a c?u h?nh backend giao h?ng h?p l?.');
+ if(!url||url.protocol!=='https:'&&!(url.protocol==='http:'&&['localhost','127.0.0.1'].includes(url.hostname)&&['localhost','127.0.0.1'].includes(location.hostname)))throw Error('Chưa cấu hình backend giao hàng hợp lệ.');
  const response=await fetch(new URL('/functions/v1/delivery-verify',base),{
   method:'POST',
   headers:{
@@ -22,7 +22,7 @@ export async function suggestDeliveryAddresses(query,signal){
   signal
  });
  const data=await response.json().catch(()=>({}));
- if(!response.ok)throw Error(data.error||'Kh?ng t?m ???c ??a ch?.');
+ if(!response.ok)throw Error(data.error||'Không tìm được địa chỉ.');
  return Array.isArray(data.suggestions)?data.suggestions:[];
 }
 

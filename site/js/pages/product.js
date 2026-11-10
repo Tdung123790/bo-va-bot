@@ -120,7 +120,7 @@ export async function initProduct(){
     try{
       await addToCart({collectionId:'bakeryproducts',itemId:product.id,quantity});
       trackEvent('add_to_cart',{currency:'VND',value:product.price*quantity,items:[toGaItem(product,quantity)]});
-      toast({title:'Đã thêm vào giỏ',description:name});
+      toast({title:'Đã thêm vào giỏ',description:name,variant:'success'});
       if(buyNow)toast({title:'Giỏ hàng đã cập nhật',description:'Bạn có thể tiếp tục từ giỏ hàng.'});
     }catch(error){toast({title:'Không thể thêm sản phẩm',description:error.message,variant:'destructive'});}
     finally{add.disabled=max<1;buy.disabled=max<1;add.textContent='Thêm Vào Giỏ';}

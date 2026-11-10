@@ -97,3 +97,7 @@ reference/migration-verification/
 __pycache__/
 *.py[cod]
 prod-ca-2021.crt
+/artifacts/ui-polish/**/*.png
+/artifacts/ui-polish/**/*.jpg
+/artifacts/ui-polish/**/*.jpeg
+/artifacts/ui-polish/**/*.webp

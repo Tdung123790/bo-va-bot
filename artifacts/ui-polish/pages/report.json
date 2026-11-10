@@ -1,0 +1,530 @@
+[
+  {
+    "size": "desktop",
+    "route": "menu.html",
+    "state": {
+      "width": 0,
+      "title": "Thực Đơn | Bơ & Bột",
+      "page": "thuc-don",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "product.html?id=0533f042-0bc0-487c-8a31-70b2fd00ec02",
+    "state": {
+      "width": 0,
+      "title": "Chi Tiết Bánh | Bơ & Bột",
+      "page": "chi-tiet-banh",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "wishlist.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "profile.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "login.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "reviews.html",
+    "state": {
+      "width": 0,
+      "title": "Đánh Giá Từ Khách Hàng | Bơ & Bột",
+      "page": "goc-khach-hang",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "contact.html",
+    "state": {
+      "width": 0,
+      "title": "Liên Hệ | Bơ & Bột",
+      "page": "lien-he",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "admin-management.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "admin-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "staff-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Xử lý đơn | Bơ & Bột",
+      "page": "staff-orders",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "pos.html",
+    "state": {
+      "width": 0,
+      "title": "POS tại quầy | Bơ & Bột",
+      "page": "pos",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "desktop",
+    "route": "dashboard.html",
+    "state": {
+      "width": 0,
+      "title": "Manager Dashboard | Bơ & Bột",
+      "page": "dashboard",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "menu.html",
+    "state": {
+      "width": 0,
+      "title": "Thực Đơn | Bơ & Bột",
+      "page": "thuc-don",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "product.html?id=0533f042-0bc0-487c-8a31-70b2fd00ec02",
+    "state": {
+      "width": 0,
+      "title": "Chi Tiết Bánh | Bơ & Bột",
+      "page": "chi-tiet-banh",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "wishlist.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "profile.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "login.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "reviews.html",
+    "state": {
+      "width": 0,
+      "title": "Đánh Giá Từ Khách Hàng | Bơ & Bột",
+      "page": "goc-khach-hang",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "contact.html",
+    "state": {
+      "width": 0,
+      "title": "Liên Hệ | Bơ & Bột",
+      "page": "lien-he",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "admin-management.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "admin-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "staff-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Xử lý đơn | Bơ & Bột",
+      "page": "staff-orders",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "pos.html",
+    "state": {
+      "width": 0,
+      "title": "POS tại quầy | Bơ & Bột",
+      "page": "pos",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "tablet",
+    "route": "dashboard.html",
+    "state": {
+      "width": 0,
+      "title": "Manager Dashboard | Bơ & Bột",
+      "page": "dashboard",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "menu.html",
+    "state": {
+      "width": 0,
+      "title": "Thực Đơn | Bơ & Bột",
+      "page": "thuc-don",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "product.html?id=0533f042-0bc0-487c-8a31-70b2fd00ec02",
+    "state": {
+      "width": 0,
+      "title": "Kiwi Tart | Bơ & Bột",
+      "page": "chi-tiet-banh",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "wishlist.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "profile.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "login.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "reviews.html",
+    "state": {
+      "width": 0,
+      "title": "Đánh Giá Từ Khách Hàng | Bơ & Bột",
+      "page": "goc-khach-hang",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "contact.html",
+    "state": {
+      "width": 0,
+      "title": "Liên Hệ | Bơ & Bột",
+      "page": "lien-he",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "admin-management.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "admin-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "staff-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Xử lý đơn | Bơ & Bột",
+      "page": "staff-orders",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "pos.html",
+    "state": {
+      "width": 0,
+      "title": "POS tại quầy | Bơ & Bột",
+      "page": "pos",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "mobile",
+    "route": "dashboard.html",
+    "state": {
+      "width": 0,
+      "title": "Manager Dashboard | Bơ & Bột",
+      "page": "dashboard",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "menu.html",
+    "state": {
+      "width": 0,
+      "title": "Thực Đơn | Bơ & Bột",
+      "page": "thuc-don",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "product.html?id=0533f042-0bc0-487c-8a31-70b2fd00ec02",
+    "state": {
+      "width": 0,
+      "title": "Kiwi Tart | Bơ & Bột",
+      "page": "chi-tiet-banh",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "wishlist.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "profile.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "login.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "reviews.html",
+    "state": {
+      "width": 0,
+      "title": "Đánh Giá Từ Khách Hàng | Bơ & Bột",
+      "page": "goc-khach-hang",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "contact.html",
+    "state": {
+      "width": 0,
+      "title": "Liên Hệ | Bơ & Bột",
+      "page": "lien-he",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "admin-management.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "admin-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Đăng nhập & Đăng ký | Bơ & Bột",
+      "page": "dang-nhap",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "staff-orders.html",
+    "state": {
+      "width": 0,
+      "title": "Xử lý đơn | Bơ & Bột",
+      "page": "staff-orders",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "pos.html",
+    "state": {
+      "width": 0,
+      "title": "POS tại quầy | Bơ & Bột",
+      "page": "pos",
+      "main": true
+    },
+    "errors": []
+  },
+  {
+    "size": "small-mobile",
+    "route": "dashboard.html",
+    "state": {
+      "width": 0,
+      "title": "Manager Dashboard | Bơ & Bột",
+      "page": "dashboard",
+      "main": true
+    },
+    "errors": []
+  }
+]

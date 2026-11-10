@@ -11,7 +11,7 @@ All generated source files are present in the `bobot/` directory. See `PHASE1_AU
 - `js/core/format.js`: `formatVND(amount): string`; `formatDate(value,options?): string`; `formatOrderItem(item): string` hiển thị snapshot tùy chọn bánh trong chi tiết đơn.
 - `js/core/storage.js`: `getJSON(key,fallback=null): any`; `setJSON(key,value): boolean`; `removeKey(key): boolean`; aliases `get`, `set`.
 - `js/core/store.js`: `createStore(initial={}): {get,set,subscribe}`; singleton `store`.
-- `js/core/toast.js`: `toast({title,description,variant,duration}): {dismiss,id}`; alias `showToast`.
+- `js/core/toast.js`: `toast({title,description,variant,duration}): {dismiss,id}`; `variant` nhận `default`, `success`, `destructive`; alias `showToast`.
 - `js/core/partials.js`: `includePartials(root=document): Promise<void>`.
 - `js/core/guard.js`: `getCurrentUser(): object|null`; `requireLogin({message,redirect}={}): object|null`; `requireAdmin(): object|null`. These are *temporary browser UI guards*, not secure authorization.
 - `js/core/analytics.js`: `trackEvent(eventName,params={}): void`; `setGaUser(contactId): void`; `toGaItem(product,quantity=1): object`; `initAnalytics(): Promise<void>`.

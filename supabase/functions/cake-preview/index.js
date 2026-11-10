@@ -82,14 +82,21 @@ Deno.serve(async request => {
       return reply(origin, 401, {error: 'AUTH_REQUIRED'});
     }
 
+    const requestedText = choices.text?.trim();
+
     const prompt = [
       'Create ONE photorealistic professional French patisserie product photograph of a physically makeable custom round celebration cake.',
       'Premium Maison Bơ & Bột aesthetic, three-quarter view, elegant travertine stand, warm ivory backdrop, soft champagne studio lighting.',
       `Cake size: ${choices.size}. Sponge flavor: ${choices.flavor}. Frosting: ${choices.cream}.`,
-      `Inscription style preference: ${choices.font}. Inscription color preference: ${choices.color}.`,
-      'Leave the top surface clear for lettering added separately.',
+      `The cake should include a real piped inscription written directly on the cake surface.`,
+      `Inscription text: "${requestedText || ''}".`,
+      `Inscription font style preference: ${choices.font}.`,
+      `Inscription color preference: ${choices.color}.`,
+      'Render the inscription as realistic piped frosting or cream lettering that follows the cake perspective and surface naturally.',
+      'Place the inscription neatly and legibly on the top surface of the cake, centered and visually balanced.',
+      'The lettering must look like it was physically decorated onto the cake by a baker, not like digital overlay text.',
       'Minimal realistic piped frosting, refined finish, natural cake proportions.',
-      'No words, no labels, no logos, no watermarks, no hands, no people, no additional cakes.',
+      'No logos, no watermarks, no hands, no people, no additional cakes.',
       'Show the whole cake, sharp focus, square composition.'
     ].join(' ');
 
@@ -104,11 +111,8 @@ Deno.serve(async request => {
         body: JSON.stringify({
           contents: [{parts: [{text: prompt}]}],
           generationConfig: {
-            responseModalities: ['IMAGE'],
-            responseFormat: {
-              image: {aspectRatio: '1:1', imageSize: '1K'}
-            }
-          }
+          responseModalities: ['TEXT', 'IMAGE']
+        }
         }),
         signal: AbortSignal.timeout(55000)
       }
@@ -117,11 +121,12 @@ Deno.serve(async request => {
     if (!generated.ok) {
       const failure = await generated.json().catch(() => null);
 
-      console.error(
-        'Gemini API status:',
-        generated.status,
-        String(failure?.error?.status || 'UNKNOWN')
-      );
+      console.error('Gemini API error:', {
+        httpStatus: generated.status,
+        code: failure?.error?.code ?? null,
+        status: failure?.error?.status ?? 'UNKNOWN',
+        message: String(failure?.error?.message ?? '').slice(0, 700)
+      });
 
       const unavailable = [402, 403, 429].includes(generated.status);
 

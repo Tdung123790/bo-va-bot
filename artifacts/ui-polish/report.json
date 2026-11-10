@@ -1,0 +1,137 @@
+[
+  {
+    "label": "desktop",
+    "cartState": {
+      "overflow": 0,
+      "footerBottom": 900,
+      "viewport": 900,
+      "buttonBackground": "rgb(48, 36, 30)",
+      "buttonDisabled": false,
+      "itemCount": 1
+    },
+    "checkoutState": {
+      "dialogWidth": 704,
+      "viewport": 1440,
+      "overflow": 0
+    },
+    "errors": [],
+    "failed": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Trirong:wght@400;500;600;700&display=swap",
+      "https://www.transparenttextures.com/patterns/cream-pixels.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-PXXcVpPBFAXHU2wDSBI0V6gxmrAmVYHs8PUG-5fUmA&s=10",
+      "https://static.wixstatic.com/media/fb1c19_fcbe3949af294b148332fcc826298d2b~mv2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMgWqctCq2mNED2CH9Wo_3iQz1kaPy3LGAVde8xbBmWg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6jdWAzNxbn_QB8geXxuDmuLXqoctbvx6a_etiGruBw&s=10",
+      "https://static.wixstatic.com/media/nsplsh_b04b86b754f8450f87df0cfa2ac40ebe~mv2.jpg",
+      "https://static.wixstatic.com/media/nsplsh_b1ffd3af908840eda863beb4520abae2~mv2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTu_V1PvTXuUy5DMY6znyL1rLzQgS_WL0PrWs8DVU_2w&s=10",
+      "https://static.wixstatic.com/media/fb1c19_de2219ff61424335a5e55e8f102ceb9e~mv2.jpg",
+      "https://static.wixstatic.com/media/nsplsh_39734b6342424d49493651~mv2_d_4500_3000_s_4_2.jpg",
+      "https://static.wixstatic.com/media/fb1c19_79a247c5d08a4bd7bd547e9e09b23779~mv2.png?originWidth=640&originHeight=640",
+      "https://static.wixstatic.com/media/nsplsh_4dba7138d09e4fee9d4a360a1959480c~mv2.jpg",
+      "https://static.wixstatic.com/media/fb1c19_3bb5b5875bf34e1fbe3980fc1300c690~mv2.png?originWidth=640&originHeight=640",
+      "https://static.wixstatic.com/media/fb1c19_1620963c479f4b578979bc7d7dac891b~mv2.png",
+      "https://a.tile.openstreetmap.org/13/6523/3848.png",
+      "https://b.tile.openstreetmap.org/13/6524/3848.png",
+      "https://b.tile.openstreetmap.org/13/6523/3849.png",
+      "https://c.tile.openstreetmap.org/13/6524/3849.png",
+      "https://c.tile.openstreetmap.org/13/6522/3848.png",
+      "https://c.tile.openstreetmap.org/13/6525/3848.png",
+      "https://a.tile.openstreetmap.org/13/6522/3849.png",
+      "https://a.tile.openstreetmap.org/13/6525/3849.png"
+    ]
+  },
+  {
+    "label": "tablet",
+    "cartState": {
+      "overflow": 0,
+      "footerBottom": 1024,
+      "viewport": 1024,
+      "buttonBackground": "rgb(48, 36, 30)",
+      "buttonDisabled": false,
+      "itemCount": 1
+    },
+    "checkoutState": {
+      "dialogWidth": 704,
+      "viewport": 768,
+      "overflow": 0
+    },
+    "errors": [],
+    "failed": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Trirong:wght@400;500;600;700&display=swap",
+      "https://www.transparenttextures.com/patterns/cream-pixels.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-PXXcVpPBFAXHU2wDSBI0V6gxmrAmVYHs8PUG-5fUmA&s=10",
+      "https://static.wixstatic.com/media/fb1c19_fcbe3949af294b148332fcc826298d2b~mv2.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMgWqctCq2mNED2CH9Wo_3iQz1kaPy3LGAVde8xbBmWg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq6jdWAzNxbn_QB8geXxuDmuLXqoctbvx6a_etiGruBw&s=10",
+      "https://static.wixstatic.com/media/nsplsh_b04b86b754f8450f87df0cfa2ac40ebe~mv2.jpg",
+      "https://static.wixstatic.com/media/nsplsh_b1ffd3af908840eda863beb4520abae2~mv2.jpg",
+      "https://static.wixstatic.com/media/fb1c19_1620963c479f4b578979bc7d7dac891b~mv2.png",
+      "https://a.tile.openstreetmap.org/13/6523/3848.png",
+      "https://b.tile.openstreetmap.org/13/6524/3848.png",
+      "https://b.tile.openstreetmap.org/13/6523/3849.png",
+      "https://c.tile.openstreetmap.org/13/6524/3849.png",
+      "https://c.tile.openstreetmap.org/13/6522/3848.png",
+      "https://c.tile.openstreetmap.org/13/6525/3848.png",
+      "https://a.tile.openstreetmap.org/13/6522/3849.png",
+      "https://a.tile.openstreetmap.org/13/6525/3849.png"
+    ]
+  },
+  {
+    "label": "mobile",
+    "cartState": {
+      "overflow": 0,
+      "footerBottom": 844,
+      "viewport": 844,
+      "buttonBackground": "rgb(48, 36, 30)",
+      "buttonDisabled": false,
+      "itemCount": 1
+    },
+    "checkoutState": {
+      "dialogWidth": 390,
+      "viewport": 390,
+      "overflow": 0
+    },
+    "errors": [],
+    "failed": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Trirong:wght@400;500;600;700&display=swap",
+      "https://www.transparenttextures.com/patterns/cream-pixels.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-PXXcVpPBFAXHU2wDSBI0V6gxmrAmVYHs8PUG-5fUmA&s=10",
+      "https://static.wixstatic.com/media/fb1c19_fcbe3949af294b148332fcc826298d2b~mv2.jpg",
+      "https://static.wixstatic.com/media/fb1c19_1620963c479f4b578979bc7d7dac891b~mv2.png",
+      "https://a.tile.openstreetmap.org/13/6523/3848.png",
+      "https://b.tile.openstreetmap.org/13/6524/3848.png",
+      "https://b.tile.openstreetmap.org/13/6523/3849.png",
+      "https://c.tile.openstreetmap.org/13/6524/3849.png"
+    ]
+  },
+  {
+    "label": "small-mobile",
+    "cartState": {
+      "overflow": 0,
+      "footerBottom": 800,
+      "viewport": 800,
+      "buttonBackground": "rgb(48, 36, 30)",
+      "buttonDisabled": false,
+      "itemCount": 1
+    },
+    "checkoutState": {
+      "dialogWidth": 360,
+      "viewport": 360,
+      "overflow": 0
+    },
+    "errors": [],
+    "failed": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Trirong:wght@400;500;600;700&display=swap",
+      "https://www.transparenttextures.com/patterns/cream-pixels.png",
+      "https://a.tile.openstreetmap.org/13/6523/3848.png",
+      "https://b.tile.openstreetmap.org/13/6524/3848.png",
+      "https://b.tile.openstreetmap.org/13/6523/3849.png",
+      "https://c.tile.openstreetmap.org/13/6524/3849.png"
+    ]
+  }
+]

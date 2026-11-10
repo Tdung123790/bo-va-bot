@@ -94,9 +94,7 @@ async function generate() {
       throw Error('Gemini không trả về dữ liệu ảnh hợp lệ.');
     }
 
-    document.getElementById('cake-preview-text').textContent =
-      document.getElementById('cake-text').value.trim();
-
+    document.getElementById('cake-preview-text').textContent = '';
     image.src = `data:${result.mimeType};base64,${result.image}`;
     image.hidden = false;
     preview.classList.add('ai-ready');

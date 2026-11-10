@@ -35,7 +35,7 @@ export async function initCheckoutForm(){
     <p id="checkout-estimated" aria-live="polite">Chọn ngày và giờ nhận thực tế. Bánh tùy chỉnh cần đặt trước ít nhất 24 giờ.</p>
     <label>Ghi chú <textarea name="notes" rows="3"></textarea></label>
     <fieldset><legend>Thanh toán mô phỏng</legend><label><input type="radio" name="paymentMethod" value="bank_transfer_demo" checked> Chuyển khoản demo — chờ xác nhận mô phỏng</label></fieldset>
-    <section class="checkout-summary" aria-label="Chi tiết thanh toán"><p>Tạm tính <strong id="checkout-subtotal">0 ₫</strong></p><p id="checkout-promotion" hidden>Khuyến mãi tự động <strong id="checkout-discount">0 ₫</strong></p><p>Phí giao hàng <strong id="checkout-fee">Chưa xác định</strong></p><p>Tổng cộng <strong id="checkout-total">Chưa xác định</strong></p></section>
+    <section class="checkout-summary" aria-label="Chi tiết thanh toán"><p>Tạm tính <strong id="checkout-subtotal">0 ₫</strong></p><p id="checkout-promotion" hidden>Khuyến mãi tự động <strong id="checkout-discount">0 ₫</strong></p><p>Phí giao hàng <strong id="checkout-fee">Chưa xác định</strong></p><p class="checkout-summary__total">Tổng cộng <strong id="checkout-total">Chưa xác định</strong></p></section>
     <p id="checkout-error" role="alert"></p>
    </div>
    <footer><button class="button button--primary" type="submit" id="checkout-submit">Xác Nhận Đặt Bánh</button></footer>
@@ -51,7 +51,7 @@ export async function initCheckoutForm(){
  pointsLine.hidden=true;
  pointsLine.innerHTML='Giảm bằng điểm <strong id="checkout-points-discount">0 ₫</strong>';
  wrapper.querySelector('.checkout-summary').before(pointsLabel);
- wrapper.querySelector('.checkout-summary').append(pointsLine);
+ wrapper.querySelector('.checkout-summary__total').before(pointsLine);
  document.body.append(wrapper);
  const dialog=wrapper.querySelector('dialog'),form=dialog.querySelector('form'),$=selector=>dialog.querySelector(selector);
  let map,selectedSelectionToken=null,selectedPlaceId=null,selectedLat=null,selectedLng=null,deliveryProof=null,refreshVersion=0,submitting=false,requestId=crypto.randomUUID();
@@ -74,7 +74,7 @@ export async function initCheckoutForm(){
   $('#checkout-verification').hidden=false;
   $('#checkout-district').closest('.checkout-two').style.display='none';
   $('#checkout-success h2').textContent='Đã tạo đơn hàng';
-  $('#checkout-estimated').textContent='Pickup 10:00–20:00; giao hàng 10:00–19:00, đặt giao trong ngày trước 17:00. Bánh thường trước ít nhất 2 giờ, bánh tùy chỉnh trước 24 giờ.';
+  $('#checkout-estimated').textContent='Nhận tại cửa hàng 10:00–20:00; giao hàng 10:00–19:00, đặt giao trong ngày trước 17:00. Bánh thường trước ít nhất 2 giờ, bánh tùy chỉnh trước 24 giờ.';
  }
  const delivery=()=>form.elements.fulfillmentType.value==='delivery';
  const hasCustomCake=()=>cart.getCart().some(item=>!!item.customCakeId);
@@ -94,7 +94,7 @@ export async function initCheckoutForm(){
 
   const notice=$('.checkout-geocoder-notice');
   if(notice){
-   notice.textContent='Nh?p s? nh? v? t?n ???ng, ch?n ??a ch? g?i ? ?? t? ghim v? x?c minh v? tr? giao h?ng.';
+   notice.hidden=true;
   }
 
   initAddressAutocomplete(input,{
@@ -112,7 +112,7 @@ export async function initCheckoutForm(){
     await ensureMap();
 
     if(!map){
-     $('#checkout-verification').textContent='Kh?ng m? ???c b?n ?? ?? ghim v? tr?.';
+     $('#checkout-verification').textContent='Không mở được bản đồ để ghim vị trí.';
      return;
     }
 
@@ -283,7 +283,7 @@ export async function initCheckoutForm(){
   event.preventDefault();if(submitting)return;
   const error=$('#checkout-error'),button=$('#checkout-submit');error.textContent='';
   if(!form.reportValidity())return;
-  submitting=true;button.disabled=true;
+  submitting=true;button.disabled=true;button.textContent='Đang xác nhận đơn...';
   try{
    if(delivery()&&(selectedLat==null||selectedLng==null||isSupabaseMode()&&!deliveryProof))throw Error('Vui lòng xác minh địa chỉ và ghim trước khi đặt.');
    const data=Object.fromEntries(new FormData(form).entries());
@@ -303,7 +303,7 @@ export async function initCheckoutForm(){
    requestId=crypto.randomUUID();
    deliveryProof=null;
   }catch(failure){if(isSupabaseMode())await refresh();error.textContent=failure.message;}
-  finally{submitting=false;button.disabled=false;}
+  finally{submitting=false;button.disabled=false;button.textContent='Xác Nhận Đặt Bánh';}
  });
  dialog.addEventListener('close',()=>{form.hidden=false;$('#checkout-success').hidden=true;});
  await refresh();return dialog;

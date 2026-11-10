@@ -93,7 +93,7 @@ async function init(){
         const cake=await createCake(config);
         await addToCart({collectionId:'bakeryproducts',itemId:options.customProductId,quantity:1,customCakeId:cake.id});
         trackEvent('add_to_cart',{currency:'VND',value:cake.estimatedPrice,item_name:'Bánh Tùy Chỉnh'});
-        toast({title:'Đã thêm bánh thiết kế',description:'Thiết kế đã được lưu trong giỏ hàng.'});
+        toast({title:'Đã thêm bánh thiết kế',description:'Thiết kế đã được lưu trong giỏ hàng.',variant:'success'});
         openCart();
       }catch(error){
         console.error(error);
