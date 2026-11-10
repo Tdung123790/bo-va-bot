@@ -7,7 +7,9 @@ async function readConfig(url, optional = false) {
   return response.json();
 }
 const baseConfig = await readConfig(baseUrl);
-const localConfig = await readConfig(localUrl, true);
+const localConfig = ['localhost', '127.0.0.1'].includes(location.hostname)
+  ? await readConfig(localUrl, true)
+  : null;
 const backendConfig = localConfig || baseConfig;
 export const backendMode = backendConfig.mode === 'demo' ? 'demo' : 'supabase';
 export const isSupabaseMode = () => backendMode === 'supabase';
@@ -17,7 +19,7 @@ let clientPromise;
 export async function getSupabaseClient() {
   if (!isSupabaseMode()) throw Error('Website đang ở chế độ demo localStorage.');
   if (!backendConfig.url || !backendConfig.publishableKey) {
-    throw Error('Chưa cấu hình Supabase local. Chạy npm run db:configure:local.');
+    throw Error('Thiếu Supabase URL hoặc publishable key trong backend-config.json.');
   }
   if (!clientPromise) {
     clientPromise = new Promise((resolve, reject) => {

@@ -192,11 +192,11 @@ export function mountMaisonJourney(grid, products) {
 
   const cakes = curated.map(({product, signature}, index) => {
     const link = node('a', 'bobot-film__cake-link');
-    link.href = productHref(product);
-    link.setAttribute(
-      'aria-label',
-      `Xem ${product.name} · ${formatVND(product.price)}`
-    );
+    link.href = Number(product.price) > 0
+      ? productHref(product)
+      : 'menu.html';
+
+    link.setAttribute('aria-label', `Xem ${product.name}`);
     link.tabIndex = -1;
     link.inert = true;
 
@@ -332,8 +332,13 @@ export function mountMaisonJourney(grid, products) {
       `${String(index + 1).padStart(2, '0')} / 04 · ${signature.caption}`;
 
     name.textContent = product.name;
-    price.textContent = formatVND(product.price);
-    detail.href = productHref(product);
+    price.textContent = Number(product.price) > 0
+      ? formatVND(product.price)
+      : 'Xem thực đơn';
+
+    detail.href = Number(product.price) > 0
+      ? productHref(product)
+      : 'menu.html';
 
     counter.textContent =
       `${String(index + 1).padStart(2, '0')} / 04`;

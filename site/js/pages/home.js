@@ -77,6 +77,7 @@ const chosen = [
       grid.replaceChildren(
         el('p', {text: 'Chưa có sản phẩm đủ điều kiện trưng bày.'})
       );
+      mountMaisonJourney(grid, []);
       return;
     }
 
@@ -88,6 +89,7 @@ const chosen = [
     grid.replaceChildren(
       el('p', {text: 'Không thể tải bộ sưu tập. Vui lòng thử lại.'})
     );
+    mountMaisonJourney(grid, []);
   }
 }
 

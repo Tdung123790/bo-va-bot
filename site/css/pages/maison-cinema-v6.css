@@ -1000,3 +1000,6 @@ body[data-page="trang-chu"] .bobot-film__door img {
     animation: none;
   }
 }
+body[data-page="trang-chu"] .home-breather {
+  display: none;
+}
