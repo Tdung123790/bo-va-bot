@@ -1,0 +1,1002 @@
+
+body[data-page="trang-chu"] .bobot-film {
+  --f-bg: #24160f;
+  --f-ink: #f8e9d6;
+  --f-hero: 1;
+  --f-atelier: 0;
+  --f-alchemy: 0;
+  --f-gallery: 0;
+  --f-meta: 0;
+  --f-end: 0;
+  --f-words2: 0;
+  --f-dust: 0;
+  --f-ring: 0;
+  --f-cacao: 0;
+  --f-formula: 0;
+  --f-quote: 0;
+  --f-left: 0%;
+  --f-right: 0%;
+  position: relative;
+  isolation: isolate;
+  height: 650svh;
+  background: #24160f;
+}
+
+body[data-page="trang-chu"] .bobot-film__stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  perspective: 1600px;
+  background: var(--f-bg);
+  color: #f8e9d6;
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier,
+body[data-page="trang-chu"] .bobot-film__alchemy,
+body[data-page="trang-chu"] .bobot-film__gallery {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier {
+  z-index: 1;
+  opacity: var(--f-atelier);
+  background: #24150d;
+}
+
+body[data-page="trang-chu"] .bobot-film__plate,
+body[data-page="trang-chu"] .bobot-film__arm {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  backface-visibility: hidden;
+}
+
+body[data-page="trang-chu"] .bobot-film__plate {
+  z-index: 0;
+}
+
+body[data-page="trang-chu"] .bobot-film__arm--left {
+  z-index: 2;
+  transform-origin: 37% 12%;
+  transform: translate3d(0, var(--f-arm-left, -3px), 0)
+    rotate(-.35deg);
+}
+
+body[data-page="trang-chu"] .bobot-film__arm--right {
+  z-index: 3;
+  transform-origin: 72% 12%;
+  transform: translate3d(0, var(--f-arm-right, 2px), 0)
+    rotate(.2deg);
+}
+
+body[data-page="trang-chu"] .bobot-film__beam {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      118deg,
+      rgba(253, 207, 134, .16),
+      transparent 35%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 9, 6, .32),
+      transparent 30%,
+      transparent 73%,
+      rgba(15, 9, 6, .33)
+    );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__dust {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  opacity: var(--f-dust);
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(
+    ellipse 30% 42% at 51% 53%,
+    black 20%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 30% 42% at 51% 53%,
+    black 20%,
+    transparent 100%
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__particle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: block;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: rgba(255, 235, 192, .84);
+  box-shadow: 0 0 10px rgba(255, 210, 144, .38);
+  animation: bobot-grain 4.6s ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes bobot-grain {
+  from {
+    opacity: .12;
+    transform: translate3d(-5px, 8px, 0);
+  }
+
+  to {
+    opacity: .8;
+    transform: translate3d(6px, -18px, 0);
+  }
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier-precision,
+body[data-page="trang-chu"] .bobot-film__atelier-soul {
+  position: absolute;
+  z-index: 5;
+  top: 43%;
+  opacity: var(--f-words2);
+  color: #f8e7ce;
+  text-shadow: 0 3px 23px #140b08;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier-precision {
+  left: 9%;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  text-align: center;
+  font: 400 clamp(1.3rem, 2.4vw, 2.7rem)/1.03
+    var(--font-heading, Georgia, serif);
+  letter-spacing: .12em;
+  transform: translate3d(
+    calc((1 - var(--f-words2)) * -26px),
+    -50%,
+    0
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier-precision strong {
+  font-weight: 400;
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier-soul {
+  right: 10%;
+  font: italic 400 clamp(2.8rem, 5vw, 5.8rem)/1
+    var(--font-heading, Georgia, serif);
+  color: #f5d4a4;
+  transform: translate3d(
+    calc((1 - var(--f-words2)) * 26px),
+    -50%,
+    0
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__atelier-precision::after,
+body[data-page="trang-chu"] .bobot-film__atelier-soul::after {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 1px;
+  margin: 1rem auto 0;
+  background: rgba(244, 218, 175, .63);
+}
+
+body[data-page="trang-chu"] .bobot-film__alchemy {
+  z-index: 2;
+  opacity: var(--f-alchemy);
+  background: #25160e;
+}
+
+body[data-page="trang-chu"] .bobot-film__alchemy-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+body[data-page="trang-chu"] .bobot-film__alchemy-halo {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 36%,
+    rgba(249, 177, 89, .14),
+    transparent 48%
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__diagram {
+  position: absolute;
+  z-index: 1;
+  inset: 3% 7% 11%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__diagram svg {
+  display: block;
+  width: min(100%, 1100px);
+  height: 100%;
+  overflow: visible;
+}
+
+body[data-page="trang-chu"] .bobot-film__draw {
+  fill: none;
+  stroke: #eac18b;
+  stroke-width: 1.25;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--f-ring));
+  opacity: .9;
+}
+
+body[data-page="trang-chu"] .bobot-film__draw--dim {
+  stroke-width: .6;
+  opacity: .26;
+}
+
+body[data-page="trang-chu"] .bobot-film__draw--axis,
+body[data-page="trang-chu"] .bobot-film__draw--rule {
+  opacity: .48;
+}
+
+body[data-page="trang-chu"] .bobot-film__botanical {
+  fill: none;
+  stroke: #ebc792;
+  stroke-width: 1.6;
+  opacity: var(--f-cacao);
+}
+
+body[data-page="trang-chu"] .bobot-film__nodes {
+  fill: #ffdfa5;
+  opacity: var(--f-ring);
+}
+
+body[data-page="trang-chu"] .bobot-film__note {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  color: #ead1ad;
+  font: italic 400 clamp(.72rem, 1.1vw, 1.1rem)/1.2
+    var(--font-heading, Georgia, serif);
+  opacity: var(--f-note-opacity, 0);
+  transform: translateY(
+    calc((1 - var(--f-note-opacity, 0)) * 12px)
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__note strong {
+  font-weight: 400;
+}
+
+body[data-page="trang-chu"] .bobot-film__note span {
+  font-size: .83em;
+  opacity: .8;
+}
+
+body[data-page="trang-chu"] .bobot-film__note::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  max-width: 100%;
+  margin-top: .3rem;
+  height: 1px;
+  background: rgba(234, 193, 139, .55);
+}
+
+body[data-page="trang-chu"] .bobot-film__note--tl {
+  top: 16%;
+  left: 10%;
+  --f-note-opacity: var(--f-notes1, 0);
+}
+
+body[data-page="trang-chu"] .bobot-film__note--tr {
+  top: 16%;
+  right: 10%;
+  text-align: right;
+  align-items: flex-end;
+  --f-note-opacity: var(--f-notes2, 0);
+}
+
+body[data-page="trang-chu"] .bobot-film__note--bl {
+  top: 65%;
+  left: 10%;
+  --f-note-opacity: var(--f-notes2, 0);
+}
+
+body[data-page="trang-chu"] .bobot-film__note--br {
+  top: 65%;
+  right: 10%;
+  text-align: right;
+  align-items: flex-end;
+  --f-note-opacity: var(--f-notes3, 0);
+}
+
+body[data-page="trang-chu"] .bobot-film__formula {
+  position: absolute;
+  z-index: 3;
+  top: 45%;
+  left: 50%;
+  display: flex;
+  gap: clamp(.5rem, 1.5vw, 1.5rem);
+  align-items: baseline;
+  width: max-content;
+  max-width: 90%;
+  transform: translate(
+    -50%,
+    calc(-50% + (1 - var(--f-formula)) * 15px)
+  );
+  opacity: var(--f-formula);
+  color: #f5e8d5;
+  text-shadow: 0 4px 22px #150b07;
+  white-space: nowrap;
+}
+
+body[data-page="trang-chu"] .bobot-film__formula-precision {
+  font: 300 clamp(1.2rem, 2.2vw, 2.5rem)/1
+    Arial, sans-serif;
+  letter-spacing: .13em;
+}
+
+body[data-page="trang-chu"] .bobot-film__formula-amp,
+body[data-page="trang-chu"] .bobot-film__formula-soul {
+  font: italic 400 clamp(2.3rem, 4.8vw, 5.4rem)/1
+    var(--font-heading, Georgia, serif);
+  color: #f1c994;
+}
+
+body[data-page="trang-chu"] .bobot-film__quote {
+  position: absolute;
+  z-index: 3;
+  bottom: 11%;
+  left: 50%;
+  width: min(46rem, 84%);
+  margin: 0;
+  color: #f8e3c7;
+  text-align: center;
+  font: 400 clamp(1.1rem, 1.6vw, 1.5rem)/1.55
+    var(--font-heading, Georgia, serif);
+  opacity: var(--f-quote);
+  transform: translate(
+    -50%,
+    calc((1 - var(--f-quote)) * 18px)
+  );
+  text-wrap: balance;
+}
+
+body[data-page="trang-chu"] .bobot-film__door {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+
+body[data-page="trang-chu"] .bobot-film__door--left {
+  clip-path: inset(0 50% 0 0);
+  transform: translate3d(
+    var(--f-left),
+    0,
+    0
+  ) rotateY(var(--f-left-rotate, 0deg));
+  transform-origin: right center;
+}
+
+body[data-page="trang-chu"] .bobot-film__door--right {
+  clip-path: inset(0 0 0 50%);
+  transform: translate3d(
+    var(--f-right),
+    0,
+    0
+  ) rotateY(var(--f-right-rotate, 0deg));
+  transform-origin: left center;
+}
+
+body[data-page="trang-chu"] .bobot-film__door img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 58% center;
+  filter: saturate(.82) brightness(.79) contrast(1.03);
+}
+
+body[data-page="trang-chu"] .bobot-film__door::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 12, 10, .73),
+    rgba(18, 12, 10, .27) 54%,
+    rgba(18, 12, 10, .07)
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__seam {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #f5cf92 25%,
+    #f5cf92 75%,
+    transparent
+  );
+  box-shadow:
+    0 0 22px rgba(255, 206, 139, .76),
+    0 0 65px rgba(241, 184, 111, .18);
+  opacity: var(--f-seam, 0);
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__stage .home-hero {
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__stage .home-hero__photo {
+  visibility: hidden;
+}
+
+body[data-page="trang-chu"] .bobot-film__stage .home-hero__text,
+body[data-page="trang-chu"] .bobot-film__stage .home-hero__text.reveal {
+  position: relative;
+  z-index: 3;
+  opacity: var(--f-hero);
+  transform: none;
+  transition: none;
+  pointer-events: auto;
+}
+
+body[data-page="trang-chu"] .bobot-film__stage .home-hero h1 {
+  font-size: clamp(4.7rem, 8.5vw, 9.5rem);
+}
+
+body[data-page="trang-chu"] .bobot-film__gallery {
+  z-index: 4;
+  opacity: var(--f-gallery);
+  color: var(--f-ink);
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+body[data-page="trang-chu"] .bobot-film__spotlight {
+  position: absolute;
+  left: 62%;
+  top: 43%;
+  width: min(64vw, 60rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 232, 194, .25),
+    transparent 57%
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__pedestal {
+  position: absolute;
+  left: 62%;
+  bottom: 12%;
+  width: min(29vw, 28rem);
+  height: 3.5rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(23, 12, 7, .4),
+    transparent 73%
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__cake-link {
+  position: absolute;
+  z-index: 2;
+  top: 47%;
+  left: 62%;
+  display: block;
+  width: min(44vw, 37rem);
+  height: min(65svh, 36rem);
+  transform: translate3d(-50%, -50%, 0);
+  opacity: 0;
+  backface-visibility: hidden;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+body[data-page="trang-chu"] .bobot-film__cake {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(
+    0 2rem 1.8rem rgba(14, 6, 4, .36)
+  );
+}
+
+body[data-page="trang-chu"] .bobot-film__cake-link--fallback .bobot-film__cake {
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 237, 205, .5);
+}
+
+body[data-page="trang-chu"] .bobot-film__info {
+  position: absolute;
+  z-index: 8;
+  top: 40%;
+  left: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 32%;
+  color: var(--f-ink);
+  opacity: var(--f-meta);
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__caption,
+body[data-page="trang-chu"] .bobot-film__detail,
+body[data-page="trang-chu"] .bobot-film__hint,
+body[data-page="trang-chu"] .bobot-film__skip {
+  font-size: .66rem;
+  letter-spacing: .16em;
+}
+
+body[data-page="trang-chu"] .bobot-film__name {
+  margin: 0;
+  font: 400 clamp(2.4rem, 4.4vw, 5.8rem)/1.02
+    var(--font-heading, Georgia, serif);
+  letter-spacing: -.05em;
+  text-wrap: balance;
+}
+
+body[data-page="trang-chu"] .bobot-film__price {
+  font-size: .95rem;
+}
+
+body[data-page="trang-chu"] .bobot-film__detail {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: .5rem;
+  margin-top: .6rem;
+}
+
+body[data-page="trang-chu"] .bobot-film__meta {
+  position: absolute;
+  z-index: 8;
+  left: 7%;
+  right: 7%;
+  bottom: 7%;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  color: var(--f-ink);
+  opacity: var(--f-meta);
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .bobot-film__counter {
+  font: 400 1.3rem var(--font-heading, Georgia, serif);
+}
+
+body[data-page="trang-chu"] .bobot-film__track {
+  display: block;
+  width: min(16vw, 12rem);
+  height: 1px;
+  background: currentColor;
+  opacity: .75;
+}
+
+body[data-page="trang-chu"] .bobot-film__fill {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+body[data-page="trang-chu"] .bobot-film__hint {
+  margin-left: auto;
+}
+
+body[data-page="trang-chu"] .bobot-film__end {
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: #f8f3e9;
+  color: #4a3426;
+  opacity: var(--f-end);
+  pointer-events: none;
+  text-align: center;
+  font: italic 400 clamp(2rem, 4.7vw, 5rem)/1.15
+    var(--font-heading, Georgia, serif);
+}
+
+body[data-page="trang-chu"] .bobot-film__skip {
+  position: absolute;
+  z-index: 10;
+  top: 8%;
+  right: 6%;
+  padding-bottom: .5rem;
+  color: #fff0d7;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  text-shadow: 0 2px 6px #21160f;
+}
+
+body[data-page="trang-chu"] .bobot-film__skip:hover,
+body[data-page="trang-chu"] .bobot-film__detail:hover {
+  opacity: .72;
+}
+
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  body[data-page="trang-chu"] .bobot-film--ready ~ .home-breather {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] #bestsellers.bobot-film__collection-host {
+    padding-top: 0;
+    margin-top: 0;
+    background: #f8f3e9;
+  }
+
+  body[data-page="trang-chu"] #bestsellers.bobot-film__collection-host > .section-head {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] #bestsellers.bobot-film__collection-host > #best-seller-grid {
+    padding-top: clamp(2.25rem, 4vw, 4rem);
+    scroll-margin-top: 6rem;
+  }
+}
+
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  body[data-page="trang-chu"] .bobot-film {
+    height: auto;
+    background: transparent;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage {
+    position: relative;
+    top: auto;
+    height: 100svh;
+    min-height: 34rem;
+    perspective: none;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    pointer-events: auto;
+    background: #24160f;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero__photo {
+    visibility: visible;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero__photo img {
+    transform: none;
+    filter: saturate(.82) brightness(.76);
+    will-change: auto;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero__text,
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero__text.reveal {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__atelier,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__alchemy,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__gallery,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__door,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__seam,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__info,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__meta,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__end,
+  body[data-page="trang-chu"] .bobot-film__stage .bobot-film__skip {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="trang-chu"] .bobot-film__stage .home-hero h1 {
+    font-size: clamp(4rem, 14vw, 6.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="trang-chu"] .bobot-film__particle {
+    animation: none;
+  }
+}
+body[data-page="trang-chu"] .home-hero {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+body[data-page="trang-chu"] .home-hero .home-hero__text,
+body[data-page="trang-chu"] .home-hero .home-hero__text.reveal {
+  position: relative;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  transform: none;
+}
+
+body[data-page="trang-chu"] .maison-hero__identity {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 46rem);
+  gap: 0;
+  transform: translateY(-4vh);
+}
+
+body[data-page="trang-chu"] .maison-hero__crest {
+  display: block;
+  margin-bottom: 1.45rem;
+  color: #e5c28c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+  line-height: 1;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .4);
+}
+
+body[data-page="trang-chu"] .maison-hero__overline {
+  display: block;
+  margin-bottom: .75rem;
+  color: #e9d3b0;
+  font-family: var(--font-paragraph, Georgia, serif);
+  font-size: clamp(.6rem, .75vw, .8rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: .4em;
+  text-indent: .4em;
+  text-transform: uppercase;
+}
+
+body[data-page="trang-chu"] .home-hero .maison-hero__brand {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff1dc;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(3.5rem, 6.2vw, 6.65rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow:
+    0 4px 16px rgba(0, 0, 0, .45),
+    0 0 35px rgba(0, 0, 0, .16);
+}
+
+body[data-page="trang-chu"] .maison-hero__origin {
+  display: block;
+  margin-top: 1.2rem;
+  color: #e1c29b;
+  font-size: clamp(.59rem, .72vw, .78rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: .3em;
+  text-indent: .3em;
+}
+
+body[data-page="trang-chu"] .maison-hero__ornament {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8.5rem;
+  margin-top: 1.6rem;
+  color: #d6b68a;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+body[data-page="trang-chu"] .maison-hero__ornament::before,
+body[data-page="trang-chu"] .maison-hero__ornament::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2.5rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(224, 189, 142, .7)
+  );
+}
+
+body[data-page="trang-chu"] .maison-hero__ornament::before {
+  left: 0;
+}
+
+body[data-page="trang-chu"] .maison-hero__ornament::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+body[data-page="trang-chu"] .maison-hero__discover {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  bottom: clamp(2.8rem, 7vh, 5.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 9rem;
+  padding: .7rem 1rem;
+  border: 0;
+  background: transparent;
+  color: #f0d6b2;
+  font-family: var(--font-paragraph, Georgia, serif);
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .32em;
+  text-indent: .32em;
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: color .3s ease;
+}
+
+body[data-page="trang-chu"] .maison-hero__discover:hover {
+  color: #fff7e9;
+}
+
+body[data-page="trang-chu"] .maison-hero__chevron {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  animation: maison-chevron-float 2.6s ease-in-out infinite;
+}
+
+@keyframes maison-chevron-float {
+  0%, 100% {
+    translate: 0 0;
+    opacity: .7;
+  }
+
+  50% {
+    translate: 0 7px;
+    opacity: 1;
+  }
+}
+
+body[data-page="trang-chu"] .home-hero__photo img {
+  object-position: center;
+  transform: none;
+  filter: saturate(.92) brightness(.83) contrast(1.03);
+}
+
+body[data-page="trang-chu"] .bobot-film__door img {
+  object-position: center;
+  filter: saturate(.9) brightness(.84) contrast(1.03);
+}
+
+@media (max-width: 767px) {
+  body[data-page="trang-chu"] .home-hero .home-hero__text,
+  body[data-page="trang-chu"] .home-hero .home-hero__text.reveal {
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 1rem 6rem;
+    text-align: center;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__identity {
+    width: 100%;
+    transform: translateY(-3vh);
+  }
+
+  body[data-page="trang-chu"] .maison-hero__crest {
+    margin-bottom: 1.2rem;
+    font-size: 1.9rem;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__overline {
+    font-size: .55rem;
+    letter-spacing: .23em;
+    text-indent: .23em;
+  }
+
+  body[data-page="trang-chu"] .home-hero .maison-hero__brand {
+    font-size: clamp(3.2rem, 12.5vw, 5.3rem);
+    line-height: 1.08;
+    letter-spacing: -.06em;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__origin {
+    margin-top: 1rem;
+    font-size: .56rem;
+    letter-spacing: .2em;
+    text-indent: .2em;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__discover {
+    bottom: 2.6rem;
+    gap: 1rem;
+    font-size: .62rem;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__ornament {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="trang-chu"] .maison-hero__chevron {
+    animation: none;
+  }
+}

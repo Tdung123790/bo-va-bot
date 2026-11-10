@@ -11,10 +11,20 @@
         <fieldset class="custom-panel"><legend><span>2</span> Cốt Bánh</legend><div id="cake-flavors" class="custom-options"></div><h3>Loại Kem Phủ</h3><div id="cake-creams" class="custom-options"></div></fieldset>
         <fieldset class="custom-panel"><legend><span>3</span> Lời Chúc (Tùy chọn)</legend><label for="cake-text">Nội dung viết lên bánh</label><input id="cake-text" name="text" maxlength="30" placeholder="VD: Happy Birthday bé Gạo..."><small id="cake-counter">0/30 ký tự</small><div class="custom-personalize"><div><label for="cake-font">Font chữ</label><select id="cake-font" name="font"></select></div><div><span class="custom-label">Màu chữ</span><div id="cake-colors" class="custom-colors"></div></div></div></fieldset>
       </form>
-      <aside class="custom-preview"><div class="custom-preview__image"><img id="cake-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV5yHGNiCrvW9W_HfNBJO3dkzFSH8FEzM1LT8k7kMfpA&amp;s=10" alt="Bánh mẫu để xem trước thiết kế"><span id="cake-preview-text">Bơ &amp; Bột</span><span id="cake-flavor-label"></span></div><dl id="cake-breakdown"></dl><p class="custom-preview__total">Tổng Tạm Tính <strong id="cake-total">Giá theo tùy chọn</strong></p><button id="cake-add" type="button">Hoàn Tất &amp; Thêm Vào Giỏ</button><p id="cake-feedback" role="status"></p></aside>
+      <aside class="custom-preview"><div class="custom-preview__image"><img id="cake-image" alt="Ảnh bánh được tạo bằng AI" hidden>
+<div class="custom-preview__placeholder">
+  <span>MAISON BƠ &amp; BỘT</span>
+  <strong>Votre création</strong>
+  <small>Thiết kế của bạn sẽ xuất hiện tại đây</small>
+</div><span id="cake-preview-text">Bơ &amp; Bột</span><span id="cake-flavor-label"></span></div>
+<button id="cake-generate" type="button">Tạo ảnh xem trước bằng AI</button>
+<p id="cake-ai-status" role="status" aria-live="polite">
+  Chọn cấu hình rồi nhấn tạo ảnh. Cần đăng nhập.
+</p>
+<dl id="cake-breakdown"></dl><p class="custom-preview__total">Tổng Tạm Tính <strong id="cake-total">Giá theo tùy chọn</strong></p><button id="cake-add" type="button">Hoàn Tất &amp; Thêm Vào Giỏ</button><p id="cake-feedback" role="status"></p></aside>
     </section>
   </main>
   <div data-include="footer"></div>
-  <script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/customize.js"></script>
+  <script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/customize.js"></script> <script type="module" src="js/pages/cake-ai-preview.js"></script>
 </body>
 </html>

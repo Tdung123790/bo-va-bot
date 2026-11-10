@@ -1,0 +1,1146 @@
+body[data-page="trang-chu"] {
+  --maison-ink: #2d241f;
+  --maison-cream: #f8f3e9;
+  --maison-gold: #d7b78c;
+  --maison-ease: cubic-bezier(.22, 1, .36, 1);
+  background: var(--maison-cream);
+  overflow-x: clip;
+}
+
+body[data-page="trang-chu"] .home-hero {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100svh;
+  min-height: 38rem;
+  padding: 0;
+  gap: 0;
+  background: #30241d;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body[data-page="trang-chu"] .home-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  z-index: 0;
+}
+
+body[data-page="trang-chu"] .home-hero__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 58% center;
+  filter: saturate(.83) brightness(.79);
+  transform: translate3d(0, var(--maison-hero-y, 0px), 0) scale(1.1);
+  will-change: transform;
+}
+
+body[data-page="trang-chu"] .home-hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(21,15,12,.8),
+      rgba(28,20,16,.44) 46%,
+      rgba(28,20,16,.1) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(22,15,11,.54),
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .home-hero__text,
+body[data-page="trang-chu"] .home-hero__text.reveal {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: none;
+  min-height: 100%;
+  padding: 6rem clamp(1.5rem, 7vw, 8rem) 7rem;
+  opacity: 1;
+  transform: none;
+}
+
+body[data-page="trang-chu"] .home-hero .eyebrow {
+  color: #e8cda6;
+  font-size: .67rem;
+  letter-spacing: .22em;
+  margin-bottom: 1.5rem;
+}
+
+body[data-page="trang-chu"] .home-hero h1 {
+  color: #fff0de;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(5.8rem, 10.5vw, 11.5rem);
+  font-weight: 400;
+  line-height: .87;
+  letter-spacing: -.075em;
+  margin: 0 0 1.8rem -.05em;
+  white-space: nowrap;
+  text-shadow: 0 15px 40px rgba(12,8,6,.27);
+}
+
+body[data-page="trang-chu"] .home-hero__text > p {
+  color: #f2e4d0;
+  max-width: 30rem;
+  font-size: .94rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+body[data-page="trang-chu"] .home-hero__actions {
+  margin-top: 1.8rem;
+  gap: 1.8rem;
+}
+
+body[data-page="trang-chu"] .home-hero__actions .pill-button {
+  min-height: 2.9rem;
+  padding: .7rem 0;
+  border: 0;
+  border-bottom: 1px solid #e1c39c;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff0dd;
+  font-size: .74rem;
+  letter-spacing: .07em;
+  transition: color .3s ease, translate .3s ease;
+}
+
+body[data-page="trang-chu"] .home-hero__actions .pill-button:hover {
+  color: #d6ab76;
+  translate: 0 -3px;
+}
+
+body[data-page="trang-chu"] .maison-hero__frame {
+  position: absolute;
+  inset: 1.3rem;
+  border: 1px solid rgba(244,222,185,.24);
+  z-index: 1;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .maison-hero__edition,
+body[data-page="trang-chu"] .maison-hero__bottom,
+body[data-page="trang-chu"] .maison-hero__scroll {
+  position: absolute;
+  z-index: 3;
+  color: #f4dfc2;
+  font-size: .63rem;
+  letter-spacing: .19em;
+}
+
+body[data-page="trang-chu"] .maison-hero__edition {
+  top: 2.7rem;
+  right: 4rem;
+}
+
+body[data-page="trang-chu"] .maison-hero__bottom {
+  bottom: 3rem;
+  left: clamp(1.5rem, 7vw, 8rem);
+}
+
+body[data-page="trang-chu"] .maison-hero__scroll {
+  bottom: 3rem;
+  right: 4rem;
+  text-decoration: none;
+}
+
+body[data-page="trang-chu"] .home-breather {
+  position: relative;
+  isolation: isolate;
+  width: min(88%, 84rem);
+  height: clamp(23rem, 34vw, 30rem);
+  min-height: 0;
+  margin: clamp(3rem, 5vw, 5rem) auto;
+  padding: 2rem clamp(1.5rem, 5vw, 5rem);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #2d241f;
+  border-radius: .35rem;
+  border: 1px solid rgba(99,73,45,.18);
+  box-shadow: 0 24px 55px rgba(49,36,23,.12);
+  clip-path: none;
+  opacity: 1;
+}
+
+body[data-page="trang-chu"] .home-breather > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  filter: saturate(.79) brightness(.5);
+  transform: translate3d(0, var(--maison-quote-y, 0px), 0) scale(1.14);
+}
+
+body[data-page="trang-chu"] .home-breather::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(24,17,13,.55),
+    rgba(24,17,13,.23) 50%,
+    rgba(24,17,13,.55)
+  );
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .home-breather blockquote,
+body[data-page="trang-chu"] .home-breather blockquote.reveal {
+  position: relative;
+  z-index: 2;
+  max-width: 61rem;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  color: #f5e9d7;
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(2rem, 3.45vw, 3.65rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -.025em;
+  text-align: center;
+  text-wrap: balance;
+  opacity: 1;
+  transform: none;
+}
+
+body[data-page="trang-chu"] .home-breather blockquote::before {
+  content: "NOTRE PHILOSOPHIE / 01";
+  display: block;
+  color: #e3c59a;
+  margin-bottom: 1rem;
+  font-family: var(--font-paragraph, Georgia, serif);
+  font-size: .6rem;
+  letter-spacing: .2em;
+}
+
+body[data-page="trang-chu"] .home-section {
+  --maison-section-gutter: clamp(1.25rem, 6vw, 8rem);
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 5rem var(--maison-section-gutter);
+  background: #f8f3e9;
+}
+
+body[data-page="trang-chu"] .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+  max-width: 96rem;
+  margin: 0 auto 2.2rem;
+  padding-bottom: 1.7rem;
+  border-bottom: 1px solid rgba(69,50,32,.17);
+}
+
+body[data-page="trang-chu"] .section-head .eyebrow,
+body[data-page="trang-chu"] .home-center .eyebrow,
+body[data-page="trang-chu"] .home-story .eyebrow {
+  font-size: .66rem;
+  letter-spacing: .2em;
+  color: #95734a;
+}
+
+body[data-page="trang-chu"] .section-head h2 {
+  margin: .7rem 0 .7rem;
+  font-family: var(--font-heading, Georgia, serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 4.8vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+  color: var(--maison-ink);
+}
+
+body[data-page="trang-chu"] .section-head h2 em {
+  color: #a27b51;
+  font-weight: 400;
+}
+
+body[data-page="trang-chu"] .section-head p {
+  max-width: 36rem;
+  color: #6b5b4c;
+  font-size: .9rem;
+  line-height: 1.72;
+}
+
+body[data-page="trang-chu"] .outline-button {
+  padding: .6rem 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  color: #453326;
+  background: transparent;
+  font-size: .7rem;
+  text-decoration: none;
+  letter-spacing: .07em;
+}
+
+body[data-page="trang-chu"] .maison-journey {
+  position: relative;
+  width: calc(100% + 2 * var(--maison-section-gutter));
+  height: var(--maison-journey-height, 322svh);
+  margin: 0 calc(-1 * var(--maison-section-gutter)) 3rem;
+  isolation: isolate;
+}
+
+body[data-page="trang-chu"] .maison-journey__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 35rem;
+  overflow: hidden;
+  perspective: 1000px;
+  isolation: isolate;
+  background: #e5d4b9;
+  color: #30251d;
+}
+
+body[data-page="trang-chu"] .maison-journey__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .65;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 66% 37%,
+      rgba(255,250,233,.62),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 86%,
+      rgba(54,30,19,.11),
+      transparent 36%
+    );
+}
+
+body[data-page="trang-chu"] .maison-journey__ghost {
+  position: absolute;
+  z-index: 0;
+  top: 20%;
+  left: -2%;
+  width: 104%;
+  color: rgba(250,242,228,.34);
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(5rem, 15vw, 17rem);
+  font-weight: 400;
+  line-height: .8;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+}
+
+body[data-page="trang-chu"] .maison-journey__top {
+  position: absolute;
+  top: clamp(4.5rem, 8vh, 7rem);
+  left: 6%;
+  right: 6%;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body[data-page="trang-chu"] .maison-journey__label,
+body[data-page="trang-chu"] .maison-journey__skip,
+body[data-page="trang-chu"] .maison-journey__note {
+  color: #423024;
+  font-size: .67rem;
+  letter-spacing: .18em;
+}
+
+body[data-page="trang-chu"] .maison-journey__skip {
+  display: inline-block;
+  border-bottom: 1px solid rgba(60,40,24,.5);
+  padding-bottom: .4rem;
+  text-decoration: none;
+}
+
+body[data-page="trang-chu"] .maison-journey__gallery {
+  position: absolute;
+  inset: 0;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+body[data-page="trang-chu"] .maison-journey__card {
+  position: absolute;
+  top: 49%;
+  left: 59%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  width: clamp(17rem, 36vw, 34rem);
+  text-decoration: none;
+  color: #30241e;
+  backface-visibility: hidden;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+body[data-page="trang-chu"] .maison-journey__image-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.22;
+  overflow: hidden;
+  border: 9px solid rgba(253,248,235,.88);
+  background: #bc9c7f;
+  box-shadow:
+    0 25px 65px rgba(37,21,13,.25),
+    0 1px 0 rgba(255,255,255,.5) inset;
+}
+
+body[data-page="trang-chu"] .maison-journey__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s var(--maison-ease);
+}
+
+body[data-page="trang-chu"] .maison-journey__card:hover .maison-journey__image {
+  transform: scale(1.055);
+}
+
+body[data-page="trang-chu"] .maison-journey__card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: .95rem;
+  gap: .4rem;
+}
+
+body[data-page="trang-chu"] .maison-journey__card-index,
+body[data-page="trang-chu"] .maison-journey__card-cta {
+  font-size: .64rem;
+  letter-spacing: .15em;
+}
+
+body[data-page="trang-chu"] .maison-journey__card-name {
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(1.5rem, 2.7vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+
+body[data-page="trang-chu"] .maison-journey__card-price {
+  font-size: .83rem;
+  color: #6a503b;
+}
+
+body[data-page="trang-chu"] .maison-journey__card-cta {
+  margin-top: .45rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: .35rem;
+}
+
+body[data-page="trang-chu"] .maison-journey__rail {
+  position: absolute;
+  left: 6%;
+  bottom: 10%;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: min(21rem, 30vw);
+}
+
+body[data-page="trang-chu"] .maison-journey__counter {
+  font: 400 1.2rem var(--font-heading, Georgia, serif);
+  white-space: nowrap;
+}
+
+body[data-page="trang-chu"] .maison-journey__track {
+  height: 1px;
+  flex: 1;
+  background: rgba(60,40,24,.28);
+}
+
+body[data-page="trang-chu"] .maison-journey__fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #392a1e;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+body[data-page="trang-chu"] .maison-journey__note {
+  position: absolute;
+  bottom: 13%;
+  right: 6%;
+  z-index: 4;
+  margin: 0;
+}
+
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__label,
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__skip,
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__note,
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__counter,
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__card,
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__card-price {
+  color: #fff1dd;
+}
+
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__track {
+  background: rgba(255,234,206,.4);
+}
+
+body[data-page="trang-chu"] .maison-journey__stage[data-tone="dark"] .maison-journey__fill {
+  background: #fbe6c6;
+}
+
+body[data-page="trang-chu"] #best-seller-grid {
+  scroll-margin-top: 6rem;
+}
+
+body[data-page="trang-chu"] .product-grid--home {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 96rem;
+  margin: 0 auto;
+  gap: 1.65rem;
+}
+
+body[data-page="trang-chu"] .product-card--home {
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__media {
+  width: 100%;
+  height: auto;
+  aspect-ratio: .87;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__body {
+  padding: .9rem 0 0;
+  text-align: left;
+  align-items: flex-start;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__title {
+  font: 400 clamp(1.3rem, 1.55vw, 1.75rem)/1.2 var(--font-heading, Georgia, serif);
+  margin: 0 0 .45rem;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__description {
+  font-size: .8rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__bottom {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: .6rem;
+  padding: .8rem 0 0;
+  border-top: 1px solid rgba(70,50,32,.18);
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__price {
+  font-size: .93rem;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__button {
+  width: auto;
+  min-height: 2.5rem;
+  border: 1px solid #543d2c;
+  border-radius: 0;
+  background: transparent;
+  color: #30241e;
+  font-size: .63rem;
+  padding: .5rem .7rem;
+}
+
+body[data-page="trang-chu"] .product-card--home .product-card__button:hover {
+  background: #30241e;
+  color: #f9f1e3;
+  transform: none;
+}
+
+body[data-page="trang-chu"] .home-story {
+  position: relative;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: start;
+  gap: clamp(2rem, 5vw, 6rem);
+  padding: 5.5rem clamp(1.25rem, 7vw, 9rem);
+  background: #2b231e;
+  color: #f6eddf;
+}
+
+body[data-page="trang-chu"] .home-story__intro {
+  position: sticky;
+  top: 7rem;
+  max-width: 34rem;
+  padding-top: 1rem;
+}
+
+body[data-page="trang-chu"] .home-story .eyebrow {
+  color: #d3af7e;
+}
+
+body[data-page="trang-chu"] .home-story h2 {
+  font: 400 clamp(3rem, 4.9vw, 5.7rem)/1.04 var(--font-heading, Georgia, serif);
+  letter-spacing: -.045em;
+  color: #f9ebd9;
+  margin: 1.3rem 0 1.5rem;
+}
+
+body[data-page="trang-chu"] .home-story h2 strong {
+  color: #ddbd92;
+  font-weight: 400;
+  font-style: italic;
+}
+
+body[data-page="trang-chu"] .home-story p {
+  color: #cbbba9;
+  font-size: .89rem;
+  line-height: 1.75;
+  max-width: 31rem;
+}
+
+body[data-page="trang-chu"] .home-story .outline-button {
+  display: inline-block;
+  margin-top: 1.15rem;
+  color: #e9c99a;
+}
+
+body[data-page="trang-chu"] .home-story__gallery {
+  display: grid;
+  gap: 2.8rem;
+  padding-top: 1.8rem;
+}
+
+body[data-page="trang-chu"] .home-story figure {
+  min-height: 0;
+  margin: 0;
+}
+
+body[data-page="trang-chu"] .home-story figure:nth-child(2) {
+  width: 84%;
+  margin-left: 16%;
+}
+
+body[data-page="trang-chu"] .home-story figure img {
+  display: block;
+  width: 100%;
+  height: clamp(20rem, 31vw, 31rem);
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 20px 55px rgba(0,0,0,.2);
+}
+
+body[data-page="trang-chu"] .home-story figure:nth-child(2) img {
+  height: clamp(17rem, 24vw, 24rem);
+}
+
+body[data-page="trang-chu"] .home-story figcaption {
+  position: static;
+  max-width: none;
+  padding: .85rem 0 0;
+  background: transparent;
+}
+
+body[data-page="trang-chu"] .home-story figcaption h3 {
+  color: #f6e9d5;
+  font: 400 1.7rem var(--font-heading, Georgia, serif);
+  margin-bottom: .2rem;
+}
+
+body[data-page="trang-chu"] .home-story figcaption p {
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+body[data-page="trang-chu"] .home-promotions {
+  padding-top: 3.8rem;
+  padding-bottom: 4.5rem;
+  background: #f3eadb;
+}
+
+body[data-page="trang-chu"] .home-promotions .home-center {
+  margin-bottom: 1.7rem;
+}
+
+body[data-page="trang-chu"] .home-promotions .home-center h2 {
+  font: 400 clamp(2.5rem, 4vw, 4.6rem)/1.06 var(--font-heading, Georgia, serif);
+  letter-spacing: -.04em;
+  color: #30251e;
+  margin: .65rem 0 0;
+}
+
+body[data-page="trang-chu"] .home-promotions__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 80rem;
+  gap: 1.2rem;
+  margin: auto;
+}
+
+body[data-page="trang-chu"] #promotion-grid .promotion-tile:only-child {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+body[data-page="trang-chu"] .promotion-tile {
+  min-height: 0;
+  height: clamp(18rem, 25vw, 23rem);
+  border-radius: .3rem;
+  background: #a58161;
+  box-shadow: 0 18px 38px rgba(60,43,28,.12);
+}
+
+body[data-page="trang-chu"] .promotion-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-page="trang-chu"] .promotion-tile::after {
+  background: linear-gradient(
+    90deg,
+    rgba(29,19,14,.76),
+    rgba(29,19,14,.28) 67%,
+    rgba(29,19,14,.07)
+  );
+}
+
+body[data-page="trang-chu"] .promotion-tile__content {
+  width: min(100%, 32rem);
+  max-width: 32rem;
+  padding: clamp(1.3rem, 3vw, 2.8rem);
+  color: #f6ead8;
+}
+
+body[data-page="trang-chu"] .promotion-tile__content h3 {
+  font: 400 clamp(2rem, 2.6vw, 3rem)/1.04 var(--font-heading, Georgia, serif);
+  color: #fff0dc;
+  margin: .4rem 0;
+}
+
+body[data-page="trang-chu"] .promotion-tile__content p,
+body[data-page="trang-chu"] .promotion-tile__content span,
+body[data-page="trang-chu"] .promotion-tile__content a {
+  color: #f5e6d0;
+  font-size: .83rem;
+  line-height: 1.55;
+}
+
+body[data-page="trang-chu"] .promotion-tile__content a {
+  display: inline-block;
+  margin-top: .6rem;
+  text-underline-offset: .25em;
+}
+
+body[data-page="trang-chu"] .home-newsletter {
+  padding: 3.8rem 1.5rem;
+  background: #2b231e;
+  color: #f5e5cb;
+}
+
+body[data-page="trang-chu"] .home-newsletter > div {
+  max-width: 39rem;
+}
+
+body[data-page="trang-chu"] .home-newsletter h2 {
+  font: 400 clamp(2.3rem, 3.6vw, 3.6rem)/1.07 var(--font-heading, Georgia, serif);
+  margin: .8rem 0;
+  color: #fff0da;
+}
+
+body[data-page="trang-chu"] .home-newsletter p {
+  font-size: .84rem;
+  line-height: 1.65;
+  color: #d7c5ad;
+}
+
+body[data-page="trang-chu"] .home-newsletter form {
+  max-width: 32rem;
+  margin: 1.4rem auto 0;
+  border-color: rgba(235,206,164,.36);
+}
+
+body[data-page="trang-chu"] .home-newsletter input {
+  color: #fff0dd;
+}
+
+body[data-page="trang-chu"] .home-newsletter button {
+  color: #eac699;
+}
+
+body[data-page="trang-chu"] :is(a, button, input):focus-visible {
+  outline: 2px solid #dbb37d;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  body[data-page="trang-chu"] .product-grid--home {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body[data-page="trang-chu"] .maison-journey__card {
+    left: 59%;
+    width: clamp(17rem, 43vw, 30rem);
+  }
+
+  body[data-page="trang-chu"] .maison-journey__note {
+    max-width: 13rem;
+    line-height: 1.6;
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="trang-chu"] .home-hero {
+    height: 100svh;
+    min-height: 34rem;
+  }
+
+  body[data-page="trang-chu"] .home-hero__photo img {
+    object-position: 70% center;
+  }
+
+  body[data-page="trang-chu"] .home-hero__photo::after {
+    background: linear-gradient(
+      180deg,
+      rgba(18,12,9,.45),
+      rgba(18,12,9,.32) 25%,
+      rgba(18,12,9,.72) 100%
+    );
+  }
+
+  body[data-page="trang-chu"] .home-hero__text,
+  body[data-page="trang-chu"] .home-hero__text.reveal {
+    justify-content: flex-end;
+    padding: 6rem 1.3rem 7.8rem;
+  }
+
+  body[data-page="trang-chu"] .home-hero h1 {
+    font-size: clamp(4.1rem, 15vw, 6.2rem);
+    margin-bottom: 1.3rem;
+  }
+
+  body[data-page="trang-chu"] .home-hero__text > p {
+    font-size: .87rem;
+    line-height: 1.65;
+  }
+
+  body[data-page="trang-chu"] .home-hero__actions {
+    gap: 1.25rem;
+    margin-top: 1.4rem;
+  }
+
+  body[data-page="trang-chu"] .home-hero__actions .pill-button {
+    font-size: .68rem;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__frame {
+    inset: .7rem;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__edition {
+    right: 1.5rem;
+    top: 1.8rem;
+    font-size: .56rem;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__bottom {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] .maison-hero__scroll {
+    right: 1.5rem;
+    bottom: 2rem;
+    font-size: .56rem;
+  }
+
+  body[data-page="trang-chu"] .home-breather {
+    width: calc(100% - 1.5rem);
+    height: 24rem;
+    margin: 2.5rem auto;
+    padding: 1.25rem;
+  }
+
+  body[data-page="trang-chu"] .home-breather blockquote,
+  body[data-page="trang-chu"] .home-breather blockquote.reveal {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.2;
+    padding: 0;
+  }
+
+  body[data-page="trang-chu"] .home-section {
+    padding: 3.7rem 1.25rem;
+    --maison-section-gutter: 1.25rem;
+  }
+
+  body[data-page="trang-chu"] .section-head {
+    grid-template-columns: 1fr;
+    gap: .7rem;
+  }
+
+  body[data-page="trang-chu"] .section-head h2 {
+    font-size: clamp(2.8rem, 9vw, 4.2rem);
+  }
+
+  body[data-page="trang-chu"] .maison-journey {
+    height: auto;
+    margin-bottom: 2.3rem;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    padding: 5rem 0 3rem;
+    perspective: none;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__top {
+    top: 2rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__label,
+  body[data-page="trang-chu"] .maison-journey__skip {
+    font-size: .53rem;
+    letter-spacing: .1em;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__ghost {
+    top: 13%;
+    font-size: 5.3rem;
+    opacity: .75;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__gallery {
+    position: relative;
+    inset: auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1.5rem 1.25rem 1.75rem;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    perspective: none;
+    transform-style: flat;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(78vw, 22rem);
+    flex: 0 0 min(78vw, 22rem);
+    transform: none;
+    opacity: 1;
+    filter: none;
+    scroll-snap-align: center;
+    will-change: auto;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__image-wrap {
+    border-width: 5px;
+    aspect-ratio: 1.05;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__card-name {
+    font-size: 1.75rem;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__rail,
+  body[data-page="trang-chu"] .maison-journey__note {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] .product-grid--home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem .85rem;
+  }
+
+  body[data-page="trang-chu"] .product-card--home .product-card__description {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] .product-card--home .product-card__bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .65rem;
+  }
+
+  body[data-page="trang-chu"] .product-card--home .product-card__button {
+    width: 100%;
+  }
+
+  body[data-page="trang-chu"] .home-story {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4.8rem 1.25rem 3.8rem;
+  }
+
+  body[data-page="trang-chu"] .home-story__intro {
+    position: static;
+  }
+
+  body[data-page="trang-chu"] .home-story h2 {
+    font-size: clamp(3rem, 9vw, 4.5rem);
+  }
+
+  body[data-page="trang-chu"] .home-story__gallery {
+    padding: 0;
+    gap: 2rem;
+  }
+
+  body[data-page="trang-chu"] .home-story figure img {
+    height: 21rem;
+  }
+
+  body[data-page="trang-chu"] .home-story figure:nth-child(2) img {
+    height: 17rem;
+  }
+
+  body[data-page="trang-chu"] .home-promotions {
+    padding: 3rem 1.25rem 3.6rem;
+  }
+
+  body[data-page="trang-chu"] .home-promotions .home-center h2 {
+    font-size: clamp(2.7rem, 8vw, 4rem);
+  }
+
+  body[data-page="trang-chu"] .home-promotions__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="trang-chu"] .promotion-tile {
+    height: 21rem;
+  }
+
+  body[data-page="trang-chu"] .promotion-tile__content {
+    padding: 1.25rem;
+  }
+
+  body[data-page="trang-chu"] .home-newsletter {
+    padding: 3rem 1.25rem;
+  }
+
+  body[data-page="trang-chu"] .home-newsletter h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body[data-page="trang-chu"] .home-hero h1 {
+    font-size: clamp(3.9rem, 14.7vw, 5rem);
+  }
+
+  body[data-page="trang-chu"] .home-breather blockquote,
+  body[data-page="trang-chu"] .home-breather blockquote.reveal {
+    font-size: clamp(1.4rem, 5.8vw, 1.9rem);
+  }
+
+  body[data-page="trang-chu"] .maison-journey__label {
+    max-width: 45%;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="trang-chu"] .home-hero__photo img,
+  body[data-page="trang-chu"] .home-breather > img {
+    transform: scale(1.03);
+    will-change: auto;
+  }
+
+  body[data-page="trang-chu"] .maison-journey {
+    height: auto;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__stage {
+    position: relative;
+    top: auto;
+    min-height: 0;
+    height: auto;
+    padding: 5rem 0 3rem;
+    perspective: none;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__gallery {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1.2rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__card {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex: 0 0 min(75vw, 23rem);
+    width: min(75vw, 23rem);
+    transform: none;
+    opacity: 1;
+    filter: none;
+    scroll-snap-align: center;
+    will-change: auto;
+  }
+
+  body[data-page="trang-chu"] .maison-journey__rail,
+  body[data-page="trang-chu"] .maison-journey__note {
+    display: none;
+  }
+
+  body[data-page="trang-chu"] .product-card--home,
+  body[data-page="trang-chu"] .product-card--home .product-card__image {
+    transition: none;
+  }
+}
