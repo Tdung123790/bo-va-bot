@@ -147,7 +147,9 @@ async function reconcile(request){
 Deno.serve(async request=>{
  if(request.method==='OPTIONS')return json({});
  try{
-  const action=request.method==='GET'?new URL(request.url).searchParams.get('action'):(await request.clone().json()).action;
+  const callbackUrl=new URL(request.url);
+  const isIpnCallback=request.method==='GET'&&[...callbackUrl.searchParams.keys()].some(key=>key.startsWith('vnp_'));
+  const action=request.method==='GET'?callbackUrl.searchParams.get('action'):(await request.clone().json()).action;
   if(action==='availability'&&request.method==='POST'){
    let available=false;
    try{
@@ -159,7 +161,7 @@ Deno.serve(async request=>{
    }catch{}
    return json({available});
   }
-  if(action==='ipn'&&request.method==='GET')return ipn(request);
+  if(request.method==='GET'&&(action==='ipn'||isIpnCallback))return ipn(request);
   if(request.method!=='POST')return json({error:'METHOD_NOT_ALLOWED'},405);
   if(action==='start')return await start(request);
   if(action==='status')return await status(request);
