@@ -40,7 +40,7 @@ export async function calculateOrder(input){
   if(product.isCustomizable&&!row.customCakeId)throw Error('Thiếu cấu hình bánh tùy chỉnh');
   let unitPrice=Number(product.price),customization=null;
   if(product.isCustomizable){
-   const conf=getJSON('bobot:v1:customCakes',[]);const cake=Array.isArray(conf)?conf.find(c=>c.id===row.customCakeId):null;
+   const cake=getCustomCakeById(row.customCakeId);
    if(!cake)throw Error('Không tìm thấy cấu hình bánh tùy chỉnh');
    const response=await fetch('data/cake-options.json');if(!response.ok)throw Error('Không tải được cấu hình giá bánh');
    const opt=await response.json();const find=(set,id)=>set.find(x=>String(x.id)===String(id));
