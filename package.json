@@ -1,0 +1,19 @@
+{
+  "name": "bo-va-bot-db-dev",
+  "private": true,
+  "scripts": {
+    "db:check": "node scripts/check-supabase-sql-structure.cjs",
+    "db:test:local": "node scripts/run-supabase-local-tests.mjs",
+    "db:test:concurrency": "node scripts/test-supabase-concurrency.mjs",
+    "db:verify:empty": "node scripts/verify-supabase-greenfield.mjs",
+    "db:configure:local": "node scripts/configure-supabase-local.mjs"
+  },
+  "devDependencies": {
+    "pg": "^8.23.1",
+    "playwright": "^1.64.1",
+    "supabase": "^3.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0"
+  }
+}

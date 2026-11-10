@@ -1,6 +1,8 @@
 import {getJSON,setJSON} from '../core/storage.js';
 import {store} from '../core/store.js';
 import {getById} from './productService.js';
+import {getById as getCustomCakeById,calculatePrice as calculateCakePrice} from './customCakeService.js';
+import {isSupabaseMode} from '../core/backend.js';
 export const CART_KEY='bobot:v1:guestCart';
 const listeners=new Set();
 export function getCart(){const value=getJSON(CART_KEY,[]);return Array.isArray(value)?value:[];}
@@ -12,9 +14,15 @@ export async function addToCart({collectionId='bakeryproducts',itemId,quantity=1
  if(!itemId)throw Error('Thiếu mã sản phẩm');if(!Number.isSafeInteger(quantity)||quantity<1||quantity>99)throw Error('Số lượng phải từ 1 đến 99');
  const product=await getById(itemId);if(!product||product.status==='inactive')throw Error('Không tìm thấy sản phẩm');
  if(product.isCustomizable&&!customCakeId)throw Error('Vui lòng chọn cấu hình bánh tùy chỉnh');
+ const customCake=product.isCustomizable?getCustomCakeById(customCakeId):null;
+ if(product.isCustomizable&&!customCake)throw Error('Không tìm thấy cấu hình bánh tùy chỉnh');
+ if(isSupabaseMode()&&!product.isCustomizable&&(!Number.isSafeInteger(Number(product.price))||Number(product.price)<=0))throw Error('Sản phẩm chưa có giá được xác nhận trên backend.');
+ const unitPrice=customCake?await calculateCakePrice(customCake):product.price;
  const rows=getCart(),key=[itemId,variantId||'',customCakeId||''].join('|'),found=rows.find(i=>i.key===key),newQty=quantity+(found?.quantity||0);
- if(newQty>99||(Number.isFinite(product.stockQuantity)&&product.stockQuantity>=0&&newQty>product.stockQuantity))throw Error('Số lượng vượt tồn kho');
- if(found)found.quantity=newQty;else rows.push({key,productId:String(itemId),itemId:String(itemId),collectionId,variantId,customCakeId,quantity,unitPrice:product.price,productNameSnapshot:product.name,image:product.image,customizationData});
+ // Bánh thiết kế được làm theo đơn; bản ghi khuôn CMS có stockQuantity=0.
+ const madeToOrder=Boolean(customCake);
+ if(newQty>99||(!madeToOrder&&Number.isFinite(product.stockQuantity)&&product.stockQuantity>=0&&newQty>product.stockQuantity))throw Error('Số lượng vượt tồn kho');
+ if(found){found.quantity=newQty;found.unitPrice=unitPrice;}else rows.push({key,productId:String(itemId),itemId:String(itemId),collectionId,variantId,customCakeId,quantity,unitPrice,productNameSnapshot:product.name,image:product.image,customizationData});
  return publish(rows);
 }
 export function updateQuantity(keyOrItem,quantity){const key=typeof keyOrItem==='string'?keyOrItem:keyOrItem?.key;if(!Number.isSafeInteger(quantity)||quantity<0||quantity>99)throw Error('Số lượng không hợp lệ');const rows=getCart();const found=rows.find(i=>i.key===key);if(!found)throw Error('Không tìm thấy dòng hàng');if(quantity===0)return removeFromCart(key);found.quantity=quantity;return publish(rows);}

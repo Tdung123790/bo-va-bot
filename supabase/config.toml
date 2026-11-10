@@ -1,0 +1,39 @@
+project_id = "bo-va-bot-local"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+
+[studio]
+enabled = true
+port = 54323
+
+[functions.vnpay-gateway]
+verify_jwt = false
+entrypoint = './functions/vnpay-gateway/index.js'
+
+[functions.delivery-verify]
+verify_jwt = false
+entrypoint = './functions/delivery-verify/index.js'
+
+[functions.churn-research]
+verify_jwt = false
+entrypoint = './functions/churn-research/index.js'
+static_files = [ './functions/churn-research/research.json', './functions/churn-research/assets/*.png' ]
+
+[functions.related-products]
+verify_jwt = false
+entrypoint = './functions/related-products/index.js'
+static_files = [ './functions/related-products/rankings.json' ]
+
+[functions.product-search]
+verify_jwt = false
+entrypoint = './functions/product-search/index.js'
+static_files = [ './functions/product-search/model.json' ]

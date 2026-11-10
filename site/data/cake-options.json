@@ -1,0 +1,90 @@
+{
+  "customProductId": "416febf3-47f1-47a8-b476-107abd5395f0",
+  "sizes": [
+    {
+      "id": "15",
+      "name": "15cm",
+      "price": 250000
+    },
+    {
+      "id": "20",
+      "name": "20cm",
+      "price": 350000
+    },
+    {
+      "id": "25",
+      "name": "25cm",
+      "price": 450000
+    }
+  ],
+  "flavors": [
+    {
+      "id": "vanilla",
+      "name": "Vani",
+      "priceModifier": 0
+    },
+    {
+      "id": "chocolate",
+      "name": "Chocolate Bỉ",
+      "priceModifier": 30000
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "priceModifier": 40000
+    }
+  ],
+  "creams": [
+    {
+      "id": "whipping",
+      "name": "Whipping",
+      "priceModifier": 0
+    },
+    {
+      "id": "butter",
+      "name": "Bơ Pháp",
+      "priceModifier": 50000
+    },
+    {
+      "id": "mascarpone",
+      "name": "Mascarpone",
+      "priceModifier": 60000
+    }
+  ],
+  "fonts": [
+    {
+      "id": "font-paragraph",
+      "name": "Thanh lịch (Trirong)"
+    },
+    {
+      "id": "font-caveat",
+      "name": "Viết tay (Caveat)"
+    },
+    {
+      "id": "font-pinyon-script",
+      "name": "Bay bổng (Pinyon)"
+    }
+  ],
+  "textColors": [
+    {
+      "id": "#FFFFFF",
+      "name": "Trắng",
+      "value": "#FFFFFF"
+    },
+    {
+      "id": "#4A3728",
+      "name": "Nâu Choco",
+      "value": "#4A3728"
+    },
+    {
+      "id": "#E57373",
+      "name": "Hồng Pastel",
+      "value": "#E57373"
+    },
+    {
+      "id": "#81C784",
+      "name": "Xanh Mint",
+      "value": "#81C784"
+    }
+  ]
+}

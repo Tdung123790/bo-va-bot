@@ -1,1 +1,66 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Góc Khách Hàng | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head><body data-page="goc-khach-hang"><div data-include="header"></div><main id="main-content"><section class="inner-hero"><h1>Góc Khách Hàng</h1><p>Những chia sẻ chân thành từ những người yêu bánh Bơ & Bột.</p></section><section class="content-wrap"><div class="reviews-summary"><h2>Lời yêu thương của khách</h2><p id="reviews-count"></p></div><div id="reviews-list" class="reviews-grid" aria-live="polite"><p>Đang tải đánh giá…</p></div><div class="reviews-actions"><button type="button" id="reviews-more" hidden>Xem thêm đánh giá</button></div></section></main><div data-include="footer"></div><script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/reviews.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Đánh Giá Từ Khách Hàng | Bơ & Bột</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/review-submit.css">
+</head>
+<body data-page="goc-khach-hang">
+  <div data-include="header"></div>
+  <main id="main-content">
+    <section class="reviews-hero">
+      <div class="reviews-container">
+        <h1>Đánh Giá Từ Khách Hàng</h1>
+        <p>Khách hàng nói gì về Bơ &amp; Bột? Cùng khám phá những câu chuyện và trải nghiệm ngọt ngào mà chúng tôi đã có cơ hội mang đến cho mọi người</p>
+      </div>
+    </section>
+    <section class="reviews-summary-section reviews-container" id="reviews-summary-section" hidden>
+      <div class="reviews-summary">
+        <div class="reviews-summary__stars" id="reviews-average-stars" aria-hidden="true"></div>
+        <div class="reviews-summary__value"><span id="reviews-average">0.0</span><span>trên 5</span></div>
+        <p id="reviews-count"></p>
+      </div>
+    </section>
+    <section class="reviews-container" id="review-submit-section" hidden>
+      <h2>Đánh giá đơn hàng của bạn</h2>
+      <p id="review-submit-status" role="status" aria-live="polite"></p>
+      <form id="review-submit-form">
+        <label for="review-order-item">Bánh đã mua</label>
+        <select id="review-order-item" name="orderItem" required></select>
+        <label for="review-rating">Đánh giá</label>
+        <select id="review-rating" name="rating" required>
+          <option value="5">5 sao</option><option value="4">4 sao</option>
+          <option value="3">3 sao</option><option value="2">2 sao</option>
+          <option value="1">1 sao</option>
+        </select>
+        <label for="review-content">Trải nghiệm của bạn</label>
+        <textarea id="review-content" name="content" required minlength="3" maxlength="2500" rows="4"></textarea>
+        <button type="submit">Gửi đánh giá</button>
+      </form>
+      <div class="review-own">
+        <h3>Đánh giá của tôi</h3>
+        <div id="review-own-list" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="reviews-list-section reviews-container">
+      <div id="reviews-list" class="reviews-grid" aria-live="polite"><p>Đang tải đánh giá…</p></div>
+      <div class="reviews-actions"><button type="button" id="reviews-more" hidden>Xem thêm đánh giá</button></div>
+    </section>
+    <section class="reviews-cta">
+      <div class="reviews-cta__inner">
+        <div><h2>Chia Sẻ Trải Nghiệm Của Bạn</h2><p>Hãy chia sẻ cảm nhận của bạn về Bơ &amp; Bột nhé! Mỗi đánh giá của bạn là động lực để chúng tôi ngày càng hoàn thiện và phục vụ bạn tốt hơn!</p></div>
+        <div class="reviews-cta__links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Đánh giá Bơ &amp; Bột trên Facebook</a>
+          <a href="https://www.instagram.com/butter.and.flour.sweetie?psln=MWxxZnA1OTJvdWtqNQ==" target="_blank" rel="noopener noreferrer">Tag Bơ &amp; Bột trên Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="js/core/bootstrap.js"></script>
+  <script type="module" src="js/pages/reviews.js"></script>
+  <script type="module" src="js/pages/review-submit.js"></script>
+</body>
+</html>

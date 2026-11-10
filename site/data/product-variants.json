@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "100",
+    "legacyId": "00dd715e-3b85-4f7c-acf6-cec9a9d15479",
+    "productId": "34",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 31,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "171",
+    "legacyId": "02c4633b-38ca-4f51-94b1-514956677f3e",
+    "productId": "57",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 13,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "95",
+    "legacyId": "03f42189-4f45-4a82-8796-824fabbda4a6",
+    "productId": "32",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 20,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "94",
+    "legacyId": "0442ae8e-7642-488d-b73a-2e302e472fdb",
+    "productId": "32",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 21,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "163",
+    "legacyId": "05fa76c8-b4ba-43de-88bf-ce26108ff0fc",
+    "productId": "55",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 10,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "45",
+    "legacyId": "06f136f2-00d7-4a7d-a9a1-e7a7fe4f6ffb",
+    "productId": "15",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 28,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "159",
+    "legacyId": "0bc8f48b-6309-4d8d-a615-f7df1a07cc04",
+    "productId": "53",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "17",
+    "legacyId": "0e00bf68-f0fd-45ff-bd6b-3eaaf12465ad",
+    "productId": "6",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 50,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "172",
+    "legacyId": "0e19e293-b034-48a4-be8a-242daa818203",
+    "productId": "58",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 19,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "149",
+    "legacyId": "0f7d885f-22a6-4e67-a0b1-f1e76574b597",
+    "productId": "50",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "118",
+    "legacyId": "0f80cdd0-587b-48d7-a9e9-23be4544d839",
+    "productId": "40",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "5",
+    "legacyId": "0fb75d7e-df38-4a23-b8cd-3e97ad8aaffd",
+    "productId": "2",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 66,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "168",
+    "legacyId": "0fc25f09-626f-4358-9d2f-5720ff79eb70",
+    "productId": "56",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "91",
+    "legacyId": "11e2a30c-2cf2-4ea8-a45e-2edecf7eeeb6",
+    "productId": "31",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 19,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "89",
+    "legacyId": "144855b5-c412-4990-92b7-521973bf7e69",
+    "productId": "30",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 64,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "110",
+    "legacyId": "14c1630f-02b8-444d-bb76-214948b7db08",
+    "productId": "37",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "29",
+    "legacyId": "1506785b-18dd-4913-a2ca-4818eabc08dc",
+    "productId": "10",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 28,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "174",
+    "legacyId": "180905c4-ba6f-42c5-a0b5-43b5ecd34c26",
+    "productId": "58",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 8,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "155",
+    "legacyId": "1bda3836-3fe8-49c3-a95c-cdfc08266337",
+    "productId": "52",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 53,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "90",
+    "legacyId": "1c19f3f9-5f4b-4b12-b962-4dd8ae447717",
+    "productId": "30",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "184",
+    "legacyId": "1d960b37-8b6e-49f2-9ff4-67ca75b8bc38",
+    "productId": "62",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 17,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "26",
+    "legacyId": "1dcdcce0-b4f5-4b8e-81e3-aa3fcd4e23f3",
+    "productId": "9",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 67,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "35",
+    "legacyId": "2418d745-9b2c-4eb2-bde6-7043dcbb8bc1",
+    "productId": "12",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 41,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "111",
+    "legacyId": "24bd5515-de63-468f-868e-e0536b0cc627",
+    "productId": "37",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 17,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "166",
+    "legacyId": "255045cd-8ea7-4fb8-b356-47bbb37bd014",
+    "productId": "56",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 40,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "176",
+    "legacyId": "27ad17da-353c-40c8-8974-0668299d9492",
+    "productId": "59",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 51,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "148",
+    "legacyId": "2912f676-8d68-4469-b0a6-72c019e429ea",
+    "productId": "50",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "183",
+    "legacyId": "29e03043-b341-47ca-b44e-1a4222a562de",
+    "productId": "61",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "1",
+    "legacyId": "2a700513-1a71-4cd8-a70e-24ed71f892fa",
+    "productId": "1",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 36,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "49",
+    "legacyId": "2cb402ec-c64e-4a8f-acb8-165e5f1e81e2",
+    "productId": "17",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 19,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "134",
+    "legacyId": "302f020e-9c78-4111-a760-6234ca49207f",
+    "productId": "45",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 37,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "167",
+    "legacyId": "31ba022c-784c-4cdd-b403-28209e3ca851",
+    "productId": "56",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "157",
+    "legacyId": "32dc3370-db5c-412d-84d1-fe6d3910ed5b",
+    "productId": "53",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 19,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "107",
+    "legacyId": "330e0c9c-71fb-42b2-bc9b-024a02f6e79c",
+    "productId": "36",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 25,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "21",
+    "legacyId": "33145a8b-effe-4690-8fc2-caf01b5e0124",
+    "productId": "7",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 7,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "54",
+    "legacyId": "345c20ea-da6d-467a-8beb-2712943071ba",
+    "productId": "18",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 11,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "63",
+    "legacyId": "34683ea2-674a-4db7-b8f6-6d22bf18a9d0",
+    "productId": "21",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "40",
+    "legacyId": "34e5de70-396e-4b91-be3f-81222c07a19e",
+    "productId": "14",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 37,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "129",
+    "legacyId": "352a50b5-434d-4021-bd54-f7ccff3956ef",
+    "productId": "43",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "116",
+    "legacyId": "3a1901e7-aef2-4a7e-9189-1b2a2b5c9f2c",
+    "productId": "39",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 43,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "23",
+    "legacyId": "3afb4d02-6749-4a7b-bf9d-d8931f1c51f2",
+    "productId": "8",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 47,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "87",
+    "legacyId": "3c3f5e60-6210-4a44-a9f0-2db1bf525b9f",
+    "productId": "29",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 10,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "28",
+    "legacyId": "3d7d45c0-bb30-4fd8-a8e4-76e04cf7dbf2",
+    "productId": "10",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 35,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "104",
+    "legacyId": "442d60e0-b8b9-4f56-8dee-180a03bb92eb",
+    "productId": "35",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 67,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "13",
+    "legacyId": "44bda595-e85e-4068-896a-ba31084b69c1",
+    "productId": "5",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 40,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "178",
+    "legacyId": "459a85dc-a711-4143-b933-435a3878915b",
+    "productId": "60",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "120",
+    "legacyId": "472b3c52-da67-4201-89f4-633a02336abe",
+    "productId": "40",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "51",
+    "legacyId": "47b3da0c-319b-4f79-ae68-12c96f5ffc64",
+    "productId": "17",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 8,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "48",
+    "legacyId": "499858af-639b-4a2b-abdf-a4c45bd746ee",
+    "productId": "16",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 24,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "18",
+    "legacyId": "4aaf56d2-0ecd-4c25-9fb9-ddb62e7c9cb4",
+    "productId": "6",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 7,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "102",
+    "legacyId": "52052fcf-3c75-4adb-be52-b26c99ee1515",
+    "productId": "34",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 7,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "65",
+    "legacyId": "5346e269-9f11-423c-9ad8-242b1c70066f",
+    "productId": "22",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "123",
+    "legacyId": "5966c0d5-a93e-46c5-848b-0ba56d9d656b",
+    "productId": "41",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 24,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "62",
+    "legacyId": "5a9c4c09-9dab-46a3-9403-4be33310678c",
+    "productId": "21",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 74,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "25",
+    "legacyId": "5c171063-a2ff-4f2e-a84f-a4c6081af7fe",
+    "productId": "9",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "114",
+    "legacyId": "5cb95f3f-d16e-490e-a525-ef3ee5171348",
+    "productId": "38",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 15,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "70",
+    "legacyId": "5e6be36e-5964-4d07-b41b-b200964ade15",
+    "productId": "24",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 35,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "56",
+    "legacyId": "5fefa9b0-628e-4f6f-abe9-0b1812f62c8d",
+    "productId": "19",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 62,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "145",
+    "legacyId": "60512503-c9b1-4be6-8e16-5c1f1f89bc7e",
+    "productId": "49",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "127",
+    "legacyId": "608168eb-2cd4-4890-aaf0-c64f0ea3a356",
+    "productId": "43",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "93",
+    "legacyId": "609ca556-f699-4fc4-bb21-796f28a76c99",
+    "productId": "31",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 15,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "112",
+    "legacyId": "6124c297-076d-45c4-9ee6-eaccfd66709e",
+    "productId": "38",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "80",
+    "legacyId": "61f26d47-476d-487e-bfcf-4a051ffd611b",
+    "productId": "27",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 21,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "59",
+    "legacyId": "653f4d14-f498-4237-8b0e-998eb2236457",
+    "productId": "20",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 74,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "10",
+    "legacyId": "65eff9a1-2e27-43c9-9286-c9d509fd6cec",
+    "productId": "4",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 31,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "147",
+    "legacyId": "67d5f0fa-0f20-4ce5-812c-7be035204179",
+    "productId": "49",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 16,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "43",
+    "legacyId": "6b1088c6-ce5e-46a0-86e8-a29967796075",
+    "productId": "15",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "31",
+    "legacyId": "6b560c7d-327f-4292-9188-de5ca0ae3c87",
+    "productId": "11",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 11,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "180",
+    "legacyId": "6b57f033-8952-4ac6-8d38-3e5dfbb32e9d",
+    "productId": "60",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 9,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "146",
+    "legacyId": "6c3d8711-601e-4ac7-9b63-48219922405d",
+    "productId": "49",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "67",
+    "legacyId": "70be4882-cd64-4f2a-b291-b2c4c2fbba16",
+    "productId": "23",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 18,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "15",
+    "legacyId": "712413d5-6bfc-4925-9fc4-7370ece586bc",
+    "productId": "5",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "128",
+    "legacyId": "713ad853-5587-4164-aa5e-954b95961ec7",
+    "productId": "43",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 30,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "105",
+    "legacyId": "7145450b-7b7d-48ca-a26f-d82b44112681",
+    "productId": "35",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 25,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "113",
+    "legacyId": "7236a412-c6c8-401b-8146-186740912eae",
+    "productId": "38",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 49,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "74",
+    "legacyId": "73ab781b-baa5-4b43-af93-8569fa1f2890",
+    "productId": "25",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 72,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "39",
+    "legacyId": "7931b36d-731e-46d7-8172-8b38357bbb66",
+    "productId": "13",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 16,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "150",
+    "legacyId": "79a6c677-0165-4bab-a2ad-f9a6b39d1b89",
+    "productId": "50",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "20",
+    "legacyId": "7e39cb07-1a37-444c-95ed-10ad9d1becba",
+    "productId": "7",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 73,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "153",
+    "legacyId": "7ea65725-8230-4544-9599-784cf680bcb5",
+    "productId": "51",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "8",
+    "legacyId": "8220d11b-8c84-4962-a0cf-3040b9762e43",
+    "productId": "3",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 47,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "169",
+    "legacyId": "832144ae-6a2c-424f-acef-bf3859b5de63",
+    "productId": "57",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "96",
+    "legacyId": "83e229c1-78ba-43e8-9eb7-9a3917abc86d",
+    "productId": "32",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 10,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "108",
+    "legacyId": "84a8d9c1-b9b1-4b86-9f9f-d11aee925ede",
+    "productId": "36",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 28,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "81",
+    "legacyId": "84f14a49-f2f3-4e5e-bcca-1d4236a2ea25",
+    "productId": "27",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 24,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "97",
+    "legacyId": "852c8204-b91b-4c23-9d6b-0cdce4c2953c",
+    "productId": "33",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 37,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "139",
+    "legacyId": "8595e75b-c3d6-4f8c-aeb7-3f3dcb06021d",
+    "productId": "47",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "143",
+    "legacyId": "85d7b4f6-675f-452b-ab42-42e6a8588f39",
+    "productId": "48",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "160",
+    "legacyId": "877363d7-b8cb-4a73-b297-571a74e8a0a7",
+    "productId": "54",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "14",
+    "legacyId": "8b4750d1-59c7-4cee-9a18-ec805573f65b",
+    "productId": "5",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "88",
+    "legacyId": "8f00967f-49fe-42e6-98f1-9ca494c92a2a",
+    "productId": "30",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 18,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "135",
+    "legacyId": "8f351064-a15e-4042-9a66-01a4f78c9ee1",
+    "productId": "45",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 19,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "27",
+    "legacyId": "8f677865-7b9c-40d7-8aa9-8c60c1c0f492",
+    "productId": "9",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 16,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "72",
+    "legacyId": "8fc2201b-8cca-4d22-b9fb-01acab004277",
+    "productId": "24",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "52",
+    "legacyId": "90588f8e-ee67-4325-acc2-db464bd457a1",
+    "productId": "18",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 28,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "9",
+    "legacyId": "91449381-365d-4416-8102-99b5f2f1bf63",
+    "productId": "3",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 15,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "154",
+    "legacyId": "921896c5-5acb-4148-8856-4fc35ed17f16",
+    "productId": "52",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 25,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "141",
+    "legacyId": "9258b110-381a-4ac3-b705-c470881cad3e",
+    "productId": "47",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 18,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "158",
+    "legacyId": "947365d8-7862-422d-a41b-bbbabb57a9ed",
+    "productId": "53",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "44",
+    "legacyId": "992d93f8-61b5-4b98-9b5a-fcc113f6e062",
+    "productId": "15",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 75,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "117",
+    "legacyId": "992e19ee-333f-41b0-8f59-a577f5e9b570",
+    "productId": "39",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "76",
+    "legacyId": "9b685caa-f3d3-49b5-8411-8e2f634893c4",
+    "productId": "26",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "162",
+    "legacyId": "9bb4629e-3cec-4144-8659-b88a20f33288",
+    "productId": "54",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 6,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "22",
+    "legacyId": "9c149673-b1b4-4173-a86e-c8a13a77bbb8",
+    "productId": "8",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "69",
+    "legacyId": "9c1f84a2-82cd-4ef7-9b25-5b3163a6da75",
+    "productId": "23",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "38",
+    "legacyId": "9c69d89e-f7ec-4bc6-8819-62801012b7d8",
+    "productId": "13",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 46,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "119",
+    "legacyId": "9d3abbe4-e33c-468b-b040-a323411ec9ad",
+    "productId": "40",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 40,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "177",
+    "legacyId": "9d72bb15-99fc-41c7-871b-44254eb6f94d",
+    "productId": "59",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 28,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "33",
+    "legacyId": "9f5e8e08-fe26-4ef1-b8c9-7b6ab0cb82d5",
+    "productId": "11",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "77",
+    "legacyId": "a040aa04-befe-4fda-bb85-96028b6f5c92",
+    "productId": "26",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 63,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "47",
+    "legacyId": "a2e366c0-b470-498c-9931-ab813dbaada6",
+    "productId": "16",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 38,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "42",
+    "legacyId": "a336b42b-74ec-454e-8664-de6728a2cada",
+    "productId": "14",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "170",
+    "legacyId": "a3cf1840-8505-4930-b58b-530cc4f9b232",
+    "productId": "57",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 68,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "36",
+    "legacyId": "a401f9dd-b7ca-4628-a6d3-b9c0308755e5",
+    "productId": "12",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "6",
+    "legacyId": "a6d4ca34-35c7-47e5-8fa9-996f53d183eb",
+    "productId": "2",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 8,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "86",
+    "legacyId": "ab65f427-5a9e-4a2a-94ec-6cd51efe5d8d",
+    "productId": "29",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 21,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "130",
+    "legacyId": "aebf8e8f-3196-4598-ac30-6eaac873d7df",
+    "productId": "44",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "142",
+    "legacyId": "af99a6e8-4ae0-4136-a638-f84127715d21",
+    "productId": "48",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 18,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "175",
+    "legacyId": "b47ef231-b9de-4a24-b8c9-d2616d93616b",
+    "productId": "59",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 10,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "53",
+    "legacyId": "b8024252-5ca2-4c0e-bdef-f7cdc28c7569",
+    "productId": "18",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 52,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "7",
+    "legacyId": "b8b37b9f-6da2-445e-b3ae-beaac83f15d7",
+    "productId": "3",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 20,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "137",
+    "legacyId": "b9850505-4467-4b98-b74f-ac8b5acb1b10",
+    "productId": "46",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 47,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "84",
+    "legacyId": "ba5d18db-36bb-4440-b98b-55023ab192f7",
+    "productId": "28",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "133",
+    "legacyId": "ba728ac5-100d-4f35-be5d-f485da55b500",
+    "productId": "45",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "64",
+    "legacyId": "bb4ee4b3-1d67-4fd2-832b-68c85e4b6046",
+    "productId": "22",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 21,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "98",
+    "legacyId": "bc7c0672-9546-473a-b809-a7c544f8f417",
+    "productId": "33",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "85",
+    "legacyId": "bcdcfe7a-fe01-4b25-8a72-59d77a158d4f",
+    "productId": "29",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 18,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "136",
+    "legacyId": "bd1a7593-5e7c-4241-a76b-d8d6582b76dc",
+    "productId": "46",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 31,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "4",
+    "legacyId": "bdeb2de5-eed7-4507-b4d1-55c3c08bd8d4",
+    "productId": "2",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "3",
+    "legacyId": "bf5dfe3f-2a8e-4db5-87f1-c4d1c66cc77e",
+    "productId": "1",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 17,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "37",
+    "legacyId": "c0063ec7-4779-4ab7-b318-f1b727f0fb05",
+    "productId": "13",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 13,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "34",
+    "legacyId": "c04ebd4d-623d-48aa-98b5-2a31f44c266d",
+    "productId": "12",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "164",
+    "legacyId": "c0fbfe99-4156-4507-a5d9-f597a67c2a33",
+    "productId": "55",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 33,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "165",
+    "legacyId": "c205fa04-6557-4941-8c96-081e5fbc8655",
+    "productId": "55",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "124",
+    "legacyId": "c60163bb-e1f2-49c2-83c3-069c512a9cb5",
+    "productId": "42",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "185",
+    "legacyId": "c6426fd9-9d2b-4f6f-b750-8b1f321a85cb",
+    "productId": "62",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 52,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "152",
+    "legacyId": "c6d6f090-e3ff-4c72-86e9-71edc7b3510a",
+    "productId": "51",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 63,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "19",
+    "legacyId": "c732cea4-df15-4cd0-81e3-2b0935ed329a",
+    "productId": "7",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 12,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "132",
+    "legacyId": "c9658d37-0b01-4054-8d03-c30491acea66",
+    "productId": "44",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "131",
+    "legacyId": "c9a5831a-64f3-4b9b-9b40-a8ae5f645cc6",
+    "productId": "44",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "121",
+    "legacyId": "ca0a10fc-447d-432a-8de4-9f24f7d73c62",
+    "productId": "41",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 40,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "138",
+    "legacyId": "ccd7500c-1070-40bf-8ef5-e6e83069b6b4",
+    "productId": "46",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 20,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "103",
+    "legacyId": "cd283b53-fb52-4619-9efe-81938a56bd36",
+    "productId": "35",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "57",
+    "legacyId": "ce806581-229e-437e-9c6c-bda0fa7950c3",
+    "productId": "19",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 20,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "46",
+    "legacyId": "cefc0b24-1a2e-424b-8c22-b743e3b701f7",
+    "productId": "16",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 11,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "68",
+    "legacyId": "cfccde05-c777-4168-bf14-31e5c58b36bb",
+    "productId": "23",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 56,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "126",
+    "legacyId": "d0be968d-e534-4c92-8f96-4a7092f05068",
+    "productId": "42",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 6,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "2",
+    "legacyId": "d0c59945-0f0d-42f5-b582-9a038052e950",
+    "productId": "1",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 49,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "82",
+    "legacyId": "d197029a-ead6-48f1-9328-2549a3986416",
+    "productId": "28",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 39,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "78",
+    "legacyId": "d26a2b73-e155-4f1d-a5b8-7ae565afef4e",
+    "productId": "26",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 25,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "50",
+    "legacyId": "d2da4d2e-6ea9-4321-8003-bcc1db3a150c",
+    "productId": "17",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 42,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "92",
+    "legacyId": "d413cba8-3001-4f6f-ae47-d5708be3db2d",
+    "productId": "31",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 78,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "179",
+    "legacyId": "d5a53ff9-3416-4205-a7bd-276ae04bb78e",
+    "productId": "60",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 31,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "16",
+    "legacyId": "d876aa32-a32f-4d16-b4ab-cc46d4d31112",
+    "productId": "6",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 39,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "125",
+    "legacyId": "d98e6744-2bb0-4d04-a085-000e3dfdfb86",
+    "productId": "42",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 76,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "151",
+    "legacyId": "dcbe11d2-8ae8-4bb4-b4c9-dc6152c60e7c",
+    "productId": "51",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 31,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "83",
+    "legacyId": "dcf46693-a174-469f-a34b-5959b93dfa8a",
+    "productId": "28",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 62,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "109",
+    "legacyId": "dddf9a60-18d2-4ddd-b4a8-ebb642c5febb",
+    "productId": "37",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "186",
+    "legacyId": "de4b6177-40bb-4124-9ed7-d3ea348184a0",
+    "productId": "62",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "122",
+    "legacyId": "e0bd4e20-24de-4b52-b4f8-f37b37d1ba77",
+    "productId": "41",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 56,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "75",
+    "legacyId": "e3728d0b-06bf-4f98-851b-a83adb8e91c0",
+    "productId": "25",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 24,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "12",
+    "legacyId": "e557b103-8d58-4113-887d-f84fc85f8d5a",
+    "productId": "4",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 16,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "181",
+    "legacyId": "e671afa7-ef81-42e9-a53c-4a95680d050b",
+    "productId": "61",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "71",
+    "legacyId": "e89682fb-9ea8-4bbc-8d17-419cdcb930b6",
+    "productId": "24",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 47,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "73",
+    "legacyId": "ea29513e-a3bd-4d67-8ad1-ee0a3b9ad03a",
+    "productId": "25",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 34,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "58",
+    "legacyId": "ebceb48f-d0df-4c01-b86a-66744fe8b1e7",
+    "productId": "20",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 17,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "99",
+    "legacyId": "ec349826-2e91-4b3d-9281-29477db213e4",
+    "productId": "33",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 23,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "32",
+    "legacyId": "ed2b0a1c-8644-458a-b943-fd5da6f0c92c",
+    "productId": "11",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 57,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "140",
+    "legacyId": "ed334f41-e845-4b92-8698-76bd973a367f",
+    "productId": "47",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 48,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "24",
+    "legacyId": "ed83c816-abeb-4efa-b8dc-0ffc46fdbd93",
+    "productId": "8",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 8,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "55",
+    "legacyId": "f0294f48-8713-4586-9452-bf6c5d7b223d",
+    "productId": "19",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 14,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "41",
+    "legacyId": "f0a5de0e-38c9-4670-ad59-d2227e9bf0c3",
+    "productId": "14",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 62,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "173",
+    "legacyId": "f0ddd6c3-159d-4de3-9075-fd9f9861f1b0",
+    "productId": "58",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 40,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "61",
+    "legacyId": "f10d6e69-16db-40dc-840b-7e9466d4e426",
+    "productId": "21",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 21,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "161",
+    "legacyId": "f1b02d37-70b5-45ff-ab13-207b851703f5",
+    "productId": "54",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 58,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "30",
+    "legacyId": "f3e8dfb1-397a-42f4-9612-5ebc9d84e246",
+    "productId": "10",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 22,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "66",
+    "legacyId": "f442196d-ca22-4e96-aefc-0f60ad6e42e4",
+    "productId": "22",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "115",
+    "legacyId": "f7424764-a716-455f-96d1-328d48167e88",
+    "productId": "39",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 15,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "60",
+    "legacyId": "f7d42073-bc61-4481-aef0-e13806372bd6",
+    "productId": "20",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 8,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "156",
+    "legacyId": "f8a61b8a-d65d-4a6c-83f1-958a63a6bbec",
+    "productId": "52",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 26,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "11",
+    "legacyId": "f8fa643e-5e78-42f3-b1c0-8e6aeefff9fb",
+    "productId": "4",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 36,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "144",
+    "legacyId": "f9d2644a-2435-4a6b-872c-c293b7d5555e",
+    "productId": "48",
+    "name": "Size lớn",
+    "priceModifier": 35000,
+    "stockQuantity": 29,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "182",
+    "legacyId": "fcdaf8c7-e80f-4522-9b96-30aa2010e463",
+    "productId": "61",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 54,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "101",
+    "legacyId": "fed9b00a-5325-4e3f-9699-0bc1de3e5559",
+    "productId": "34",
+    "name": "Size tiêu chuẩn",
+    "priceModifier": 0,
+    "stockQuantity": 45,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "79",
+    "legacyId": "ff56ab2f-8d6d-4d7c-b14d-08946cb4d750",
+    "productId": "27",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 27,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "106",
+    "legacyId": "ff9f0fca-1adb-4f0f-8b76-274596c8b8c4",
+    "productId": "36",
+    "name": "Size nhỏ",
+    "priceModifier": -15000,
+    "stockQuantity": 10,
+    "status": "active",
+    "_sample": false
+  }
+]

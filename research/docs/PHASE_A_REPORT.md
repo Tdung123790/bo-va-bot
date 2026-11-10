@@ -1,0 +1,11 @@
+# PHA A — tiếp nhận dataset research
+
+**Ngày:** 09/11/2026. **Kết quả:** hoàn thành tiếp nhận, audit và baseline Churn offline; không import database, không thay catalog/website.
+
+- Đầu vào có tại `research/input/Bo_Bot_data.zip`, `research/input/ML_CATALOG_MAPPING_VERIFIED.json`, `research/input/CHURN_HOLDOUT_SYNTHETIC.json`. Tên chính xác `research/input/BoBot_ML_CATALOG_MAPPING_VERIFIED.json` được nêu trong task **không tồn tại**; file alias đang có chứa `source_zip=Bo_Bot_data.zip`, snapshot 09/11, 62 product/186 variant và đã được kiểm trực tiếp với CSV/site. Không coi là xác minh UUID trên Supabase LIVE.
+- `node research/scripts/audit-dataset.mjs` **PASS**: 38 ZIP entries; PK không trùng/rỗng, FK đã kiểm không mồ côi; 62/62 product và 186/186 variant khớp tên, ID và giá ×1.000; 13 options nghiên cứu khác 16 options frontend; 567 refund COMPLETED thiếu charge paid; 12.360 đơn dùng tỷ lệ 1.000 VND/điểm cũ. Báo cáo chi tiết tại `DATASET_VALIDATION_REPORT.md` và tổng số dòng tại `research/output/dataset-audit.synthetic.json` (ignored).
+- `node research/scripts/train-churn.mjs` **PASS** trên 8.500 dòng synthetic, 8 feature lịch sử, split 6.375/2.125 stratified seed 42, không dùng customer ID, ngày mốc, future purchase hoặc nhãn làm feature. Baseline logistic regression: confusion matrix `[[1422,131],[240,332]]`, ROC-AUC **0,8913**, PR-AUC **0,7272**, accuracy **0,8254**, precision **0,7171**, recall **0,5804**, F1 **0,6415**. Khác mô hình HistGradientBoostingClassifier bàn giao; không so sánh như cùng phép thử. Metadata/model synthetic nằm trong `research/output/` và không có customer IDs.
+- `ML_SEARCH_DESIGN.md` mô tả truy hồi content-based cho Guest/Customer, API chỉ đọc và fallback vào catalog hiện hành. ZIP không có nhãn query→product, vì vậy chất lượng tìm kiếm theo query **chưa được kiểm chứng**. Recommendation holdout chỉ dùng đánh giá offline history→future, không dùng future làm feature.
+- `.gitignore` bảo vệ `research/input/`, `research/output/`, `research/models/`; tài liệu và script nhỏ được giữ ngoài các thư mục bị ignore.
+
+**Không thực hiện:** seed Auth/Orders/Payments/Reviews, nhập 29 CSV vào 18 bảng vận hành, hiển thị xác suất synthetic cho khách thật, triển khai search model vào storefront. Database LOCAL và hai đơn VNPAY TEST chưa bị truy cập/ghi bởi PHA A.

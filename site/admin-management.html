@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quản trị cửa hàng | Bơ &amp; Bột</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/admin-management.css">
+</head>
+<body data-page="quan-tri-cua-hang">
+  <div data-include="header"></div>
+  <main id="main-content" class="management-page">
+    <header class="management-header">
+      <h1>Quản trị Bơ &amp; Bột</h1>
+      <p>Quản lý sản phẩm, khuyến mãi, nhân viên và đánh giá khách hàng.</p>
+      <nav><a href="admin-orders.html">Đơn hàng</a><a href="dashboard.html">Dashboard</a><a href="staff-orders.html">Vận hành</a></nav>
+    </header>
+    <p id="management-notice" role="status" aria-live="polite">Đang kiểm tra quyền truy cập…</p>
+    <div id="management-content" hidden>
+      <section class="management-panel" id="products-panel">
+        <h2>Sản phẩm và tồn kho</h2>
+        <div class="management-split">
+          <div>
+            <label for="product-search">Tìm sản phẩm</label>
+            <input id="product-search" type="search" placeholder="Nhập tên bánh">
+            <label for="product-select">Danh sách sản phẩm</label>
+            <select id="product-select" size="10" aria-label="Chọn sản phẩm"></select>
+          </div>
+          <form id="product-form" class="management-form">
+            <label>Tên bánh <input name="name" required maxlength="180"></label>
+            <label>Mô tả <textarea name="description" rows="3"></textarea></label>
+            <label>Ảnh HTTPS <input name="imageUrl" type="url"></label>
+            <div class="management-pair"><label>Giá (VND) <input name="price" type="number" min="1" step="1" required></label><label>Tồn kho <input name="stock" type="number" min="0" step="1" required></label></div>
+            <label>Trạng thái <select name="status"><option value="active">Đang bán</option><option value="inactive">Ngừng bán</option></select></label>
+            <label class="management-check"><input name="featured" type="checkbox"> Sản phẩm nổi bật</label>
+            <label class="management-check"><input name="bestSeller" type="checkbox"> Bán chạy</label>
+            <button type="submit">Lưu sản phẩm</button>
+          </form>
+        </div>
+      </section>
+      <section class="management-panel" id="promotions-panel">
+        <h2>Khuyến mãi tự động</h2>
+        <p>Hệ thống chỉ chọn một khuyến mãi hợp lệ có mức giảm cao nhất cho mỗi đơn.</p>
+        <button type="button" id="promotion-activate-final">Kích hoạt ưu đãi 12/11 đã duyệt</button>
+        <div class="management-split">
+          <div><label for="promotion-select">Chọn chương trình</label><select id="promotion-select" size="9"></select><button type="button" id="promotion-new">Tạo khuyến mãi</button></div>
+          <form id="promotion-form" class="management-form">
+            <label>Tên chương trình <input name="name" required maxlength="160"></label>
+            <label>Mô tả <textarea name="description" rows="2"></textarea></label>
+            <div class="management-pair"><label>Loại giảm <select name="discountType"><option value="PERCENT">Phần trăm</option><option value="FIXED">Số tiền VND</option></select></label><label>Mức giảm <input name="discountValue" type="number" min="0.01" step="0.01" required></label></div>
+            <label>Phạm vi áp dụng <select name="targetType"><option value="ALL">Toàn cửa hàng</option><option value="PRODUCT">Một sản phẩm</option><option value="CATEGORY">Một danh mục</option></select></label>
+            <label>Sản phẩm áp dụng <select name="targetProduct"><option value="">Không chọn</option></select></label>
+            <label>Danh mục áp dụng <select name="targetCategory"><option value="">Không chọn</option></select></label>
+            <div class="management-pair"><label>Đơn tối thiểu (VND) <input name="minOrder" type="number" min="0" step="1" value="0" required></label><label>Giảm tối đa (VND) <input name="maxDiscount" type="number" min="0" step="1" placeholder="Để trống nếu không giới hạn"></label></div>
+            <div class="management-pair"><label>Bắt đầu (giờ Việt Nam) <input name="startsAt" type="datetime-local" step="1" required></label><label>Kết thúc (giờ Việt Nam) <input name="endsAt" type="datetime-local" step="1" required></label></div>
+            <div class="management-pair"><label>Giới hạn toàn chương trình <input name="usageLimit" type="number" min="0" step="1"></label><label>Giới hạn mỗi khách <input name="usagePerCustomer" type="number" min="0" step="1"></label></div>
+            <label>Trạng thái <select name="status"><option value="inactive">Chưa kích hoạt</option><option value="active">Hoạt động</option></select></label>
+            <p id="promotion-usage"></p>
+            <button type="submit">Lưu khuyến mãi</button>
+          </form>
+        </div>
+      </section>
+      <section class="management-panel" id="staff-panel">
+        <h2>Nhân viên và quyền truy cập</h2>
+        <div class="management-split">
+          <div><label for="profile-select">Tài khoản</label><select id="profile-select" size="8"></select></div>
+          <form id="profile-form" class="management-form">
+            <p id="profile-identity"></p>
+            <label>Vai trò <select name="role"><option value="customer">Customer</option><option value="staff">Staff</option><option value="admin">Admin</option></select></label>
+            <label>Trạng thái <select name="status"><option value="active">Hoạt động</option><option value="blocked">Khóa</option></select></label>
+            <button type="submit">Lưu quyền truy cập</button>
+          </form>
+        </div>
+      </section>
+      <section class="management-panel" id="reviews-panel">
+        <h2>Kiểm duyệt đánh giá</h2>
+        <p>Không từ chối chỉ vì đánh giá 1 sao hoặc góp ý tiêu cực hợp lệ.</p>
+        <label for="review-filter">Hiển thị <select id="review-filter"><option value="pending">Chờ duyệt</option><option value="all">Tất cả</option><option value="published">Đã công khai</option><option value="hidden">Đã ẩn</option></select></label>
+        <div id="moderation-list" class="moderation-list"></div>
+      </section>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="js/core/bootstrap.js"></script>
+  <script type="module" src="js/pages/admin-management.js"></script>
+</body>
+</html>

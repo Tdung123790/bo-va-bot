@@ -1,0 +1,22 @@
+import {readFileSync} from 'node:fs';
+
+const endpoint=process.env.BOBOT_DISPOSABLE_SUPABASE_URL;
+const key=process.env.BOBOT_DISPOSABLE_SERVICE_ROLE_KEY;
+if(process.env.BOBOT_DISPOSABLE_TEST!=='1'||!endpoint||!key)throw Error('DISPOSABLE_TEST_CONFIGURATION_REQUIRED');
+const url=new URL(endpoint);
+if(!['127.0.0.1','localhost'].includes(url.hostname)||url.port==='54321'||url.protocol!=='http:')throw Error('REFUSING_NON_DISPOSABLE_TARGET');
+const source=JSON.parse(readFileSync(new URL('../site/data/hcm-locations.json',import.meta.url),'utf8'));
+if(!Number.isFinite(source.bakery?.lat)||!Number.isFinite(source.bakery?.lng))throw Error('DEMO_ORIGIN_MISSING');
+const headers={apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=representation'};
+const existing=await fetch(new URL('/rest/v1/orders?select=id&limit=1',url),{headers});
+if(!existing.ok)throw Error(`DISPOSABLE_EMPTY_CHECK_FAILED_${existing.status}`);
+if((await existing.json()).length)throw Error('REFUSING_PROJECT_WITH_EXISTING_ORDERS');
+const settings=await fetch(new URL('/rest/v1/store_settings?store_key=eq.main&select=delivery_origin_approval_source&limit=1',url),{headers});
+if(!settings.ok)throw Error(`DISPOSABLE_SETTINGS_CHECK_FAILED_${settings.status}`);
+const current=(await settings.json())[0];
+if(current?.delivery_origin_approval_source&&!current.delivery_origin_approval_source.startsWith('TEST_ONLY_'))throw Error('REFUSING_APPROVED_NON_TEST_ORIGIN');
+const first=await fetch(new URL('/rest/v1/store_settings?on_conflict=store_key',url),{method:'POST',headers,body:JSON.stringify({store_key:'main',timezone:'Asia/Ho_Chi_Minh',bakery_lat:source.bakery.lat,bakery_lng:source.bakery.lng})});
+if(!first.ok)throw Error(`DEMO_ORIGIN_WRITE_FAILED_${first.status}`);
+const second=await fetch(new URL('/rest/v1/store_settings?store_key=eq.main',url),{method:'PATCH',headers,body:JSON.stringify({delivery_origin_approval_source:'TEST_ONLY_site/data/hcm-locations.json_not_surveyed',delivery_origin_approved_at:new Date().toISOString()})});
+if(!second.ok)throw Error(`DEMO_ORIGIN_LABEL_FAILED_${second.status}`);
+console.log('TEST_ONLY demo delivery origin configured on disposable loopback project; coordinates are not surveyed or approved for production');

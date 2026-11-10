@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>POS tại quầy | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head>
+<body data-page="pos">
+<div data-include="header"></div>
+<main id="main-content" class="ops-page">
+ <div class="ops-shell">
+  <header class="ops-heading"><div><h1>Bán hàng tại quầy</h1><p>POS mô phỏng · Dữ liệu và báo giá từ Supabase</p></div><nav aria-label="Nghiệp vụ"><a href="staff-orders.html">Xử lý đơn</a><a href="dashboard.html" data-admin-only hidden>Dashboard</a></nav></header>
+  <p id="pos-permission" role="status"></p>
+  <div id="pos-app" class="pos-layout" hidden>
+   <section class="ops-panel"><h2>Chọn sản phẩm</h2><div class="ops-fields"><label>Tìm theo tên hoặc mã<input id="pos-search" type="search" autocomplete="off"></label><label>Danh mục<select id="pos-category"><option value="">Tất cả</option></select></label></div><div id="pos-products" class="pos-products" aria-live="polite">Đang tải sản phẩm...</div></section>
+   <section class="ops-panel pos-checkout"><h2>Giỏ tại quầy</h2><p class="ops-note">Chỉ bán cho khách vãng lai trong luồng này. Liên kết tài khoản cần xác minh chủ sở hữu và chưa được bật.</p><div id="pos-cart" aria-live="polite"></div><div class="pos-quote"><p>Tiền hàng <strong id="pos-subtotal">—</strong></p><p>Khuyến mãi tự động <strong id="pos-discount">—</strong></p><p>Tổng thanh toán <strong id="pos-total">—</strong></p></div><p id="pos-error" class="ops-error" role="alert"></p><button id="pos-submit" class="ops-primary" type="button" disabled>Tạo đơn POS demo</button><button id="pos-release" class="ops-secondary" type="button" hidden>Kiểm tra đơn rồi tạo yêu cầu mới</button><p id="pos-result" class="ops-result" role="status"></p><button id="pos-complete" class="ops-primary" type="button" hidden>Xác nhận đã thu tiền mặt demo và giao bánh</button></section>
+  </div>
+ </div>
+</main>
+<div data-include="footer"></div>
+<script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/pos.js"></script>
+</body>
+</html>

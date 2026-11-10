@@ -1,4 +1,4 @@
-@import url('./base/fonts.css');
+/* Wix font-face definitions remain in fonts.css; their local WOFF2 files are unavailable. */
 @import url('./base/font-fallback.css');
 @import url('./base/tokens.css');
 @import url('./base/reset.css');
@@ -10,13 +10,19 @@
 
 @import url('./components/product-card.css');
 @import url('./pages/home.css');
+@import url('./pages/home-cards.css');
 @import url('./pages/menu.css');
 @import url('./pages/product.css');
 
 @import url('./components/cart-drawer.css');
 @import url('./pages/checkout.css');
+@import url('./pages/delivery-verification.css');
 
 @import url('./pages/account.css');
+@import url('./pages/wishlist.css');
+@import url('./pages/profile.css');
+@import url('./pages/admin-orders.css');
+@import url('./pages/operations.css');
 
 @import url('./pages/about.css');
 @import url('./pages/promotions.css');
@@ -25,3 +31,194 @@
 @import url('./pages/contact.css');
 @import url('./pages/customize.css');
 @import url('./pages/404.css');
+
+body[data-page="trang-chu"] .home-section {
+  background:
+    radial-gradient(circle at 92% 14%, rgba(176,159,131,.17), transparent 26rem),
+    radial-gradient(circle at 8% 88%, rgba(213,194,154,.19), transparent 30rem),
+    linear-gradient(145deg, #fef5e1 0%, #faeed8 52%, #fef5e1 100%);
+}
+
+body[data-page="trang-chu"] .home-story {
+  background: linear-gradient(120deg, #f4e7d0 0%, #fef5e1 55%, #f5e9d5 100%);
+}
+
+.home-promotions {
+  padding-block: 3.5rem;
+}
+
+.home-promotions .home-center {
+  margin-bottom: 2rem;
+}
+
+.home-promotions .home-center h2 {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.1;
+}
+
+#promotion-grid .promotion-tile:only-child {
+  width: min(100%, 54rem);
+  justify-self: center;
+}
+
+.promotion-tile {
+  min-height: 18rem;
+}
+
+.promotion-tile__content {
+  max-width: 24rem;
+  padding: 1.5rem;
+}
+
+.promotion-tile__content h3 {
+  font-size: 2rem;
+}
+
+.home-newsletter {
+  padding: 3.5rem 1.5rem;
+}
+
+.home-newsletter > div {
+  max-width: 40rem;
+}
+
+.home-newsletter h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  margin: .5rem 0 1rem;
+}
+
+.home-newsletter p {
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+.home-newsletter form {
+  max-width: 34rem;
+  margin: 1.5rem auto 0;
+}
+
+.home-newsletter input {
+  padding: .75rem;
+}
+
+.home-breather {
+  width: 100%;
+  height: clamp(23rem, 49vw, 36rem);
+  margin: 3rem 0;
+  background: #332a20;
+}
+
+.home-breather img {
+  inset: -15% 0;
+  width: 100%;
+  height: 130%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.home-breather blockquote {
+  max-width: 74rem;
+  font-size: clamp(1.7rem, 3.6vw, 3.9rem);
+  line-height: 1.17;
+  padding: 1.5rem clamp(1rem, 4vw, 4rem);
+}
+
+.home-breather.reveal-wipe {
+  clip-path: inset(0 100% 0 0);
+  opacity: .85;
+  transition:
+    clip-path 1.15s cubic-bezier(.22,1,.36,1),
+    opacity .8s ease;
+}
+
+.home-breather.reveal-wipe.is-visible {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+.about-values,
+.about-team {
+  padding-block: 3.75rem;
+}
+
+.about-section-heading {
+  margin-bottom: 2rem;
+}
+
+.about-section-heading h2 {
+  font-size: clamp(1.85rem, 3vw, 2.8rem);
+}
+
+.about-section-heading p {
+  font-size: 1rem;
+}
+
+.about-value {
+  padding: 1.5rem;
+}
+
+.about-value__icon {
+  margin-bottom: 1rem;
+}
+
+.about-team__grid {
+  gap: 1.6rem;
+}
+
+.about-member__photo {
+  height: clamp(14rem, 20vw, 18rem);
+}
+
+.about-mission {
+  padding: 4rem 1.5rem;
+}
+
+.about-mission h2 {
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  margin-bottom: 2rem;
+}
+
+.about-mission__word {
+  font-size: clamp(5rem, 12vw, 11rem);
+}
+
+.contact-main {
+  gap: 2rem;
+  align-items: start;
+}
+
+.contact-side {
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  #promotion-grid:has(> .promotion-tile:only-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .home-promotions {
+    padding-block: 2.75rem;
+  }
+
+  .home-newsletter {
+    padding: 3rem 1.25rem;
+  }
+
+  .home-newsletter form {
+    flex-wrap: wrap;
+  }
+
+  .about-values,
+  .about-team {
+    padding-block: 3rem;
+  }
+
+  .about-mission {
+    padding-block: 3.5rem;
+  }
+}
+
+

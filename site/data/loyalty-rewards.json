@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2",
+    "name": "Voucher 10%",
+    "description": "Giảm 10% cho đơn hàng",
+    "pointsRequired": 500,
+    "rewardType": "PERCENT_DISCOUNT",
+    "rewardValue": 10000,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "1",
+    "name": "Voucher 20.000đ",
+    "description": "Giảm 20.000đ cho đơn tiếp theo",
+    "pointsRequired": 200,
+    "rewardType": "FIXED_DISCOUNT",
+    "rewardValue": 20000,
+    "status": "active",
+    "_sample": false
+  },
+  {
+    "id": "3",
+    "name": "Bánh quy tặng kèm",
+    "description": "Đổi điểm nhận bánh quy thủ công",
+    "pointsRequired": 350,
+    "rewardType": "FREE_PRODUCT",
+    "rewardValue": 55000,
+    "status": "active",
+    "_sample": false
+  }
+]

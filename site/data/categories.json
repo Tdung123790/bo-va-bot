@@ -1,0 +1,72 @@
+[
+  {
+    "id": "Brownies",
+    "name": "Brownies",
+    "slug": "brownies",
+    "description": "",
+    "image": "",
+    "displayOrder": 1,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Bánh Kem GATO ",
+    "name": "Bánh Kem GATO ",
+    "slug": "bánh-kem-gato-",
+    "description": "",
+    "image": "",
+    "displayOrder": 2,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Bánh Mì Ngũ Cốc Men Tự Nhiên",
+    "name": "Bánh Mì Ngũ Cốc Men Tự Nhiên",
+    "slug": "bánh-mì-ngũ-cốc-men-tự-nhiên",
+    "description": "",
+    "image": "",
+    "displayOrder": 3,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Bánh Ngọt & Bánh Âu",
+    "name": "Bánh Ngọt & Bánh Âu",
+    "slug": "bánh-ngọt-&-bánh-âu",
+    "description": "",
+    "image": "",
+    "displayOrder": 4,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Bánh Quy Thủ Công",
+    "name": "Bánh Quy Thủ Công",
+    "slug": "bánh-quy-thủ-công",
+    "description": "",
+    "image": "",
+    "displayOrder": 5,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Muffins",
+    "name": "Muffins",
+    "slug": "muffins",
+    "description": "",
+    "image": "",
+    "displayOrder": 6,
+    "isActive": true,
+    "_sample": false
+  },
+  {
+    "id": "Tarts",
+    "name": "Tarts",
+    "slug": "tarts",
+    "description": "",
+    "image": "",
+    "displayOrder": 7,
+    "isActive": true,
+    "_sample": false
+  }
+]

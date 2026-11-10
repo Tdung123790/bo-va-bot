@@ -1,0 +1,1 @@
+.checkout-delivery-actions{display:flex;flex-wrap:wrap;gap:.6rem}.checkout-delivery-actions button{border:1px solid #a38b67;border-radius:.5rem;background:#fffdf7;color:inherit;padding:.65rem .85rem;min-height:2.75rem;cursor:pointer}.checkout-delivery-actions button:disabled{opacity:.55;cursor:wait}#checkout-verification{margin:0;font-size:.9rem;line-height:1.45}

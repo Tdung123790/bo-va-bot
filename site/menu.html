@@ -1,1 +1,65 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fef5e1"><title>Thực Đơn | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head><body data-page="thuc-don"><div data-include="header"></div><main id="main-content"><section class="menu-hero"><div><h1>Thực Đơn Của Bơ&amp;Bột</h1><p>Khám phá thế giới bánh nướng ngọt ngào được đánh thức từ những nguyên liệu hảo hạng nhất</p></div><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Các loại bánh nướng" loading="eager"></section><section class="menu-filters" aria-label="Bộ lọc sản phẩm"><div class="menu-filters__inner"><div><span class="menu-filters__label">Danh Mục</span><div id="category-filters" class="menu-chips" role="group" aria-label="Lọc danh mục"></div><label for="cake-group" class="menu-filters__label">Dòng bánh</label><select id="cake-group"><option value="">Tất cả dòng bánh</option></select></div><div class="menu-filters__tools"><label class="sr-only" for="product-search">Tìm tên bánh</label><input id="product-search" type="search" placeholder="Tìm tên bánh..."><label class="sr-only" for="product-sort">Sắp xếp</label><select id="product-sort"><option value="default">Mặc định</option><option value="best-seller">Bán chạy nhất</option><option value="price-asc">Giá: Thấp - Cao</option><option value="price-desc">Giá: Cao - Thấp</option></select></div></div></section><section class="menu-results"><p id="menu-count" role="status"></p><div id="menu-grid" class="product-grid" aria-live="polite"><p>Đang tải sản phẩm...</p></div><div id="menu-empty" class="empty-state" hidden><h2>Không tìm thấy sản phẩm</h2><p>Không tìm thấy sản phẩm nào phù hợp với tìm kiếm của bạn.</p><button id="clear-filters" class="pill-button" type="button">Xóa Bộ Lọc</button></div><div id="menu-pagination" class="menu-pagination"></div></section></main><div data-include="footer"></div><script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/menu.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fef5e1">
+  <title>Thực Đơn | Bơ & Bột</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="thuc-don">
+  <div data-include="header"></div>
+  <main id="main-content">
+    <section class="menu-hero">
+      <div class="menu-hero__inner">
+        <div class="menu-hero__copy">
+          <h1>Thực Đơn Của Bơ&amp;Bột</h1>
+          <p>Khám phá thế giới bánh nướng ngọt ngào được đánh thức từ những nguyên liệu hảo hạng nhất</p>
+        </div>
+        <div class="menu-hero__visual">
+          <div class="menu-hero__image">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Các loại bánh nướng" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="menu-filters" aria-label="Bộ lọc sản phẩm">
+      <div class="menu-filters__inner">
+        <div class="menu-filters__categories">
+          <div class="menu-filters__heading">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 12h10m-7 5h4"/></svg>
+            <span class="menu-filters__label">Danh Mục</span>
+          </div>
+          <div id="category-filters" class="menu-chips" role="group" aria-label="Lọc danh mục"></div>
+        </div>
+        <div class="menu-filters__tools">
+          <div class="menu-filters__search">
+            <label class="sr-only" for="product-search">Tìm tên bánh</label>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input id="product-search" type="text" placeholder="Tìm tên bánh...">
+            <p id="menu-search-status" role="status" aria-live="polite"></p>
+          </div>
+          <label class="sr-only" for="product-sort">Sắp xếp</label>
+          <select id="product-sort">
+            <option value="default">Mặc định</option>
+            <option value="best-seller">Bán chạy nhất</option>
+            <option value="price-asc">Giá: Thấp - Cao</option>
+            <option value="price-desc">Giá: Cao - Thấp</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="menu-results">
+      <div id="menu-grid" class="product-grid" aria-live="polite"><p>Đang tải sản phẩm...</p></div>
+      <div id="menu-empty" class="empty-state" hidden>
+        <h2>Không tìm thấy sản phẩm</h2>
+        <p>Không tìm thấy sản phẩm nào phù hợp với tìm kiếm của bạn.</p>
+        <button id="clear-filters" class="pill-button" type="button">Xóa Bộ Lọc</button>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="js/core/bootstrap.js"></script>
+  <script type="module" src="js/pages/menu.js"></script>
+</body>
+</html>

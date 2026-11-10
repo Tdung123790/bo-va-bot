@@ -1,6 +1,75 @@
-import * as cart from '../services/cartService.js';import {formatVND} from '../core/format.js';import {escapeHtml} from '../core/dom.js';import {initCheckoutForm} from './checkout-form.js';
+import * as cart from '../services/cartService.js';
+import {calculateOrder} from '../services/orderService.js';
+import {getCurrentMember} from '../services/authService.js';
+import {loginUrl} from '../core/guard.js';
+import {formatVND} from '../core/format.js';
+import {escapeHtml} from '../core/dom.js';
+import {toast} from '../core/toast.js';
+import {initCheckoutForm} from './checkout-form.js';
+import {isSupabaseMode} from '../core/backend.js';
+import {getById as getCustomCakeById,getOptions} from '../services/customCakeService.js';
+
 let initialized=false;
-export async function initCartDrawer(){if(initialized)return;initialized=true;let dialog=document.querySelector('#cart-drawer');if(!dialog){const mount=document.createElement('div');document.body.append(mount);const r=await fetch('partials/cart-drawer.html');if(!r.ok)throw Error('Không tải được giỏ hàng');mount.innerHTML=await r.text();dialog=mount.querySelector('dialog');}
+export async function initCartDrawer(){
+ if(initialized)return;initialized=true;
+ let dialog=document.querySelector('#cart-drawer');
+ if(!dialog){const mount=document.createElement('div');document.body.append(mount);const response=await fetch('partials/cart-drawer.html');if(!response.ok)throw Error('Không tải được giỏ hàng');mount.innerHTML=await response.text();dialog=mount.querySelector('dialog');}
  const area=dialog.querySelector('#cart-drawer-items'),total=dialog.querySelector('#cart-drawer-total');
- const render=()=>{const items=cart.getCart();area.innerHTML=items.length?items.map(item=>`<article class="cart-line" data-key="${escapeHtml(item.key)}"><div><strong>${escapeHtml(item.productNameSnapshot)}</strong><p>${formatVND(item.unitPrice)}</p></div><div class="cart-line__actions"><button type="button" data-cart-minus aria-label="Giảm số lượng">−</button><span>${item.quantity}</span><button type="button" data-cart-plus aria-label="Tăng số lượng">+</button><button type="button" data-cart-remove aria-label="Xóa sản phẩm">✕</button></div></article>`).join(''):'<p class="cart-empty">Giỏ Hàng Của Bạn Trống. Thêm một số bánh ngọt ngon lành để bắt đầu.</p>';total.textContent=formatVND(cart.getTotal());dialog.querySelector('#cart-checkout').disabled=!items.length;};
- cart.subscribe(render);window.addEventListener('bobot:cart-open',()=>{render();if(!dialog.open)dialog.showModal();});window.addEventListener('bobot:cart-close',()=>dialog.close());dialog.querySelector('[data-cart-close]').addEventListener('click',cart.closeCart);dialog.addEventListener('close',()=>cart.closeCart());dialog.querySelector('#cart-clear').addEventListener('click',()=>cart.clearCart());dialog.querySelector('#cart-checkout').addEventListener('click',async()=>{cart.closeCart();await initCheckoutForm();document.querySelector('#checkout-dialog').showModal();window.dispatchEvent(new Event('bobot:checkout-open'));});area.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const key=b.closest('[data-key]')?.dataset.key;const item=cart.getCart().find(i=>i.key===key);if(!item)return;try{if(b.hasAttribute('data-cart-minus'))cart.updateQuantity(key,Math.max(1,item.quantity-1));if(b.hasAttribute('data-cart-plus'))cart.updateQuantity(key,item.quantity+1);if(b.hasAttribute('data-cart-remove'))cart.removeFromCart(key);}catch(err){alert(err.message);}});render();}
+ const discount=dialog.querySelector('#cart-drawer-discount'),checkout=dialog.querySelector('#cart-checkout');
+ let renderVersion=0,opening=false;
+ async function render(){
+  const version=++renderVersion,items=cart.getCart();
+  const options=items.some(item=>item.customCakeId)?await getOptions().catch(()=>null):null;
+  if(version!==renderVersion)return;
+  const detail=item=>{
+   const cake=item.customCakeId?getCustomCakeById(item.customCakeId):null;
+   if(!cake)return '';
+   const fields=[['sizes','sizeId','Kích thước'],['flavors','flavorId','Cốt bánh'],['creams','creamId','Kem phủ'],['fonts','fontId','Font chữ'],['textColors','colorId','Màu chữ']];
+   const parts=fields.map(([bucket,key,label])=>{const choice=options?.[bucket]?.find(value=>value.id===cake[key]);return choice?`${label}: ${choice.name}`:null;}).filter(Boolean);
+   if(cake.text)parts.push(`Lời chúc: “${cake.text}”`);
+   return parts.length?`<small>${escapeHtml(parts.join(' · '))}</small>`:'';
+  };
+  area.innerHTML=items.length?items.map(item=>`<article class="cart-line" data-key="${escapeHtml(item.key)}"><div><strong>${escapeHtml(item.productNameSnapshot)}</strong>${detail(item)}<p>${formatVND(item.unitPrice)}</p></div><div class="cart-line__actions"><button type="button" data-cart-minus aria-label="Giảm số lượng">−</button><span>${item.quantity}</span><button type="button" data-cart-plus aria-label="Tăng số lượng">+</button><button type="button" data-cart-remove aria-label="Xóa sản phẩm">✕</button></div></article>`).join(''):'<p class="cart-empty">Giỏ Hàng Của Bạn Trống. Thêm một số bánh ngọt ngon lành để bắt đầu.</p>';
+  checkout.disabled=!items.length;discount.hidden=true;
+  if(!items.length){total.textContent=formatVND(0);return;}
+  if(isSupabaseMode()){total.textContent='Chọn ngày giờ nhận để xem báo giá backend';return;}
+  total.textContent='Đang tính...';
+  try{
+   const quote=await calculateOrder({items,fulfillmentType:'pickup'});
+   if(version!==renderVersion)return;
+   discount.hidden=quote.discountAmount===0;
+   discount.querySelector('strong').textContent='−'+formatVND(quote.discountAmount);
+   total.textContent=formatVND(quote.totalAmount);
+  }catch(error){if(version!==renderVersion)return;total.textContent=error.message;checkout.disabled=true;}
+ }
+ async function beginCheckout(){
+  if(opening||!cart.getCart().length)return;
+  const member=getCurrentMember();
+  if(!member){
+   const next=new URL(location.href);next.searchParams.set('checkout','1');
+   location.assign(loginUrl('Vui lòng đăng nhập để đặt bánh online.',next.pathname.split('/').pop()+next.search+next.hash));
+   return;
+  }
+  if(member.role!=='customer'){toast({title:'Cần tài khoản khách hàng',description:'Đơn online chỉ dành cho tài khoản Customer.',variant:'destructive'});return;}
+  opening=true;
+  try{
+   await initCheckoutForm();
+   cart.closeCart();
+   const form=document.querySelector('#checkout-dialog');
+   if(!form.open)form.showModal();
+   window.dispatchEvent(new Event('bobot:checkout-open'));
+   if(new URLSearchParams(location.search).has('checkout')){const url=new URL(location.href);url.searchParams.delete('checkout');history.replaceState(null,'',url.pathname+url.search+url.hash);}
+  }catch(error){toast({title:'Không thể mở thanh toán',description:error.message,variant:'destructive'});}
+  finally{opening=false;}
+ }
+ cart.subscribe(render);
+ window.addEventListener('bobot:cart-open',()=>{render();if(!dialog.open)dialog.showModal();});
+ window.addEventListener('bobot:cart-close',()=>{if(dialog.open)dialog.close();});
+ dialog.querySelector('[data-cart-close]').addEventListener('click',cart.closeCart);
+ dialog.addEventListener('close',()=>cart.closeCart());
+ dialog.querySelector('#cart-clear').addEventListener('click',()=>cart.clearCart());
+ checkout.addEventListener('click',beginCheckout);
+ area.addEventListener('click',event=>{const button=event.target.closest('button');if(!button)return;const key=button.closest('[data-key]')?.dataset.key;const item=cart.getCart().find(row=>row.key===key);if(!item)return;try{if(button.hasAttribute('data-cart-minus'))cart.updateQuantity(key,Math.max(1,item.quantity-1));if(button.hasAttribute('data-cart-plus'))cart.updateQuantity(key,item.quantity+1);if(button.hasAttribute('data-cart-remove'))cart.removeFromCart(key);}catch(error){toast({title:'Không thể cập nhật giỏ',description:error.message,variant:'destructive'});}});
+ await render();
+ if(new URLSearchParams(location.search).get('checkout')==='1'&&getCurrentMember()&&cart.getCart().length)queueMicrotask(beginCheckout);
+}

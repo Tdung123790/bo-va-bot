@@ -1,0 +1,13 @@
+#review-submit-section{padding:28px 24px;margin-top:20px;margin-bottom:36px;background:#fffdf9;border:1px solid #e3d7ca;border-radius:14px}
+#review-submit-form{max-width:640px;display:grid;gap:10px}
+#review-submit-form label{font-weight:600}
+#review-submit-form select,#review-submit-form textarea{width:100%;min-width:0;padding:12px;border:1px solid #b6a89b;border-radius:8px;background:white;color:#241d19;font:inherit}
+#review-submit-form button{background:#49322c;color:white;padding:12px 20px;border:0;border-radius:8px;cursor:pointer;justify-self:start}
+#review-submit-form button:disabled{opacity:.6}
+#review-submit-status{min-height:24px}
+.review-own{margin-top:28px;border-top:1px solid #e3d7ca;padding-top:20px}
+.review-own h3{margin:0 0 14px}
+.review-own article{padding:14px 0;border-bottom:1px solid #e3d7ca}
+.review-own article h4,.review-own article p{margin:0 0 6px;overflow-wrap:anywhere}
+.review-own article p:nth-child(2){font-weight:600}
+@media(max-width:600px){#review-submit-section{padding:20px 14px}}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Xử lý đơn | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head>
+<body data-page="staff-orders">
+<div data-include="header"></div>
+<main id="main-content" class="ops-page">
+ <div class="ops-shell">
+  <header class="ops-heading"><div><h1>Xử lý đơn hàng</h1><p>Đơn Online và tại quầy · Thao tác được kiểm tra bởi RPC</p></div><nav aria-label="Nghiệp vụ"><a href="pos.html">POS tại quầy</a><a href="dashboard.html" data-admin-only hidden>Dashboard</a></nav></header>
+  <p id="staff-permission" role="status"></p>
+  <section id="staff-app" hidden><div class="ops-fields"><label>Kênh<select id="staff-channel"><option value="all">Tất cả</option><option value="online">Online</option><option value="offline">Tại quầy</option></select></label><label>Trạng thái<select id="staff-status"><option value="all">Tất cả</option><option value="pending">Chờ xử lý</option><option value="confirmed">Đã xác nhận</option><option value="preparing">Đang chuẩn bị</option><option value="shipping">Đang giao</option><option value="completed">Hoàn tất</option><option value="cancelled">Đã hủy</option></select></label><button id="staff-refresh" class="ops-secondary" type="button">Tải lại</button></div><p id="staff-error" class="ops-error" role="alert"></p><div id="staff-list" class="staff-list" aria-live="polite"></div></section>
+ </div>
+</main>
+<div data-include="footer"></div>
+<script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/staff-orders.js"></script>
+</body>
+</html>

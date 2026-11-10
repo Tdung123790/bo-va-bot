@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quản Lý Đơn Hàng | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head>
+<body data-page="quan-ly-don-hang">
+  <div data-include="header"></div>
+  <main id="main-content" class="admin-orders-page">
+    <div class="admin-orders-container">
+      <p id="admin-permission" role="status"></p>
+      <div id="admin-ui" hidden>
+        <header class="admin-orders-heading">
+          <div><h1>Hệ Thống Quản Lý Đơn Hàng B2C</h1><p>Trang dành riêng cho Quản trị viên điều phối quy trình làm bánh và giao nhận</p></div>
+          <button id="admin-refresh" type="button">Tải Lại Đơn Hàng</button>
+        </header>
+        <div class="admin-toolbar">
+          <label for="admin-search" class="sr-only">Tìm đơn hàng</label>
+          <input id="admin-search" type="search" placeholder="Tìm theo mã đơn, tên hoặc số điện thoại...">
+          <label for="admin-status" class="sr-only">Lọc trạng thái đơn hàng</label>
+          <select id="admin-status"><option value="all">Tất cả</option><option value="pending">Chờ xử lý</option><option value="preparing">Đang làm</option><option value="shipping">Đang giao</option><option value="completed">Hoàn tất</option><option value="cancelled">Đã hủy</option></select>
+        </div>
+        <div id="admin-list" class="admin-orders-list" aria-live="polite"><p>Đang tải đơn hàng...</p></div>
+      </div>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/admin-orders.js"></script>
+</body>
+</html>

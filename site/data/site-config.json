@@ -1,0 +1,20 @@
+{
+  "siteName": "Bơ & Bột",
+  "locale": "vi-VN",
+  "currency": "VND",
+  "timeZone": "Asia/Ho_Chi_Minh",
+  "ga4MeasurementId": "",
+  "adminEmails": [],
+  "storageSchemaVersion": 1,
+  "contact": {
+    "address": "92–94 Nam Kỳ Khởi Nghĩa, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam",
+    "phone": "+84 568 052 579",
+    "email": "bovabot7749@gmail.com"
+  },
+  "socialLinks": {
+    "tiktok": "https://www.tiktok.com/@jasmine.eni?_r=1&_t=ZS-9BHnEz9dmq5",
+    "instagram": "https://www.instagram.com/butter.and.flour.sweetie?psln=MWxxZnA1OTJvdWtqNQ=="
+  },
+  "dataSource": "Wix CMS CSV; public export excludes personal/order data",
+  "_sample": false
+}

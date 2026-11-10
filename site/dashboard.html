@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manager Dashboard | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head>
+<body data-page="dashboard">
+<div data-include="header"></div>
+<main id="main-content" class="ops-page">
+ <div class="ops-shell">
+  <header class="ops-heading"><div><h1>Manager Dashboard</h1><p>Chỉ số từ đơn hoàn tất và thanh toán demo đã ghi nhận trên Supabase</p></div><nav aria-label="Quản lý"><a href="staff-orders.html">Xử lý đơn</a><a href="pos.html">POS tại quầy</a><a href="admin-orders.html">Admin Orders</a></nav></header>
+  <p id="dashboard-permission" role="status"></p>
+  <section id="dashboard-app" hidden>
+   <form id="dashboard-filter" class="ops-fields"><label>Từ ngày<input id="dashboard-from" type="date" required></label><label>Đến ngày<input id="dashboard-to" type="date" required></label><label>Kênh<select id="dashboard-channel"><option value="all">Cả hai kênh</option><option value="online">Online</option><option value="offline">Tại quầy</option></select></label><button class="ops-primary" type="submit">Cập nhật</button></form>
+   <p id="dashboard-error" class="ops-error" role="alert"></p>
+   <p id="dashboard-status" class="ops-note" role="status" aria-live="polite"></p>
+   <div id="dashboard-kpis" class="dashboard-kpis" aria-live="polite"></div>
+   <section class="ops-panel"><h2>Doanh thu sản phẩm theo ngày</h2><p class="ops-note">Chỉ đơn completed + paid; phí giao hàng được thống kê riêng.</p><div id="dashboard-chart" class="dashboard-chart" role="img" aria-label="Biểu đồ doanh thu theo ngày"></div></section>
+   <div class="dashboard-bottom"><section class="ops-panel"><h2>Phân bổ theo kênh</h2><div id="dashboard-channels"></div></section><section class="ops-panel"><h2>Sản phẩm bán chạy</h2><div id="dashboard-products"></div></section></div>
+   <div class="dashboard-bottom"><section class="ops-panel"><h2>Tồn kho</h2><p class="ops-note">Chưa có ngưỡng sắp hết hàng được duyệt; chỉ hiển thị số lượng thực tế.</p><div id="dashboard-stock"></div></section><section class="ops-panel"><h2>Đơn chờ xử lý</h2><div id="dashboard-pending"></div></section></div>
+   <section id="dashboard-churn" class="ops-panel dashboard-churn" aria-labelledby="dashboard-churn-title"><h2 id="dashboard-churn-title">Phân tích nguy cơ rời bỏ khách hàng</h2><p class="ops-note">Mô hình dự đoán xác suất khách không mua trong 62 ngày tiếp theo từ lịch sử tính đến 01/07/2026.</p><p class="dashboard-churn-disclaimer">Dữ liệu minh họa từ nghiên cứu trên 8.500 khách hàng giả lập. Không phản ánh nguy cơ rời bỏ thực tế của khách hàng đang sử dụng website.</p><p id="dashboard-churn-status" class="ops-note" role="status" aria-live="polite">Đang tải kết quả nghiên cứu...</p><div id="dashboard-churn-content" hidden><div id="dashboard-churn-metrics" class="dashboard-churn-metrics"></div><div id="dashboard-churn-risk" class="dashboard-churn-risk"></div><div class="dashboard-churn-figures"><figure tabindex="0"><img id="dashboard-churn-evaluation" alt="Biểu đồ ROC, Precision–Recall và ma trận nhầm lẫn của mô hình Churn trên tập test giả lập"><figcaption>Đánh giá mô hình trên tập test giả lập. Trên màn hình nhỏ, cuộn ngang để xem chi tiết.</figcaption></figure><figure tabindex="0"><img id="dashboard-churn-importance" alt="Biểu đồ mức độ quan trọng của tám đặc trưng theo permutation importance"><figcaption>Độ quan trọng đặc trưng trên tập test giả lập. Trên màn hình nhỏ, cuộn ngang để xem chi tiết.</figcaption></figure></div><p id="dashboard-churn-source" class="ops-note"></p></div></section>
+  </section>
+ </div>
+</main>
+<div data-include="footer"></div>
+<script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>

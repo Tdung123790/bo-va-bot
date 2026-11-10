@@ -1,1 +1,27 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tài khoản của tôi | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head><body data-page="tai-khoan"><div data-include="header"></div><main id="main-content" class="account-page"><div class="account-container"><header class="account-heading"><span class="eyebrow">THÀNH VIÊN BƠ & BỘT</span><h1>Tài Khoản Của Tôi</h1><p id="profile-member"></p><button class="outline-button" type="button" id="profile-logout">Đăng xuất</button></header><section class="account-panel"><h2>Điểm tích lũy</h2><div id="loyalty-view"></div><div id="loyalty-transactions"></div></section><section class="account-panel"><h2>Lịch sử đặt bánh</h2><div id="my-orders" aria-live="polite">Đang tải đơn hàng...</div></section></div></main><div data-include="footer"></div><script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/profile.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tài Khoản Của Tôi | Bơ & Bột</title><link rel="stylesheet" href="css/main.css"></head>
+<body data-page="tai-khoan">
+  <div data-include="header"></div>
+  <main id="main-content" class="profile-page">
+    <div class="profile-layout">
+      <div class="profile-sidebar">
+        <header class="profile-heading"><h1>Thành Viên</h1><p>Quản lý tài khoản cá nhân</p></header>
+        <section class="profile-card">
+          <div class="profile-card__identity"><span id="profile-avatar" class="profile-card__avatar">M</span><h2 id="profile-name">Thành viên</h2><p id="profile-joined"></p></div>
+          <dl class="profile-card__details"><dt>Email</dt><dd id="profile-email"></dd><dt>Họ và Tên</dt><dd id="profile-fullname"></dd><dt>Trạng thái</dt><dd id="profile-status"></dd></dl>
+          <button type="button" id="profile-logout">Đăng Xuất</button>
+          <nav id="profile-operations" class="profile-operations" aria-label="Vận hành cửa hàng" hidden><a href="pos.html">POS tại quầy</a><a href="staff-orders.html">Xử lý đơn</a><a href="dashboard.html" data-admin-only hidden>Manager Dashboard</a><a href="admin-management.html" data-admin-only hidden>Quản trị cửa hàng</a></nav>
+        </section>
+        <section class="profile-loyalty"><h2>Điểm tích lũy</h2><div id="loyalty-view"></div><div id="loyalty-transactions"></div></section>
+      </div>
+      <div class="profile-orders">
+        <header class="profile-heading"><h2>Theo Dõi Đơn Hàng</h2><p>Trạng thái lò nướng và vận chuyển theo thời gian thực</p></header>
+        <div id="my-orders" aria-live="polite"><p>Đang tải đơn hàng...</p></div>
+      </div>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="js/core/bootstrap.js"></script><script type="module" src="js/pages/profile.js"></script>
+</body>
+</html>

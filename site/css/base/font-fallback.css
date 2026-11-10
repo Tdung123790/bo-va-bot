@@ -1,4 +1,4 @@
 /* Temporary webfont bridge: repomix lists local WOFF2 files but doesn't contain their bytes.
    For pixel parity, copy public/fonts binaries from the actual Wix repository to assets/fonts
    and then use the exact @font-face declarations from src/styles/fonts.css. */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Trirong:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Trirong:wght@400;500;600;700&display=swap');

@@ -1,3 +1,5 @@
+> **Bàn giao migration:** Các ghi chú phase bên dưới là lịch sử triển khai. Hướng dẫn chạy và phạm vi hiện tại nằm trong `../README.md` của gói bàn giao. Chạy từ thư mục gốc bằng `node scripts/serve-site.cjs`, sau đó mở `http://127.0.0.1:4173/`.
+
 # Bơ & Bột — Phase 1 foundation
 
 This package implements only the user-defined Phase 1 (CSS foundation, shared header/footer, core JS, sanitized static JSON adapter). Phase ownership and sequencing remain with the user.

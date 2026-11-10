@@ -1,0 +1,24 @@
+{
+  "source": "Bo_Bot_Churn_Ketqua-20261109T221831Z-1-001.zip",
+  "model": "HistGradientBoostingClassifier",
+  "as_of_date": "2026-07-01",
+  "horizon_days": 62,
+  "sample_size": 8500,
+  "metrics": {
+    "ROC_AUC": 0.8883606734540411,
+    "Accuracy": 0.8244705882352941,
+    "Precision": 0.6730434782608695,
+    "Recall": 0.6765734265734266,
+    "F1": 0.6748038360941587,
+    "PR_AUC": 0.7251596039530802
+  },
+  "risk_counts": {
+    "LOW": 5417,
+    "MEDIUM": 1589,
+    "HIGH": 1494
+  },
+  "risk_thresholds": {
+    "LOW": 0.3,
+    "MEDIUM": 0.65
+  }
+}

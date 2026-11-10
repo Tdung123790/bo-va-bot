@@ -1,3 +1,92 @@
-.inner-hero{padding:clamp(5rem,9vw,9rem) 1.5rem;text-align:center;background:var(--color-12,#ece0cb)}.inner-hero h1{font-size:clamp(3rem,7vw,6rem);margin:.75rem auto}.inner-hero p{max-width:48rem;margin:1rem auto}.content-wrap{max-width:94rem;margin:auto;padding:clamp(3rem,6vw,6rem) 1.5rem}.about-story{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.about-story img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1rem}.about-story h2,.about-values h2,.about-cta h2{font-size:clamp(2.5rem,5vw,5rem)}.about-values{background:#f5ecda}.about-values__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}.about-values article{border-top:1px solid #b99d67;padding-top:1.5rem}.about-values article span{color:#997c47}.about-cta{text-align:center}.about-cta .pill-button{display:inline-block;margin-top:1.5rem}@media(max-width:760px){.about-story{grid-template-columns:1fr;gap:2rem}.about-values__grid{grid-template-columns:1fr}}
+.inner-hero{padding:clamp(5rem,9vw,9rem) 1.5rem;text-align:center;background:var(--color-12,#ece0cb)}
+.inner-hero h1{font-size:clamp(3rem,7vw,6rem);margin:.75rem auto}
+.inner-hero p{max-width:48rem;margin:1rem auto}
+.content-wrap{max-width:94rem;margin:auto;padding:clamp(3rem,6vw,6rem) 1.5rem}
 
-.about-mission{text-align:center}.about-mission p{font-size:1.2rem;max-width:52rem;margin:auto;line-height:1.8}
+body[data-page="cau-chuyen-thuong-hieu"]{background:var(--color-color-11);color:var(--color-foreground)}
+.about-container{max-width:100rem;margin-inline:auto;padding-inline:1.5rem}
+.about-hero{padding:5rem 0;background:var(--color-color-12);text-align:center}
+.about-hero h1{margin:0 0 1rem;font:italic 700 3rem/1.1 var(--font-heading);color:var(--color-foreground)}
+.about-hero p{max-width:42rem;margin:0 auto;font:400 1.125rem/1.5 var(--font-paragraph);color:rgba(51,42,32,.7)}
+.about-hero h1{animation:about-hero-enter .3s ease-out both}
+.about-hero p{animation:about-hero-enter .3s ease-out .1s both}
+@keyframes about-hero-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.about-story{position:relative;overflow:hidden;padding:6rem 0;background:var(--color-color-11)}
+.about-story__inner{position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:4rem}
+.about-story__copy{min-width:0;padding:clamp(1.5rem,3vw,2.5rem);border:1px solid rgba(79,68,47,.1);border-radius:1.5rem;background:rgba(255,255,255,.8);box-shadow:0 25px 50px -12px rgba(0,0,0,.25);backdrop-filter:blur(4px)}
+.about-story__copy h2{margin:0 0 2rem;font:500 3rem/1.25 var(--font-heading);color:var(--color-primary)}
+.about-story__text{display:grid;gap:1.5rem;font:400 1.125rem/1.5 var(--font-paragraph);color:rgba(51,42,32,.8)}
+.about-story__text p{margin:0}
+.about-story__visual{display:flex;align-items:center;justify-content:center;min-height:25rem}
+.about-story__photo{width:100%;max-width:32rem;aspect-ratio:4/5;overflow:hidden;border:4px solid rgba(255,255,255,.5);border-radius:1.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);transform:rotate(-6deg);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.about-story__photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+.about-values{padding:6rem 0;background:var(--color-color-12)}
+.about-section-heading{margin:0 auto 4rem;text-align:center}
+.about-section-heading h2{margin:0 0 1rem;font:500 2.25rem/1.2 var(--font-heading);color:var(--color-foreground)}
+.about-section-heading p{max-width:42rem;margin:0 auto;font:400 1.125rem/1.5 var(--font-paragraph);color:rgba(51,42,32,.7)}
+.about-values__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
+.about-value{min-width:0;padding:2rem;border-radius:1rem;background:#ddc9a8;text-align:center;transition:box-shadow .3s cubic-bezier(.4,0,.2,1)}
+.about-value__icon{display:inline-flex;align-items:center;justify-content:center;width:4rem;height:4rem;margin:0 0 1.5rem;border-radius:50%;background:rgba(138,123,100,.2);color:var(--color-accent-gold)}
+.about-value__icon svg{width:2rem;height:2rem}
+.about-value h3{margin:0 0 .75rem;font:500 1.25rem/1.5 var(--font-heading);color:var(--color-foreground)}
+.about-value p{margin:0;font:400 .875rem/1.3 var(--font-paragraph);color:rgba(51,42,32,.7)}
+
+.about-team{max-width:100rem;margin-inline:auto;padding:6rem 0;background:#d5c29a}
+.about-team__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem}
+.about-member{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden;border-radius:1.5rem;background:#fff;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s cubic-bezier(.4,0,.2,1)}
+.about-member__photo{position:relative;height:350px;overflow:hidden}
+.about-member__photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.4),transparent 55%)}
+.about-member__photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.about-member__body{display:flex;flex:1;flex-direction:column;padding:1.75rem;background:var(--color-color-11);text-align:center}
+.about-member h3{margin:0 0 .5rem;font:500 1.5rem/1.4 var(--font-heading);color:var(--color-foreground)}
+.about-member__role{margin:0 0 1rem;font:600 .875rem/1.3 var(--font-paragraph);letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-gold)}
+.about-member__body>p:last-child{margin:0;font:400 .875rem/1.75 var(--font-paragraph);color:rgba(51,42,32,.7)}
+
+.about-mission{position:relative;overflow:hidden;padding:8rem 1.5rem 6rem;background:var(--color-color-11)}
+.about-mission__word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;user-select:none;font:500 8rem/1 var(--font-heading);color:rgba(79,68,47,.1);white-space:nowrap}
+.about-mission__inner{position:relative;z-index:1;max-width:64rem;margin:0 auto;text-align:center}
+.about-mission h2{position:relative;display:inline-block;margin:0 0 3rem;font:500 3rem/1.15 var(--font-heading)}
+.about-mission h2::after{content:"";position:absolute;bottom:-.5rem;left:50%;width:6rem;height:.25rem;border-radius:999px;background:var(--color-accent-gold);transform:translateX(-50%)}
+.about-mission p{max-width:48rem;margin:0 auto;font:400 1.125rem/1.7 var(--font-paragraph);color:rgba(51,42,32,.8)}
+
+@media(hover:hover) and (pointer:fine){
+  .about-story__photo:hover{transform:rotate(0) scale(1.05)}
+  .about-value:hover{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+  .about-member:hover{transform:translateY(-8px);box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+  .about-member:hover .about-member__photo img{transform:scale(1.05)}
+}
+@media(min-width:768px){
+  .about-hero h1{font-size:4.5rem}
+  .about-hero p{font-size:1.25rem}
+  .about-story{padding-top:8rem}
+  .about-story__copy h2{font-size:3.75rem}
+  .about-section-heading h2{font-size:3rem}
+  .about-values__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-team__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .about-mission__word{font-size:15rem}
+  .about-mission h2{font-size:4.5rem}
+  .about-mission p{font-size:1.25rem}
+}
+@media(min-width:1024px){
+  .about-story__inner{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+  .about-story__visual{min-height:37.5rem}
+  .about-values__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .about-mission__word{font-size:20rem}
+}
+@media(max-width:767px){
+  .about-story__inner{gap:3rem}
+  .about-story__text{font-size:1rem}
+  .about-story__copy h2{font-size:2.5rem}
+  .about-team__grid{max-width:28rem;margin-inline:auto}
+  .about-mission__word{font-size:clamp(6rem,25vw,8rem)}
+}
+@keyframes about-hero-soft-enter{from{opacity:.7}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .about-hero h1,.about-hero p{animation:about-hero-soft-enter .2s ease-out both;animation-duration:.2s!important}
+  .about-story__photo,.about-value,.about-member,.about-member__photo img{transition:none}
+  .about-story__photo:hover{transform:rotate(-6deg)}
+  .about-member:hover{transform:none}
+  .about-member:hover .about-member__photo img{transform:none}
+}

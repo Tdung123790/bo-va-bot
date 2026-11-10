@@ -1,0 +1,542 @@
+{
+  "bakery": {
+    "name": "Bơ & Bột",
+    "lat": 10.77315,
+    "lng": 106.70054
+  },
+  "districts": [
+    {
+      "id": "district-1",
+      "name": "Quận 1",
+      "wards": [
+        {
+          "id": "ben-nghe",
+          "name": "Phường Bến Nghé",
+          "lat": 10.7775,
+          "lng": 106.703
+        },
+        {
+          "id": "ben-thanh",
+          "name": "Phường Bến Thành",
+          "lat": 10.7725,
+          "lng": 106.698
+        },
+        {
+          "id": "da-kao",
+          "name": "Phường Đa Kao",
+          "lat": 10.7872,
+          "lng": 106.6998
+        }
+      ]
+    },
+    {
+      "id": "district-3",
+      "name": "Quận 3",
+      "wards": [
+        {
+          "id": "ward-1",
+          "name": "Phường 1",
+          "lat": 10.7847,
+          "lng": 106.682
+        },
+        {
+          "id": "ward-2",
+          "name": "Phường 2",
+          "lat": 10.7868,
+          "lng": 106.6874
+        }
+      ]
+    },
+    {
+      "id": "district-7",
+      "name": "Quận 7",
+      "wards": [
+        {
+          "id": "tan-phong",
+          "name": "Phường Tân Phong",
+          "lat": 10.7298,
+          "lng": 106.7055
+        },
+        {
+          "id": "tan-phu",
+          "name": "Phường Tân Phú",
+          "lat": 10.7423,
+          "lng": 106.7238
+        },
+        {
+          "id": "phu-my",
+          "name": "Phường Phú Mỹ",
+          "lat": 10.7054,
+          "lng": 106.733
+        }
+      ]
+    },
+    {
+      "id": "thu-duc",
+      "name": "TP. Thủ Đức",
+      "wards": [
+        {
+          "id": "hiep-binh-chanh",
+          "name": "Phường Hiệp Bình Chánh",
+          "lat": 10.8475,
+          "lng": 106.7206
+        },
+        {
+          "id": "hiep-binh-phuoc",
+          "name": "Phường Hiệp Bình Phước",
+          "lat": 10.8516,
+          "lng": 106.7177
+        },
+        {
+          "id": "linh-dong",
+          "name": "Phường Linh Đông",
+          "lat": 10.849,
+          "lng": 106.746
+        },
+        {
+          "id": "linh-tay",
+          "name": "Phường Linh Tây",
+          "lat": 10.8537,
+          "lng": 106.7582
+        },
+        {
+          "id": "linh-trung",
+          "name": "Phường Linh Trung",
+          "lat": 10.8703,
+          "lng": 106.7893
+        },
+        {
+          "id": "linh-xuan",
+          "name": "Phường Linh Xuân",
+          "lat": 10.8857,
+          "lng": 106.7727
+        },
+        {
+          "id": "tam-binh",
+          "name": "Phường Tam Bình",
+          "lat": 10.8661,
+          "lng": 106.735
+        },
+        {
+          "id": "tam-phu",
+          "name": "Phường Tam Phú",
+          "lat": 10.8643,
+          "lng": 106.7424
+        },
+        {
+          "id": "truong-tho",
+          "name": "Phường Trường Thọ",
+          "lat": 10.833,
+          "lng": 106.7665
+        },
+        {
+          "id": "binh-tho",
+          "name": "Phường Bình Thọ",
+          "lat": 10.8497,
+          "lng": 106.7603
+        },
+        {
+          "id": "phuoc-long-a",
+          "name": "Phường Phước Long A",
+          "lat": 10.8231,
+          "lng": 106.7945
+        },
+        {
+          "id": "phuoc-long-b",
+          "name": "Phường Phước Long B",
+          "lat": 10.817,
+          "lng": 106.8087
+        },
+        {
+          "id": "long-binh",
+          "name": "Phường Long Bình",
+          "lat": 10.8792,
+          "lng": 106.8342
+        },
+        {
+          "id": "long-thanh-my",
+          "name": "Phường Long Thạnh Mỹ",
+          "lat": 10.8475,
+          "lng": 106.8294
+        },
+        {
+          "id": "long-phuoc",
+          "name": "Phường Long Phước",
+          "lat": 10.84,
+          "lng": 106.8673
+        },
+        {
+          "id": "long-truong",
+          "name": "Phường Long Trường",
+          "lat": 10.8248,
+          "lng": 106.8468
+        },
+        {
+          "id": "tang-nhon-phu-a",
+          "name": "Phường Tăng Nhơn Phú A",
+          "lat": 10.8431,
+          "lng": 106.7891
+        },
+        {
+          "id": "tang-nhon-phu-b",
+          "name": "Phường Tăng Nhơn Phú B",
+          "lat": 10.8472,
+          "lng": 106.7994
+        },
+        {
+          "id": "cat-lai",
+          "name": "Phường Cát Lái",
+          "lat": 10.7698,
+          "lng": 106.8017
+        },
+        {
+          "id": "thanh-my-loi",
+          "name": "Phường Thạnh Mỹ Lợi",
+          "lat": 10.7694,
+          "lng": 106.7698
+        },
+        {
+          "id": "an-khanh",
+          "name": "Phường An Khánh",
+          "lat": 10.7861,
+          "lng": 106.7488
+        },
+        {
+          "id": "an-loi-dong",
+          "name": "Phường An Lợi Đông",
+          "lat": 10.7804,
+          "lng": 106.7425
+        },
+        {
+          "id": "thao-dien",
+          "name": "Phường Thảo Điền",
+          "lat": 10.8035,
+          "lng": 106.7422
+        },
+        {
+          "id": "an-phu",
+          "name": "Phường An Phú",
+          "lat": 10.7947,
+          "lng": 106.751
+        }
+      ]
+    },
+    {
+      "id": "district-4",
+      "name": "Quận 4",
+      "wards": [
+        {
+          "id": "ward-1",
+          "name": "Phường 1",
+          "lat": 10.7587,
+          "lng": 106.7034
+        },
+        {
+          "id": "ward-2",
+          "name": "Phường 2",
+          "lat": 10.7602,
+          "lng": 106.7062
+        },
+        {
+          "id": "ward-3",
+          "name": "Phường 3",
+          "lat": 10.759,
+          "lng": 106.7087
+        },
+        {
+          "id": "ward-4",
+          "name": "Phường 4",
+          "lat": 10.7567,
+          "lng": 106.7098
+        },
+        {
+          "id": "ward-6",
+          "name": "Phường 6",
+          "lat": 10.7545,
+          "lng": 106.7076
+        },
+        {
+          "id": "ward-8",
+          "name": "Phường 8",
+          "lat": 10.7556,
+          "lng": 106.7037
+        },
+        {
+          "id": "ward-9",
+          "name": "Phường 9",
+          "lat": 10.7575,
+          "lng": 106.7018
+        },
+        {
+          "id": "ward-10",
+          "name": "Phường 10",
+          "lat": 10.7598,
+          "lng": 106.6998
+        },
+        {
+          "id": "ward-13",
+          "name": "Phường 13",
+          "lat": 10.7632,
+          "lng": 106.7024
+        },
+        {
+          "id": "ward-14",
+          "name": "Phường 14",
+          "lat": 10.765,
+          "lng": 106.7045
+        },
+        {
+          "id": "ward-15",
+          "name": "Phường 15",
+          "lat": 10.7626,
+          "lng": 106.7078
+        },
+        {
+          "id": "ward-16",
+          "name": "Phường 16",
+          "lat": 10.7607,
+          "lng": 106.7114
+        },
+        {
+          "id": "ward-18",
+          "name": "Phường 18",
+          "lat": 10.7579,
+          "lng": 106.7145
+        }
+      ]
+    },
+    {
+      "id": "district-5",
+      "name": "Quận 5",
+      "wards": [
+        {
+          "id": "ward-1",
+          "name": "Phường 1",
+          "lat": 10.7547,
+          "lng": 106.669
+        },
+        {
+          "id": "ward-2",
+          "name": "Phường 2",
+          "lat": 10.7563,
+          "lng": 106.6668
+        },
+        {
+          "id": "ward-3",
+          "name": "Phường 3",
+          "lat": 10.7578,
+          "lng": 106.6647
+        },
+        {
+          "id": "ward-4",
+          "name": "Phường 4",
+          "lat": 10.7594,
+          "lng": 106.6629
+        },
+        {
+          "id": "ward-5",
+          "name": "Phường 5",
+          "lat": 10.7608,
+          "lng": 106.6615
+        },
+        {
+          "id": "ward-6",
+          "name": "Phường 6",
+          "lat": 10.7587,
+          "lng": 106.6709
+        },
+        {
+          "id": "ward-7",
+          "name": "Phường 7",
+          "lat": 10.7569,
+          "lng": 106.673
+        },
+        {
+          "id": "ward-8",
+          "name": "Phường 8",
+          "lat": 10.755,
+          "lng": 106.6754
+        },
+        {
+          "id": "ward-9",
+          "name": "Phường 9",
+          "lat": 10.7532,
+          "lng": 106.6774
+        },
+        {
+          "id": "ward-10",
+          "name": "Phường 10",
+          "lat": 10.7515,
+          "lng": 106.6791
+        },
+        {
+          "id": "ward-11",
+          "name": "Phường 11",
+          "lat": 10.7496,
+          "lng": 106.681
+        },
+        {
+          "id": "ward-12",
+          "name": "Phường 12",
+          "lat": 10.7478,
+          "lng": 106.6827
+        },
+        {
+          "id": "ward-13",
+          "name": "Phường 13",
+          "lat": 10.7462,
+          "lng": 106.6845
+        },
+        {
+          "id": "ward-14",
+          "name": "Phường 14",
+          "lat": 10.7447,
+          "lng": 106.6862
+        }
+      ]
+    },
+    {
+      "id": "binh-thanh",
+      "name": "Quận Bình Thạnh",
+      "wards": [
+        {
+          "id": "ward-1",
+          "name": "Phường 1",
+          "lat": 10.8038,
+          "lng": 106.6957
+        },
+        {
+          "id": "ward-2",
+          "name": "Phường 2",
+          "lat": 10.806,
+          "lng": 106.6978
+        },
+        {
+          "id": "ward-3",
+          "name": "Phường 3",
+          "lat": 10.8081,
+          "lng": 106.6998
+        },
+        {
+          "id": "ward-5",
+          "name": "Phường 5",
+          "lat": 10.8102,
+          "lng": 106.7019
+        },
+        {
+          "id": "ward-6",
+          "name": "Phường 6",
+          "lat": 10.8121,
+          "lng": 106.7041
+        },
+        {
+          "id": "ward-7",
+          "name": "Phường 7",
+          "lat": 10.814,
+          "lng": 106.706
+        },
+        {
+          "id": "ward-11",
+          "name": "Phường 11",
+          "lat": 10.816,
+          "lng": 106.708
+        },
+        {
+          "id": "ward-12",
+          "name": "Phường 12",
+          "lat": 10.8182,
+          "lng": 106.7103
+        },
+        {
+          "id": "ward-13",
+          "name": "Phường 13",
+          "lat": 10.82,
+          "lng": 106.712
+        },
+        {
+          "id": "ward-14",
+          "name": "Phường 14",
+          "lat": 10.8222,
+          "lng": 106.7142
+        },
+        {
+          "id": "ward-15",
+          "name": "Phường 15",
+          "lat": 10.824,
+          "lng": 106.716
+        },
+        {
+          "id": "ward-17",
+          "name": "Phường 17",
+          "lat": 10.8262,
+          "lng": 106.7184
+        },
+        {
+          "id": "ward-19",
+          "name": "Phường 19",
+          "lat": 10.799,
+          "lng": 106.719
+        },
+        {
+          "id": "ward-21",
+          "name": "Phường 21",
+          "lat": 10.797,
+          "lng": 106.721
+        },
+        {
+          "id": "ward-22",
+          "name": "Phường 22",
+          "lat": 10.7952,
+          "lng": 106.7235
+        },
+        {
+          "id": "ward-24",
+          "name": "Phường 24",
+          "lat": 10.7934,
+          "lng": 106.7257
+        },
+        {
+          "id": "ward-25",
+          "name": "Phường 25",
+          "lat": 10.7915,
+          "lng": 106.728
+        },
+        {
+          "id": "ward-26",
+          "name": "Phường 26",
+          "lat": 10.7893,
+          "lng": 106.73
+        },
+        {
+          "id": "ward-27",
+          "name": "Phường 27",
+          "lat": 10.7871,
+          "lng": 106.7321
+        },
+        {
+          "id": "ward-28",
+          "name": "Phường 28",
+          "lat": 10.785,
+          "lng": 106.7343
+        }
+      ]
+    }
+  ],
+  "shippingTiers": [
+    {
+      "maxKm": 3,
+      "fee": 20000
+    },
+    {
+      "maxKm": 5,
+      "fee": 30000
+    },
+    {
+      "maxKm": 10,
+      "fee": 50000
+    }
+  ],
+  "over10KmFeeFromSource": 0,
+  "distanceMethod": "haversine",
+  "earthRadiusKm": 6371
+}
