@@ -111,13 +111,13 @@ async function reconcile(request){
  }
  const payload=await buildQueryRequest({tmnCode,secret,txnRef:charge.gateway_txn_ref,
   transactionDate:charge.gateway_create_date,requestId,ipAddress:queryIp});
-  
+
  const response=await callTransactionApi(payload);
- 
+
  if(!response||typeof response!=='object'||Array.isArray(response)){
   throw Error('VNPAY_QUERYDR_INVALID_RESPONSE');
  }
- 
+
  if(typeof response.vnp_SecureHash!=='string'||!response.vnp_SecureHash){
   if(response.vnp_ResponseCode==='99'&&response.vnp_Message==='Unexpected error'){
    return json({

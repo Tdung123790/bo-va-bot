@@ -2,8 +2,8 @@
 
 > **Cập nhật readiness 10/11/2026:** Phần Sprint 5 bên dưới là báo cáo lịch sử ngày 06/11, không phản ánh catalog/store đã được áp dụng sau đó. LOCAL chính hiện có 63 sản phẩm active, 11 đơn, 3 VNPAY payment lịch sử không đổi. Promotion FINAL 12/11 được phê duyệt, migration Admin RPC đã áp dụng và test disposable PASS, nhưng row active trên LOCAL chính kết thúc lúc **23:59:00** thay vì **23:59:59** do form cũ cắt giây; form đã sửa và đang chờ Admin lưu lại đúng giây. Churn Research Dashboard Level 1, Delivery backend chain và VNPAY Edge IPN với HMAC TEST đều PASS trên disposable; Geoapify provider thật và VNPAY Sandbox với IPN công khai vẫn chưa nghiệm thu. ML Search kỹ thuật giữ PASS trước; owner không yêu cầu đánh giá chất lượng chuyên sâu thêm. **Verdict hiện hành: `NOT_READY_FOR_CLOUD`**; không deploy. Xem [báo cáo tiếp nối](research/output/completion/CONTINUATION_REPORT.md) để biết test và blocker mới.
 
-**Ngày:** 06/11/2026 (Asia/Ho_Chi_Minh)  
-**Phạm vi xác nhận:** Supabase LOCAL `127.0.0.1:54321/54322`, static site local; Cloud **NOT DEPLOYED**. Toàn bộ giao dịch dùng fixture TEST, đã dọn sau test.  
+**Ngày:** 06/11/2026 (Asia/Ho_Chi_Minh)
+**Phạm vi xác nhận:** Supabase LOCAL `127.0.0.1:54321/54322`, static site local; Cloud **NOT DEPLOYED**. Toàn bộ giao dịch dùng fixture TEST, đã dọn sau test.
 **Kết luận:** **NOT READY cho Cloud production**. Phần code LOCAL đạt các test dưới đây; catalog, store settings, danh tính Admin và quy trình triển khai production chưa được chủ dự án phê duyệt. Không có lỗi P0 mới phát hiện trong phạm vi đã kiểm thử.
 
 ## 1. Thành phần đã nghiệm thu ở LOCAL

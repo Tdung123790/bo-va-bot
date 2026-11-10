@@ -87,7 +87,7 @@ export async function initCheckoutForm(){
  }catch(error){$('#checkout-distance').textContent='Chưa tải được cấu hình địa giới: '+error.message;}
  if(!isSupabaseMode())initAddressAutocomplete($('#delivery-address'),{onSelect:place=>{selectedLat=Number(place.lat);selectedLng=Number(place.lon);map?.setLocation(selectedLat,selectedLng,false);refresh();}});
 
- 
+
  if(isSupabaseMode()){
   const input=$('#delivery-address');
   input.setAttribute('autocomplete','off');
