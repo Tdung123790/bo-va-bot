@@ -16,6 +16,17 @@ export function copyGuestCakesToAccount(ids){
  const known=new Set(existing.map(item=>item.id));
  if(!setJSON(key,[...existing,...selected.filter(item=>!known.has(item.id))]))throw Error('Không thể lưu bản nháp bánh vào tài khoản.');
 }
+export function hydrateAccountCakes(items,owner){
+ if(getCurrentMember()?.id!==owner||!Array.isArray(items))return;
+ const key=getCustomCakeStorageKey(),stored=getJSON(key,[]);
+ const records=Array.isArray(stored)?stored:[];
+ const byId=new Map(records.filter(cake=>cake?.id).map(cake=>[cake.id,cake]));
+ for(const item of items){
+  const cake=item?.customCakeData;
+  if(cake?.id&&cake.id===item.customCakeId)byId.set(cake.id,cake);
+ }
+ setJSON(key,[...byId.values()]);
+}
 async function demoGetOptions(){if(!optionsPromise)optionsPromise=fetch('data/cake-options.json').then(r=>{if(!r.ok)throw Error('Không thể đọc tùy chọn bánh');return r.json();}).catch(e=>{optionsPromise=null;throw e;});return optionsPromise;}
 export function getById(id){const a=getJSON(getCustomCakeStorageKey(),[]);return Array.isArray(a)?a.find(c=>c.id===id)||null:null;}
 export async function calculatePrice(config){const o=await getOptions(),s=o.sizes.find(x=>x.id===config.sizeId),f=o.flavors.find(x=>x.id===config.flavorId),c=o.creams.find(x=>x.id===config.creamId);if(!s||!f||!c)throw Error('Tùy chọn bánh không hợp lệ');return Number(s.price)+Number(f.priceModifier||0)+Number(c.priceModifier||0);}

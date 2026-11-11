@@ -317,7 +317,7 @@ export async function initCheckoutForm(){
    if(isSupabaseMode()&&data.paymentMethod==='vnpay'){
     const session=await startVnpayPayment(result.orderId);
     if(!session?.url||!session.url.startsWith('https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?'))throw Error('Chưa tạo được phiên VNPAY sandbox. Đơn đã được lưu, giỏ vẫn được giữ; thử lại với cùng yêu cầu.');
-    cart.clearCart();
+    await cart.clearCart();
     requestId=crypto.randomUUID();
     location.assign(session.url);
     return;

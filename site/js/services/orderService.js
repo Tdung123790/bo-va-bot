@@ -40,7 +40,7 @@ export async function calculateOrder(input){
   if(product.isCustomizable&&!row.customCakeId)throw Error('Thiếu cấu hình bánh tùy chỉnh');
   let unitPrice=Number(product.price),customization=null;
   if(product.isCustomizable){
-   const cake=getCustomCakeById(row.customCakeId);
+   const cake=getCustomCakeById(row.customCakeId)||row.customCakeData;
    if(!cake)throw Error('Không tìm thấy cấu hình bánh tùy chỉnh');
    const response=await fetch('data/cake-options.json');if(!response.ok)throw Error('Không tải được cấu hình giá bánh');
    const opt=await response.json();const find=(set,id)=>set.find(x=>String(x.id)===String(id));
@@ -102,7 +102,7 @@ async function createOnlineOrder(body){
  const lineRows=amounts.items.map((item,index)=>({_id:crypto.randomUUID(),order_id:id,order_item_id:`${id}:${index+1}`,...item}));
  // localStorage không có giao dịch nhiều key: order tự giữ snapshot đầy đủ, orderItems là read model.
  if(!setJSON(ORDER_KEY,[...previous,record]))throw Error('Không thể lưu đơn hàng');
- setJSON(ORDER_ITEMS_KEY,[...getOrderItems(),...lineRows]);clearCart();
+ setJSON(ORDER_ITEMS_KEY,[...getOrderItems(),...lineRows]);await clearCart();
  return {success:true,orderId:id,orderCode,totalAmount:record.totalAmount,order:record,items:lineRows};
 }
 export async function createOrder(body={}){
@@ -136,7 +136,7 @@ async function backendRequest(body){
    line.variant_id=data.id;
   }
   if(product.isCustomizable){
-   const cake=getCustomCakeById(row.customCakeId);
+   const cake=getCustomCakeById(row.customCakeId)||row.customCakeData;
    if(!cake)throw Error('Không tìm thấy bản nháp bánh tùy chỉnh.');
    const options=await getOptions();
    const fields={size:'sizeId',flavor:'flavorId',cream:'creamId',font:'fontId',color:'colorId'};
@@ -180,7 +180,7 @@ async function backendCreateOrder(body){
  const client=await getSupabaseClient();
  const {data,error}=await client.rpc('create_online_order',{p_request:request});
  if(error)throw backendError(error);
- if(method!=='vnpay')clearCart();
+ if(method!=='vnpay')await clearCart();
  return {success:true,orderId:data.order_id,orderCode:data.order_code,totalAmount:data.total_amount,order:data};
 }
 export const orderService={createOrder,calculateOrder,getOrders,getOrderItems,getOrderByCode,normalizePhone,estimatedTimeForDate,validateRequestedAt};
