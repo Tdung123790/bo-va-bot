@@ -44,7 +44,7 @@ function renderOrder(order){
   card.append(head,items,progress,bottom);
   const refund=(order.payments||[]).find(payment=>payment.kind==='refund');
   if(refund){
-    const refundState=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Hoàn tiền đã được duyệt, đang chờ Staff thực hiện':'Yêu cầu hoàn tiền đang chờ Admin duyệt';
+    const refundState=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.refund_rejected_at?'Yêu cầu hoàn tiền bị từ chối: '+(refund.refund_rejection_reason||'Không đủ điều kiện'):refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Hoàn tiền đã được duyệt, đang chờ Staff thực hiện':'Yêu cầu hoàn tiền đang chờ Admin duyệt';
     card.append(el('p',{className:'profile-order__cancelled',text:refundState}));
   }
   if(cancelled)card.append(cancelled);
@@ -98,10 +98,10 @@ async function init(){
   document.querySelector('#profile-status').textContent='Đã kích hoạt';
   document.querySelector('#profile-joined').textContent='Gia nhập: '+(member.createdAt?new Intl.DateTimeFormat('vi-VN',{month:'2-digit',year:'numeric'}).format(new Date(member.createdAt)):'Chưa rõ');
   const balance=await getBalance();
-  document.querySelector('#loyalty-view').textContent=`${balance.points} điểm • Hạng ${balance.tier} • Tổng tích ${balance.total_earned} điểm`;
+  document.querySelector('#loyalty-view').textContent=`${balance.points} điểm khả dụng • Nợ ${balance.point_debt||0} điểm • Hạng ${balance.tier} • Tổng tích ${balance.total_earned} điểm`;
   const transactionRows=await getTransactions();
   const transactions=(isSupabaseMode()?transactionRows:transactionRows.slice().reverse()).slice(0,10);
-  document.querySelector('#loyalty-transactions').append(...transactions.map(item=>el('p',{text:`${formatDate(item.created_at)}: ${item.points>0?'+':''}${item.points} điểm — ${item.description}`})));
+  document.querySelector('#loyalty-transactions').append(...transactions.map(item=>el('p',{text:`${formatDate(item.created_at)}: ${item.points>0?'+':''}${item.points} điểm khả dụng${item.debt_delta?` · ${item.debt_delta>0?'+':''}${item.debt_delta} điểm nợ`:''} — ${item.description}`})));
   try{
     await refreshOrders();
   }catch(error){document.querySelector('#my-orders').replaceChildren(el('p',{text:'Không thể tải đơn hàng: '+error.message}));}

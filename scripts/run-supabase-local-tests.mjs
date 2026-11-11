@@ -14,14 +14,18 @@ const database = {
   connectionTimeoutMillis: 5000,
 };
 
-for (const name of [
+const files = [
   '001_security_and_orders.sql',
   '003_shipping_kpi.sql',
   '004_customer_classification.sql',
   '005_unverified_delivery.sql',
   '006_admin_dashboard.sql',
   '007_vnpay_gateway.sql',
-]) {
+  '008_loyalty_final.sql',
+];
+const requested = process.argv.slice(2);
+if (requested.some((name) => !files.includes(name))) throw Error('Unknown SQL test file');
+for (const name of requested.length ? requested : files) {
   const file = path.join(root, 'supabase', 'sql-tests', name);
   const sql = await fs.readFile(file, 'utf8');
   const client = new Client(database);

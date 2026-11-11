@@ -15,7 +15,9 @@ values('main',10.8,106.7,
     "3":[{"start":"00:00","end":"24:00"}],"4":[{"start":"00:00","end":"24:00"}],
     "5":[{"start":"00:00","end":"24:00"}],"6":[{"start":"00:00","end":"24:00"}],
     "7":[{"start":"00:00","end":"24:00"}]}'::jsonb,
-  '{"max_km":10}'::jsonb,'[{"max_km":10,"fee":15000}]'::jsonb);
+  '{"max_km":10}'::jsonb,'[{"max_km":10,"fee":15000}]'::jsonb)
+on conflict(store_key) do update set bakery_lat=excluded.bakery_lat,bakery_lng=excluded.bakery_lng,
+  delivery_hours=excluded.delivery_hours,service_area=excluded.service_area,shipping_tiers=excluded.shipping_tiers;
 set local role authenticated;
 select set_config('request.jwt.claim.sub','51515151-5151-4515-8515-515151515151',true);
 do $$
@@ -52,7 +54,8 @@ do $$
 begin
   if (select count(*) from public.orders
       where customer_id='51515151-5151-4515-8515-515151515151')<>0
-    or (select count(*) from public.payments)<>0
+    or (select count(*) from public.payments where order_id in
+      (select id from public.orders where customer_id='51515151-5151-4515-8515-515151515151'))<>0
     or (select stock_quantity from public.products
       where id='53535353-5353-4535-8535-535353535353')<>2
     then raise exception 'Rejected delivery left a transaction side effect'; end if;

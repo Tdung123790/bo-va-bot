@@ -1,5 +1,5 @@
 import {getCurrentMember} from '../services/authService.js';
-import {getOperationalOrders,transitionOperationalOrder,cancelOperationalOrder,confirmOperationalPayment,completePosSale,recordDeliveryFailure,requestDemoRefund,approveDemoRefund,executeDemoRefund,resolveCancellationRequest} from '../services/operationsService.js';
+import {getOperationalOrders,transitionOperationalOrder,cancelOperationalOrder,confirmOperationalPayment,completePosSale,recordDeliveryFailure,requestDemoRefund,approveDemoRefund,rejectDemoRefund,executeDemoRefund,resolveCancellationRequest} from '../services/operationsService.js';
 import {getNextStatus,ORDER_STATUS_LABEL} from '../services/orderStatusService.js';
 import {formatVND,formatDate,formatOrderItem} from '../core/format.js';
 
@@ -103,13 +103,16 @@ function renderOrder(order){
   const approve=node('button','Duyệt hoàn tiền demo','ops-secondary');approve.type='button';
   approve.addEventListener('click',()=>{if(!window.confirm('Duyệt yêu cầu hoàn tiền demo? Staff sẽ thực hiện bước xác nhận sau.'))return;perform(article,()=>approveDemoRefund(refund.id));});
   actions.append(approve);
+  const reject=node('button','Từ chối hoàn tiền demo','ops-secondary');reject.type='button';
+  reject.addEventListener('click',()=>{const reason=window.prompt('Nhập lý do từ chối hoàn tiền (ít nhất 5 ký tự):');if(reason===null)return;if(reason.trim().length<5){window.alert('Lý do phải có ít nhất 5 ký tự.');return;}perform(article,()=>rejectDemoRefund(refund.id,reason.trim()));});
+  actions.append(reject);
  }
  if(refund?.status==='pending'&&user.role==='staff'&&refund.refund_approved_at){
   const execute=node('button','Ghi nhận hoàn tiền đã thực hiện','ops-secondary');execute.type='button';
   execute.addEventListener('click',()=>{const reference=window.prompt('Nhập mã giao dịch/biên nhận hoàn tiền đã thực hiện (ít nhất 6 ký tự). Không nhập thông tin cá nhân:');if(reference===null)return;if(reference.trim().length<6){window.alert('Cần mã biên nhận hoàn tiền hợp lệ.');return;}if(!window.confirm('Xác nhận đã thực sự hoàn tiền và có biên nhận?'))return;perform(article,()=>executeDemoRefund(refund.id,reference.trim()));});
   actions.append(execute);
  }
- if(refund){const state=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Admin đã duyệt — chờ Staff hoàn tiền':'Đang chờ Admin duyệt hoàn tiền';article.append(node('p',state+(refund.transaction_code?' · Biên nhận: '+refund.transaction_code:''),'staff-warning'));}
+ if(refund){const state=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.refund_rejected_at?'Admin đã từ chối hoàn tiền: '+(refund.refund_rejection_reason||'Không đủ điều kiện'):refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Admin đã duyệt — chờ Staff hoàn tiền':'Đang chờ Admin duyệt hoàn tiền';article.append(node('p',state+(refund.transaction_code?' · Biên nhận: '+refund.transaction_code:''),'staff-warning'));}
  if(actions.children.length){actions.prepend(note);article.append(actions);}
  return article;
 }

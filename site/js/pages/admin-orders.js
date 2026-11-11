@@ -1,7 +1,7 @@
 import {requireAdmin} from '../core/guard.js';
 import {getAdminOrders,updateOrderStatus,getHistory} from '../services/adminOrderService.js';
 import {confirmDemoPayment,getPaymentHistory} from '../services/paymentService.js';
-import {approveDemoRefund} from '../services/operationsService.js';
+import {approveDemoRefund,rejectDemoRefund} from '../services/operationsService.js';
 import {getNextStatus,normalizeOrderStatus,ORDER_STATUS_LABEL} from '../services/orderStatusService.js';
 import {formatVND,formatDate,formatOrderItem} from '../core/format.js';
 import {toast} from '../core/toast.js';
@@ -46,7 +46,7 @@ function renderRow(order){
   if(order.notes)detail.append(el('p',{text:'Ghi chú: '+order.notes}));
   for(const entry of history)detail.append(el('p',{text:`${formatDate(entry.created_at)}: ${ORDER_STATUS_LABEL[entry.status]||entry.status}`}));
   for(const entry of getPaymentHistory(order._id))detail.append(el('p',{text:`${formatDate(entry.created_at)}: Xác nhận thanh toán mô phỏng (${entry.payment_method==='cod'?'COD':'chuyển khoản'})`}));
-  for(const refund of order.payments||[])if(refund.kind==='refund')detail.append(el('p',{text:`Hoàn tiền demo: ${refund.status==='refunded'?'Đã thực hiện':refund.refund_approved_at?'Admin đã duyệt, chờ Staff thực hiện':'Chờ Admin duyệt'}${refund.refund_reason?' · '+refund.refund_reason:''}`}));
+  for(const refund of order.payments||[])if(refund.kind==='refund')detail.append(el('p',{text:`Hoàn tiền demo: ${refund.status==='refunded'?'Đã thực hiện':refund.refund_rejected_at?'Admin từ chối: '+(refund.refund_rejection_reason||'Không đủ điều kiện'):refund.refund_approved_at?'Admin đã duyệt, chờ Staff thực hiện':'Chờ Admin duyệt'}${refund.refund_reason?' · '+refund.refund_reason:''}`}));
   tr.append(cell(detail,'admin-items-cell'));
   tr.append(cell(order.fulfillmentType==='delivery'?'Ship tận nơi':'Tự qua lấy'));
   tr.append(cell(order.deliveryAddress||order.ship_address||'Nhận tại cửa hàng','admin-address'));
@@ -86,6 +86,17 @@ function renderRow(order){
       catch(error){toast({title:'Không thể duyệt hoàn tiền',description:error.message,variant:'destructive'});approve.disabled=false;}
     });
     actions.append(approve);
+    const reject=el('button',{type:'button',className:'admin-action admin-action--payment',text:'Từ chối hoàn tiền demo'});
+    reject.addEventListener('click',async()=>{
+      if(reject.disabled)return;
+      const reason=window.prompt('Nhập lý do từ chối hoàn tiền (ít nhất 5 ký tự):');
+      if(reason===null)return;
+      if(reason.trim().length<5){toast({title:'Lý do phải có ít nhất 5 ký tự',variant:'destructive'});return;}
+      reject.disabled=true;
+      try{await rejectDemoRefund(refund.id,reason.trim());toast({title:'Đã từ chối yêu cầu hoàn tiền demo'});await load();}
+      catch(error){toast({title:'Không thể từ chối hoàn tiền',description:error.message,variant:'destructive'});reject.disabled=false;}
+    });
+    actions.append(reject);
   }
   tr.append(cell(actions));
   return tr;

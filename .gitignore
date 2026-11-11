@@ -58,6 +58,9 @@ site/data/*
 !site/data/loyalty-rewards.json
 
 reference/*
+!reference/contracts/
+reference/contracts/*
+!reference/contracts/CONTRACT.md
 !reference/architecture/
 reference/architecture/*
 !reference/architecture/SUPABASE_IMPLEMENTATION_PLAN.md
@@ -101,4 +104,5 @@ prod-ca-2021.crt
 /artifacts/ui-polish/**/*.jpg
 /artifacts/ui-polish/**/*.jpeg
 /artifacts/ui-polish/**/*.webp
-/artifacts/
+/artifacts/*
+/artifacts/refund-e2e/

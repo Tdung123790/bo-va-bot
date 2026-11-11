@@ -1,4 +1,5 @@
 begin;
+update public.promotions set status='inactive' where status='active';
 insert into auth.users(id,instance_id,aud,role,email,encrypted_password,email_confirmed_at)
 values
  ('aaaaaaaa-0909-4aaa-8aaa-aaaaaaaaaaa1','00000000-0000-0000-0000-000000000000',
@@ -21,7 +22,8 @@ values('main','{"1":[{"start":"00:00","end":"24:00"}],
 "4":[{"start":"00:00","end":"24:00"}],
 "5":[{"start":"00:00","end":"24:00"}],
 "6":[{"start":"00:00","end":"24:00"}],
-"7":[{"start":"00:00","end":"24:00"}]}'::jsonb);
+"7":[{"start":"00:00","end":"24:00"}]}'::jsonb)
+on conflict(store_key) do update set pickup_hours=excluded.pickup_hours;
 update public.loyalty_accounts set points=1000,total_earned=1000
  where customer_id='aaaaaaaa-0909-4aaa-8aaa-aaaaaaaaaaa1';
 insert into public.loyalty_transactions(customer_id,points,gross_points,transaction_type,event_key,description)

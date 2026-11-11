@@ -55,11 +55,11 @@ for (const name of fs.readdirSync(tests).filter((value) => value.endsWith('.sql'
   scan(fs.readFileSync(path.join(tests, name), 'utf8'), name);
 }
 const tables = [...sql.matchAll(/create table public\.([a-z_]+)\s*\(/g)].map((m) => m[1]);
-assert.equal(tables.length, 18, `Expected 18 tables, found ${tables.length}`);
-assert.equal(new Set(tables).size, 18, 'Duplicate application table');
+assert.equal(tables.length, 19, `Expected 19 tables, found ${tables.length}`);
+assert.equal(new Set(tables).size, 19, 'Duplicate application table');
 for (const table of tables) {
   assert.match(sql, new RegExp(`alter table public\\.${table} enable row level security`),
     `RLS missing: ${table}`);
 }
-console.log(`PASS: ${files.length} migration files, 18 unique application tables, RLS, lexical balance`);
+console.log(`PASS: ${files.length} migration files, 19 unique application tables, RLS, lexical balance`);
 console.log('This is a structural check, not a PostgreSQL parse or execution.');
