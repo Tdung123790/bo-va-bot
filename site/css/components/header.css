@@ -2,3 +2,6 @@
 @media(max-width:399px){.site-header__inner{width:calc(100% - 2rem)}.site-header__brand{font-size:1.65rem}.site-header__actions{gap:.25rem}.site-header__button,.site-header__heart{height:2.75rem;min-width:2.75rem;padding:.375rem}}
 @media(max-width:379px){.site-header__inner{width:calc(100% - 2rem)}.site-header__brand{font-size:1.375rem}.site-header__brand svg{width:1.125rem}.site-header__button,.site-header__heart{height:2.5rem;min-width:2.5rem}}
 @media(max-width:339px){.site-header__brand{font-size:1.375rem}.site-header__button,.site-header__heart{height:2.5rem;min-width:2.5rem}}
+
+.site-header__brand .site-header__fleur{display:inline-flex;align-items:center;justify-content:center;flex:none;width:1.5rem;height:1.8rem;color:#e5c28c;font:400 1.85rem/1 Georgia,"Times New Roman",serif;text-indent:0;letter-spacing:0}
+@media(max-width:379px){.site-header__brand .site-header__fleur{width:1.125rem;font-size:1.45rem}}

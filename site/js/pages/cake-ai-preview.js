@@ -1,3 +1,5 @@
+import {loginUrl} from '../core/guard.js';
+import {getCurrentMember} from '../services/authService.js';
 
 import {isSupabaseMode,getSupabaseClient,getBackendUrl,getBackendPublishableKey} from '../core/backend.js';
 
@@ -36,8 +38,26 @@ function design() {
   };
 }
 
+function refreshGenerateAccess() {
+  const member = getCurrentMember();
+  if (!button || !status) return;
+  button.disabled = busy || Boolean(member && (member.role !== 'customer' || member.status !== 'active'));
+  if (!busy) button.textContent = !member ? 'Đăng nhập để tạo ảnh bằng AI' : member.role === 'customer' && member.status === 'active' ? 'Tạo ảnh xem trước bằng AI' : 'Chỉ tài khoản khách hàng được tạo ảnh';
+  if (!member) status.textContent = 'Đăng nhập tài khoản khách hàng để sử dụng Gemini AI.';
+}
+
 async function generate() {
   if (busy) return;
+  const member = getCurrentMember();
+  if (!member) {
+    location.assign(loginUrl('Vui lòng đăng nhập để tạo ảnh xem trước bằng AI.', 'customize.html'));
+    return;
+  }
+  if (member.role !== 'customer' || member.status !== 'active') {
+    status.textContent = 'Chỉ tài khoản khách hàng đang hoạt động được sử dụng Gemini AI.';
+    return;
+  }
+
 
   busy = true;
   button.disabled = true;
@@ -77,6 +97,9 @@ async function generate() {
       if (result.error === 'AUTH_REQUIRED') {
         throw Error('Phiên đăng nhập hết hạn.');
       }
+      if (result.error === 'ACTIVE_CUSTOMER_REQUIRED') {
+        throw Error('Chỉ tài khoản khách hàng đang hoạt động được tạo ảnh bằng AI.');
+      }
 
       if (result.error === 'GEMINI_QUOTA_OR_BILLING') {
         throw Error('Gemini chưa cấp quyền tạo ảnh, hết quota hoặc cần bật billing.');
@@ -104,11 +127,13 @@ async function generate() {
     status.textContent = error.message || 'Không thể tạo ảnh.';
   } finally {
     busy = false;
-    button.disabled = false;
-    button.textContent = 'Tạo ảnh xem trước bằng AI';
+    refreshGenerateAccess();
   }
 }
 
 form?.addEventListener('input', invalidate);
 form?.addEventListener('change', invalidate);
 button?.addEventListener('click', generate);
+
+window.addEventListener('bobot:auth-change', refreshGenerateAccess);
+refreshGenerateAccess();

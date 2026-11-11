@@ -40,9 +40,4 @@ export async function initPromotions(){
   }
 }
 
-document.querySelector('#promotions-newsletter')?.addEventListener('submit',event=>{
-  event.preventDefault();
-  document.querySelector('#promotions-newsletter-message').textContent='Đây là biểu mẫu đăng ký nhận tin minh họa; chưa gửi email.';
-  event.target.reset();
-});
 initPromotions();

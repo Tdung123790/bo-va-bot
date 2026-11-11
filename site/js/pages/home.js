@@ -1,9 +1,7 @@
 ﻿import {getAll as getProducts} from '../services/productService.js';
-import {getAll as getPromotions} from '../services/promotionService.js';
 import {renderProductCards} from '../components/product-card.js';
 import {mountMaisonJourney, SIGNATURE_NAMES} from './home-premium.js';
 import {el} from '../core/dom.js';
-import {toast} from '../core/toast.js';
 
 function reveal() {
   const nodes = document.querySelectorAll('.reveal:not(.is-visible)');
@@ -93,83 +91,13 @@ const chosen = [
   }
 }
 
-async function loadPromotions() {
-  const grid = document.querySelector('#promotion-grid');
-  if (!grid) return;
 
-  try {
-    const page = await getPromotions([], {limit: 1000});
-
-    const active = (page.items || [])
-      .filter(item => item.availability === 'active')
-      .slice(0, 4);
-
-    const cards = active.map(item => {
-      const card = el('article', {className: 'promotion-tile'});
-
-      const photo = el('img', {
-        src: item.bannerImage ||
-          'https://static.wixstatic.com/media/fb1c19_5a825b4c95524516b7b2290e8f2345ec~mv2.png?originWidth=768&originHeight=448',
-        alt: item.title || 'Khuyến mãi',
-        loading: 'lazy'
-      });
-
-      const caption = el('div', {
-        className: 'promotion-tile__content'
-      }, [
-        el('span', {text: item.discountDetails || ''}),
-        el('h3', {text: item.title || 'Ưu đãi'}),
-        el('p', {text: item.description || ''}),
-        el('a', {
-          href: 'promotions.html',
-          text: 'Khám Phá Thêm →'
-        })
-      ]);
-
-      card.append(photo, caption);
-      return card;
-    });
-
-    grid.replaceChildren(...cards);
-
-    if (!cards.length) {
-      grid.append(
-        el('p', {text: 'Ưu đãi mới sẽ sớm được cập nhật.'})
-      );
-    }
-  } catch (error) {
-    console.error('Home promotions:', error);
-    grid.replaceChildren(
-      el('p', {text: 'Không thể tải ưu đãi.'})
-    );
-  }
-}
-
-function initNewsletter() {
-  document.querySelector('#newsletter-form')?.addEventListener(
-    'submit',
-    event => {
-      event.preventDefault();
-
-      document.querySelector(
-        '#newsletter-feedback'
-      ).textContent = 'Biểu mẫu hiện chưa lưu địa chỉ email.';
-
-      toast({
-        title: 'Biểu mẫu đang ở chế độ mô phỏng',
-        description: 'Email chưa được gửi hoặc lưu.'
-      });
-
-      event.target.reset();
-    }
-  );
-}
 
 export function initHome() {
   reveal();
-  initNewsletter();
+
   void loadCollection();
-  void loadPromotions();
+
 }
 
 initHome();

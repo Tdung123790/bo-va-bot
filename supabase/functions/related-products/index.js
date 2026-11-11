@@ -1,4 +1,4 @@
-const headers={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization,apikey,content-type','Access-Control-Allow-Methods':'POST,OPTIONS','Cache-Control':'no-store','Content-Type':'application/json; charset=utf-8'};
+const headers={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization,apikey,content-type,x-client-info','Access-Control-Allow-Methods':'POST,OPTIONS','Cache-Control':'no-store','Content-Type':'application/json; charset=utf-8'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status,headers});
 const dataPromise=Deno.readTextFile(new URL('./rankings.json',import.meta.url)).then(JSON.parse);
 

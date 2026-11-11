@@ -82,6 +82,28 @@ Deno.serve(async request => {
       return reply(origin, 401, {error: 'AUTH_REQUIRED'});
     }
 
+    const account = await userResponse.json().catch(() => null);
+    if (!account?.id || !/^[0-9a-f-]{36}$/i.test(account.id)) {
+      return reply(origin, 401, {error: 'AUTH_REQUIRED'});
+    }
+
+    const profileUrl = new URL(`${url}/rest/v1/profiles`);
+    profileUrl.searchParams.set('select', 'id,role,status');
+    profileUrl.searchParams.set('id', `eq.${account.id}`);
+    profileUrl.searchParams.set('limit', '1');
+    const profileResponse = await fetch(profileUrl, {
+      headers: {apikey: key, Authorization: authorization},
+      signal: AbortSignal.timeout(10000)
+    });
+    if (!profileResponse.ok) {
+      return reply(origin, 403, {error: 'ACTIVE_CUSTOMER_REQUIRED'});
+    }
+    const profiles = await profileResponse.json().catch(() => []);
+    if (!Array.isArray(profiles) || profiles[0]?.id !== account.id ||
+        profiles[0]?.role !== 'customer' || profiles[0]?.status !== 'active') {
+      return reply(origin, 403, {error: 'ACTIVE_CUSTOMER_REQUIRED'});
+    }
+
     const requestedText = choices.text?.trim();
 
     const prompt = [

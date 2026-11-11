@@ -13,7 +13,7 @@ body[data-page="tai-khoan"]{background:var(--color-color-11)}
 .profile-card__details dt{margin-top:.75rem;color:rgba(51,42,32,.5);font:400 .75rem var(--font-paragraph)}
 .profile-card__details dd{min-width:0;margin:0;overflow-wrap:anywhere;font:500 .875rem var(--font-paragraph)}
 #profile-logout{width:100%;min-height:2.75rem;border:1px solid rgba(229,57,53,.3);border-radius:.5rem;background:transparent;color:var(--color-destructive);font:400 .75rem var(--font-paragraph);cursor:pointer}
-.profile-loyalty{margin-top:1.5rem}
+.profile-loyalty{margin:1.25rem 0;padding:1.25rem 0 0;border:0;border-top:1px solid rgba(176,159,131,.3);border-radius:0;background:transparent;box-shadow:none}
 .profile-loyalty h2{margin:0 0 .75rem;font:500 1.25rem var(--font-heading)}
 .profile-loyalty #loyalty-view{font:400 .875rem/1.5 var(--font-paragraph)}
 .profile-loyalty #loyalty-transactions p{margin:.5rem 0;color:rgba(51,42,32,.6);font:400 .75rem/1.5 var(--font-paragraph)}
@@ -39,6 +39,8 @@ body[data-page="tai-khoan"]{background:var(--color-color-11)}
 .profile-order__bottom{padding-top:1rem;border-top:1px solid rgba(176,159,131,.2);font:400 .75rem/1.4 var(--font-paragraph)}
 .profile-order__bottom span{color:rgba(51,42,32,.5)}
 .profile-order__bottom strong{font-size:.875rem;text-align:right}
-@media(min-width:1024px){.profile-layout{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.profile-card{position:sticky;top:6rem}}
+@media(min-width:1024px){.profile-layout{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.profile-sidebar{position:sticky;top:6rem;align-self:start}.profile-card{position:static}}
 @media(max-width:390px){.profile-order__bottom{flex-direction:column;align-items:flex-start}.profile-order__bottom strong{text-align:left}}
 .profile-order__cancel{margin-top:1rem;padding:.55rem .9rem;border:1px solid currentColor;border-radius:.4rem;background:transparent;color:inherit;cursor:pointer}.profile-order__cancel:disabled{opacity:.55;cursor:wait}
+
+@media(min-width:1024px) and (max-height:850px){.profile-sidebar{position:static}}

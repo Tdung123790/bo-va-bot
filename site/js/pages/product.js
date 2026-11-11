@@ -8,31 +8,10 @@ import {toast} from '../core/toast.js';
 import {getCurrentUser,loginUrl} from '../core/guard.js';
 import {toggle as toggleWishlist,ids as wishlistIds} from '../services/wishlistService.js';
 import {getRelatedProductIds} from '../services/recommendationService.js';
-import {getAll as getReviews} from '../services/reviewService.js';
 
 const IMAGE_FALLBACK='https://static.wixstatic.com/media/fb1c19_f53dddbb40214cbc9cbd321517ec21e5~mv2.png?originWidth=768&originHeight=768';
 const HEART='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>';
 const hasPrice=product=>product.price!==null&&product.price!==undefined&&product.price!==''&&Number.isFinite(Number(product.price));
-
-async function loadProductReviews(product){
-  const section=document.querySelector('#product-reviews');
-  const summary=document.querySelector('#product-reviews-summary');
-  const list=document.querySelector('#product-reviews-list');
-  section.hidden=false;
-  summary.textContent='Đang tải đánh giá sản phẩm...';
-  try{
-    const result=await getReviews([],{limit:1000});
-    const rows=result.items.filter(row=>row.source==='supabase'&&row.product_id===product.backendId);
-    if(!rows.length){summary.textContent='Chưa có đánh giá được duyệt cho sản phẩm này.';list.replaceChildren();return;}
-    const average=rows.reduce((sum,row)=>sum+Number(row.rating),0)/rows.length;
-    summary.textContent=`${rows.length} đánh giá được duyệt · ${average.toFixed(1)}/5 sao`;
-    list.replaceChildren(...rows.slice(0,3).map(row=>el('article',{},[
-      el('strong',{text:`${row.rating}/5 sao`}),
-      el('p',{text:row.content}),
-      el('time',{text:new Intl.DateTimeFormat('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(row.created_at))})
-    ])));
-  }catch(error){summary.textContent='Chưa tải được đánh giá sản phẩm.';list.replaceChildren();console.error(error);}
-}
 
 function empty(title='Sản Phẩm Không Tìm Thấy',detail='Sản phẩm bạn tìm kiếm không tồn tại hoặc đã bị xóa.'){
   const box=el('div',{className:'empty-state'},[el('h2',{text:title}),el('p',{text:detail}),el('a',{href:'menu.html',className:'pill-button',text:'← Quay Lại Thực Đơn'})]);
@@ -69,6 +48,31 @@ function favoriteButtons(productId){
   window.addEventListener('bobot:wishlist-updated',update);
   window.addEventListener('bobot:auth-change',update);
   return {create};
+}
+
+async function loadRelatedProducts(product){
+  const section=document.querySelector('#related-section');
+  const grid=document.querySelector('#related-grid');
+  if(!section||!grid)return;
+  section.hidden=false;
+  grid.replaceChildren(el('p',{text:'Đang tải sản phẩm liên quan...'}));
+  try{
+    const [rankedIds,result]=await Promise.all([
+      getRelatedProductIds(String(product.id)),
+      getAll([],{limit:1000})
+    ]);
+    const available=new Map(result.items.filter(item=>
+      item.status==='active'&&!isCustomCake(item)&&Number(item.stockQuantity)>0
+    ).map(item=>[String(item.id),item]));
+    const related=rankedIds.map(id=>available.get(id)).filter(Boolean).slice(0,4);
+    if(related.length)renderProductCards(grid,related);
+    else grid.replaceChildren(el('p',{text:'Chưa có gợi ý phù hợp đang bán cho sản phẩm này.'}));
+  }catch(error){
+    console.error('Không thể tải sản phẩm liên quan',error);
+    const retry=el('button',{type:'button',className:'outline-button',text:'Tải lại sản phẩm liên quan'});
+    retry.addEventListener('click',()=>loadRelatedProducts(product));
+    grid.replaceChildren(el('p',{text:'Không tải được gợi ý. Vui lòng thử lại.'}),retry);
+  }
 }
 
 export async function initProduct(){
@@ -141,19 +145,9 @@ export async function initProduct(){
   info.append(details);
   container.append(media,info);
   document.querySelector('#product-content').replaceChildren(container);
-  loadProductReviews(product);
   if(max<1){add.disabled=true;buy.disabled=true;info.append(el('p',{text:'Sản phẩm hiện đã hết hàng.'}));}
 
-  const relatedSection=document.querySelector('#related-section');
-  const relatedGrid=document.querySelector('#related-grid');
-  relatedSection.hidden=false;
-  relatedGrid.replaceChildren(el('p',{text:'Đang tải sản phẩm liên quan...'}));
-  try{
-    const [rankedIds,result]=await Promise.all([getRelatedProductIds(String(product.id)),getAll([],{limit:1000})]);
-    const available=new Map(result.items.filter(item=>item.status==='active'&&!isCustomCake(item)&&Number(item.stockQuantity)>0).map(item=>[String(item.id),item]));
-    const related=rankedIds.map(id=>available.get(id)).filter(Boolean).slice(0,4);
-    if(related.length)renderProductCards(relatedGrid,related);
-    else relatedGrid.replaceChildren(el('p',{text:'Hiện chưa có sản phẩm liên quan đang bán.'}));
-  }catch(error){relatedGrid.replaceChildren(el('p',{text:'Chưa tải được sản phẩm liên quan. Vui lòng thử lại sau.'}));console.error('Không thể tải sản phẩm liên quan',error);}
+  await loadRelatedProducts(product);
+
 }
 initProduct();
