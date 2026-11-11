@@ -26,6 +26,13 @@ async function backendOrders(customerId=null){
 }
 export async function getAdminOrders(){authorize();return isSupabaseMode()?{success:true,orders:await backendOrders()}:demoGetAdminOrders();}
 export async function getMyOrders(){const id=getCurrentMember()?.contactId;if(!id)throw Error('UNAUTHORIZED');return isSupabaseMode()?{success:true,orders:await backendOrders(id)}:demoGetMyOrders();}
+export async function requestCancellation(orderId,reason){
+ if(!isSupabaseMode()||!getCurrentMember()?.contactId)throw Error('Bạn cần đăng nhập.');
+ const client=await getSupabaseClient();
+ const {data,error}=await client.rpc('submit_order_cancel_request',{p_order:orderId,p_reason:reason});
+ if(error)throw backendError(error);
+ return data;
+}
 export async function cancelMyOrder(orderId){
  if(!isSupabaseMode())throw Error('Chức năng hủy đơn chỉ khả dụng trong chế độ Supabase.');
  if(!getCurrentMember()?.contactId)throw Error('Bạn cần đăng nhập.');

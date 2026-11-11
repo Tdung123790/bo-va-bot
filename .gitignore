@@ -101,3 +101,4 @@ prod-ca-2021.crt
 /artifacts/ui-polish/**/*.jpg
 /artifacts/ui-polish/**/*.jpeg
 /artifacts/ui-polish/**/*.webp
+/artifacts/

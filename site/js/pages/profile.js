@@ -1,6 +1,6 @@
 import {requireLogin} from '../core/guard.js';
 import {logout} from '../services/authService.js';
-import {getMyOrders,cancelMyOrder} from '../services/adminOrderService.js';
+import {getMyOrders,cancelMyOrder,requestCancellation} from '../services/adminOrderService.js';
 import {getBalance,getTransactions} from '../services/loyaltyService.js';
 import {getFlow,normalizeOrderStatus,ORDER_STATUS_LABEL} from '../services/orderStatusService.js';
 import {formatVND,formatDate,formatOrderItem} from '../core/format.js';
@@ -42,6 +42,11 @@ function renderOrder(order){
   if(order.payment_method==='vnpay')Object.assign(paymentLabels,{pending:'VNPAY sandbox đang chờ IPN/đối soát',paid:'VNPAY sandbox đã được backend xác nhận',refunded:'VNPAY sandbox đã xác nhận hoàn tiền',failed:'VNPAY sandbox thất bại'});
   bottom.append(el('span',{text:'Thanh toán: '+(paymentLabels[order.payment_status]||'Chưa có dữ liệu')}));
   card.append(head,items,progress,bottom);
+  const refund=(order.payments||[]).find(payment=>payment.kind==='refund');
+  if(refund){
+    const refundState=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Hoàn tiền đã được duyệt, đang chờ Staff thực hiện':'Yêu cầu hoàn tiền đang chờ Admin duyệt';
+    card.append(el('p',{className:'profile-order__cancelled',text:refundState}));
+  }
   if(cancelled)card.append(cancelled);
   if(isSupabaseMode()&&order.sales_channel==='online'&&['pending','confirmed'].includes(status)){
     const cancel=el('button',{type:'button',className:'profile-order__cancel',text:'Hủy đơn'});
@@ -52,6 +57,23 @@ function renderOrder(order){
       catch(error){const message=el('p',{className:'profile-order__cancelled',text:'Không thể hủy đơn: '+error.message});card.append(message);cancel.disabled=false;}
     });
     card.append(cancel);
+  }
+  if(isSupabaseMode()&&order.sales_channel==='online'&&['preparing','shipping'].includes(status)){
+    const current={status:order.cancel_request_status,resolution_note:order.cancel_resolution_note};
+    if(current.status==='pending')card.append(el('p',{className:'profile-order__cancelled',text:'Yêu cầu hủy đang chờ Staff xem xét; đơn chưa được hủy.'}));
+    else{
+      if(current?.status==='rejected')card.append(el('p',{className:'profile-order__cancelled',text:'Yêu cầu hủy trước đã bị từ chối: '+(current.resolution_note||'Không đủ điều kiện.')}));
+      const request=el('button',{type:'button',className:'profile-order__cancel',text:'Gửi yêu cầu hủy đơn'});
+      request.addEventListener('click',async()=>{
+        const reason=window.prompt('Vui lòng ghi lý do hủy (ít nhất 5 ký tự).');
+        if(reason===null)return;
+        if(reason.trim().length<5){window.alert('Lý do phải có ít nhất 5 ký tự.');return;}
+        request.disabled=true;
+        try{await requestCancellation(order._id,reason.trim());await refreshOrders();}
+        catch(error){window.alert('Không gửi được yêu cầu: '+error.message);request.disabled=false;}
+      });
+      card.append(request);
+    }
   }
   return card;
 }
@@ -85,5 +107,5 @@ async function init(){
   }catch(error){document.querySelector('#my-orders').replaceChildren(el('p',{text:'Không thể tải đơn hàng: '+error.message}));}
 }
 
-document.querySelector('#profile-logout').addEventListener('click',async()=>{await logout();location.assign('index.html');});
+document.querySelector('#profile-logout').addEventListener('click',async()=>{try{await logout();window.location.replace('/index.html');}catch(error){window.alert('Không thể đăng xuất: '+error.message);}});
 if(member)init().catch(error=>{document.querySelector('#my-orders').replaceChildren(el('p',{text:'Không thể tải hồ sơ: '+error.message}));});

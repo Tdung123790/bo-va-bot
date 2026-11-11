@@ -1,5 +1,5 @@
 import {getCurrentMember} from '../services/authService.js';
-import {getOperationalOrders,transitionOperationalOrder,cancelOperationalOrder,confirmOperationalPayment,completePosSale,recordDeliveryFailure,requestDemoRefund,approveDemoRefund,executeDemoRefund} from '../services/operationsService.js';
+import {getOperationalOrders,transitionOperationalOrder,cancelOperationalOrder,confirmOperationalPayment,completePosSale,recordDeliveryFailure,requestDemoRefund,approveDemoRefund,executeDemoRefund,resolveCancellationRequest} from '../services/operationsService.js';
 import {getNextStatus,ORDER_STATUS_LABEL} from '../services/orderStatusService.js';
 import {formatVND,formatDate,formatOrderItem} from '../core/format.js';
 
@@ -46,7 +46,8 @@ function renderOrder(order){
  for(const payment of [...(order.payments||[])].sort((a,b)=>String(a.created_at).localeCompare(String(b.created_at))))history.append(node('li',`${formatDate(payment.created_at)} · ${payment.payment_method} · ${payment.status} · ${formatVND(payment.amount)}`));
  details.append(history);article.append(details);
  const actions=node('div',undefined,'staff-actions');
- const next=order.sales_channel==='online'?getNextStatus(order.order_status,order.fulfillment_type):null;
+ const latestCancel={id:order.cancel_request_id,status:order.cancel_request_status,reason:order.cancel_request_reason};
+ const next=order.sales_channel==='online'&&latestCancel?.status!=='pending'?getNextStatus(order.order_status,order.fulfillment_type):null;
  const note=node('input');note.className='staff-reason';note.placeholder='Lý do/ghi chú xử lý';note.setAttribute('aria-label','Lý do hoặc ghi chú cho đơn '+order.order_code);
  if(next){
   const transition=node('button',ORDER_STATUS_LABEL[next]||next,'ops-primary');transition.type='button';
@@ -63,10 +64,28 @@ function renderOrder(order){
   failed.addEventListener('click',()=>{if(note.value.trim().length<5){note.setCustomValidity('Nhập lý do giao thất bại ít nhất 5 ký tự.');note.reportValidity();note.setCustomValidity('');return;}perform(article,()=>recordDeliveryFailure(order.id,note.value.trim()));});
   actions.append(failed);
  }
- if(order.order_status!=='completed'&&order.order_status!=='cancelled'){
+ if(['pending','confirmed'].includes(order.order_status)){
   const cancel=node('button','Hủy đơn','ops-secondary');cancel.type='button';
   cancel.addEventListener('click',()=>{if(!note.value.trim()){note.setCustomValidity('Nhập lý do hủy.');note.reportValidity();note.setCustomValidity('');return;}perform(article,()=>cancelOperationalOrder(order.id,note.value.trim()));});
   actions.append(cancel);
+ }
+ const cancelRequest=latestCancel;
+ if(cancelRequest?.status==='pending'){
+  article.append(node('p','Khách yêu cầu hủy đơn: '+cancelRequest.reason,'staff-warning'));
+  if(user.role==='staff'){
+   const approve=node('button','Chấp thuận hủy','ops-secondary');approve.type='button';
+   approve.addEventListener('click',()=>{
+    if(note.value.trim().length<5){window.alert('Nhập lý do quyết định tối thiểu 5 ký tự.');return;}
+    const restock=window.confirm('Chỉ hoàn tồn nếu đã kiểm tra hàng còn đủ điều kiện bán. OK = hoàn tồn, Cancel = KHÔNG hoàn tồn.');
+    if(!window.confirm('Xác nhận chấp thuận hủy đơn?'))return;
+    perform(article,()=>resolveCancellationRequest(cancelRequest.id,true,note.value.trim(),restock));
+   });actions.append(approve);
+   const reject=node('button','Từ chối hủy','ops-secondary');reject.type='button';
+   reject.addEventListener('click',()=>{
+    if(note.value.trim().length<5){window.alert('Nhập lý do từ chối tối thiểu 5 ký tự.');return;}
+    perform(article,()=>resolveCancellationRequest(cancelRequest.id,false,note.value.trim(),false));
+   });actions.append(reject);
+  }
  }
  const charge=order.payments?.find(row=>row.kind==='charge');
  if(order.order_status!=='cancelled'&&charge&&['bank_transfer_demo'].includes(charge.payment_method)&&['unpaid','pending'].includes(charge.status)){
@@ -86,10 +105,11 @@ function renderOrder(order){
   actions.append(approve);
  }
  if(refund?.status==='pending'&&user.role==='staff'&&refund.refund_approved_at){
-  const execute=node('button','Xác nhận đã thực hiện hoàn tiền demo','ops-secondary');execute.type='button';
-  execute.addEventListener('click',()=>{if(!window.confirm('Chỉ xác nhận khi đã thực hiện hoàn tiền demo theo quy trình.'))return;perform(article,()=>executeDemoRefund(refund.id));});
+  const execute=node('button','Ghi nhận hoàn tiền đã thực hiện','ops-secondary');execute.type='button';
+  execute.addEventListener('click',()=>{const reference=window.prompt('Nhập mã giao dịch/biên nhận hoàn tiền đã thực hiện (ít nhất 6 ký tự). Không nhập thông tin cá nhân:');if(reference===null)return;if(reference.trim().length<6){window.alert('Cần mã biên nhận hoàn tiền hợp lệ.');return;}if(!window.confirm('Xác nhận đã thực sự hoàn tiền và có biên nhận?'))return;perform(article,()=>executeDemoRefund(refund.id,reference.trim()));});
   actions.append(execute);
  }
+ if(refund){const state=refund.status==='refunded'?'Đã ghi nhận hoàn tiền':refund.status==='failed'?'Yêu cầu hoàn tiền không thành công':refund.refund_approved_at?'Admin đã duyệt — chờ Staff hoàn tiền':'Đang chờ Admin duyệt hoàn tiền';article.append(node('p',state+(refund.transaction_code?' · Biên nhận: '+refund.transaction_code:''),'staff-warning'));}
  if(actions.children.length){actions.prepend(note);article.append(actions);}
  return article;
 }
