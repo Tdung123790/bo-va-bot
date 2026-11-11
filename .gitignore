@@ -105,4 +105,6 @@ prod-ca-2021.crt
 /artifacts/ui-polish/**/*.jpeg
 /artifacts/ui-polish/**/*.webp
 /artifacts/*
-/artifacts/refund-e2e/
+!/artifacts/refund-e2e/
+/artifacts/refund-e2e/*
+/artifacts/refund-e2e/screenshots/
