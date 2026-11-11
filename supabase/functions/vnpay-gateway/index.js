@@ -151,15 +151,24 @@ Deno.serve(async request=>{
   const isIpnCallback=request.method==='GET'&&[...callbackUrl.searchParams.keys()].some(key=>key.startsWith('vnp_'));
   const action=request.method==='GET'?callbackUrl.searchParams.get('action'):(await request.clone().json()).action;
   if(action==='availability'&&request.method==='POST'){
-   let available=false;
+   let tmnCode;
+   try{({tmnCode}=credentials());}
+   catch{return json({available:false,reason:'VNPAY_SECRETS_OR_MODE'});}
+   if(!/^[A-Za-z0-9]{8}$/.test(tmnCode))return json({available:false,reason:'VNPAY_TMN_CODE_INVALID'});
+   const returnUrl=env('VNPAY_RETURN_URL');
+   if(!returnUrl)return json({available:false,reason:'VNPAY_RETURN_URL_MISSING'});
+   let target;
+   try{target=new URL(returnUrl);}
+   catch{return json({available:false,reason:'VNPAY_RETURN_URL_INVALID'});}
+   if(target.protocol!=='https:'&&!['localhost','127.0.0.1'].includes(target.hostname))return json({available:false,reason:'VNPAY_RETURN_URL_INVALID'});
+   if(!base()||!serviceKey())return json({available:false,reason:'BACKEND_SERVICE_CONFIG_MISSING'});
    try{
-    const {tmnCode}=credentials(),target=new URL(env('VNPAY_RETURN_URL'));
-    if(/^[A-Za-z0-9]{8}$/.test(tmnCode)&&(target.protocol==='https:'||['localhost','127.0.0.1'].includes(target.hostname))){
-     await rest('/rest/v1/payments?select=gateway_txn_ref,gateway_query_reserved_at&limit=0',{token:serviceKey(),service:true});
-     available=true;
-    }
-   }catch{}
-   return json({available});
+    await rest('/rest/v1/payments?select=gateway_txn_ref,gateway_query_reserved_at&limit=0',{token:serviceKey(),service:true});
+   }catch(error){
+    console.error('VNPAY availability: payment schema or database access check failed');
+    return json({available:false,reason:'PAYMENT_SCHEMA_OR_ACCESS_NOT_READY'});
+   }
+   return json({available:true});
   }
   if(request.method==='GET'&&(action==='ipn'||isIpnCallback))return ipn(request);
   if(request.method!=='POST')return json({error:'METHOD_NOT_ALLOWED'},405);

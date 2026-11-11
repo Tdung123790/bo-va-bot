@@ -65,8 +65,33 @@ export async function initCheckoutForm(){
   option.append(radio,document.createTextNode(' VNPAY sandbox — thanh toán qua cổng thử nghiệm'),gatewayNote);
   form.querySelector('input[name="paymentMethod"][value="bank_transfer_demo"]').closest('label').after(option);
   form.querySelector('input[name="paymentMethod"]').closest('fieldset').querySelector('legend').textContent='Phương thức thanh toán';
-  getVnpayAvailability().then(state=>{radio.disabled=!state.available;gatewayNote.textContent=state.available?'':' (chưa cấu hình)';})
-   .catch(()=>{radio.disabled=true;gatewayNote.textContent=' (chưa cấu hình)';});
+  const vnpayReasonLabels={
+   VNPAY_SECRETS_OR_MODE:'thiếu cấu hình Sandbox',
+   VNPAY_TMN_CODE_INVALID:'mã Terminal chưa hợp lệ',
+   VNPAY_RETURN_URL_MISSING:'thiếu Return URL',
+   VNPAY_RETURN_URL_INVALID:'Return URL chưa hợp lệ',
+   BACKEND_SERVICE_CONFIG_MISSING:'backend chưa cấu hình đầy đủ',
+   PAYMENT_SCHEMA_OR_ACCESS_NOT_READY:'database thanh toán chưa sẵn sàng'
+  };
+  let availabilityRequest=0;
+  const refreshVnpayAvailability=async()=>{
+   const version=++availabilityRequest;
+   radio.disabled=true;
+   gatewayNote.textContent=' (đang kiểm tra cấu hình)';
+   try{
+    const state=await getVnpayAvailability();
+    if(version!==availabilityRequest)return;
+    radio.disabled=state?.available!==true;
+    gatewayNote.textContent=radio.disabled?` (${vnpayReasonLabels[state?.reason]||'chưa khả dụng'})`:'';
+    if(radio.disabled&&radio.checked)form.querySelector('input[name="paymentMethod"][value="bank_transfer_demo"]').checked=true;
+   }catch(error){
+    if(version!==availabilityRequest)return;
+    radio.disabled=true;
+    gatewayNote.textContent=' (không kết nối được cổng thanh toán)';
+   }
+  };
+  void refreshVnpayAvailability();
+  dialog.addEventListener('toggle',()=>{if(dialog.open)void refreshVnpayAvailability();});
   $('#checkout-points-wrap').hidden=false;
   form.querySelector('input[name="fulfillmentType"][value="pickup"]').checked=true;
   $('#checkout-shipping').hidden=true;
