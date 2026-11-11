@@ -137,7 +137,7 @@ function scheduleSearch(){
     }catch(error){
       if(generation!==searchGeneration)return;
       state.searchIds=null;
-      status.textContent='Mô hình tìm kiếm tạm không khả dụng; đang lọc tên và mô tả cơ bản.';
+      status.textContent='';
       render();
       console.error(error);
     }
